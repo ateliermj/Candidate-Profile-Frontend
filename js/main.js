@@ -1,5 +1,23 @@
 $( document ).ready(function() {
 
+  $(function(){
+      // Enables popover
+      $("[data-toggle=popover]").popover();
+  });
+
+  $( '.applyfilters' ).click(function() {
+    var totalfilters = $('input[name="filterchecks"]:checked').length;
+    var sortby = $('input[name="sortby"]:checked').parent().text();
+    //$(this).find('input[name="filterchecks"]:checked').length;
+    console.log(sortby);
+    if($('input[name="sortby"]:checked').length > 1){
+      sortby = 'multiple';
+    }
+    $('.filtertext').html('<b>' + totalfilters + ' Filters </b>/ Sort By <b>' +sortby + '</b>');
+    $('.filter').toggleClass('filteractive')
+  });
+
+
 
   $( '.fa-star' ).click(function() {
       $(this).toggleClass('activestar')
@@ -8,11 +26,15 @@ $( document ).ready(function() {
       $('.searchbox').toggleClass('activesearch')
       $('.cancelsearch').toggleClass('activesearch')
       $('.searchicon').hide()
+      $('#filtertoggle').hide()
+
   });
   $( '.cancelsearch' ).click(function() {
       $('.searchbox').toggleClass('activesearch')
       $('.cancelsearch').toggleClass('activesearch')
       $('.searchicon').show()
+      $('#filtertoggle').show()
+
   });
   $( '#filtertoggle' ).click(function() {
       $('.filter').toggleClass('filteractive')
@@ -38,7 +60,7 @@ $( document ).ready(function() {
       $('#grid').addClass('listgridactive');
       $('#list').removeClass('listgridactive');
     });
-});
+  });
 
 $(function () {
     $('.button-checkbox').each(function () {
