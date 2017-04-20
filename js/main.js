@@ -27,14 +27,14 @@ $( document ).ready(function() {
   $(document).ready(function() {
     $('#list').click(function(event){
       event.preventDefault();
-      $('#products .item').addClass('list-group-item');
+      $('#assets .item').addClass('list-group-item');
       $('#list').addClass('listgridactive');
       $('#grid').removeClass('listgridactive');
     });
     $('#grid').click(function(event){
       event.preventDefault();
-      $('#products .item').removeClass('list-group-item');
-      $('#products .item').addClass('grid-group-item');
+      $('#assets .item').removeClass('list-group-item');
+      $('#assets .item').addClass('grid-group-item');
       $('#grid').addClass('listgridactive');
       $('#list').removeClass('listgridactive');
     });

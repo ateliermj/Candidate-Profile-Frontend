@@ -33,35 +33,32 @@ body {
   font-size: 25px;
   background: rgba(0, 0, 0, 0.5)
 }
-.largeItem{
-  width: 90%;
+.featured{
   padding: 15px;
   box-sizing: border-box;
   border: 2px solid #e6e7e8;
   margin: 40px auto 0;
-  display: flex;
-  flex-direction: row;
+  margin: 0px 15px;
 }
-.itemContent{
-  flex-direction: column;
-}
-.largeItem .listImage {
-  width: 350px;
+
+.featured .listImage {
+  width: 100%;
   height: 300px;
-  margin: 0 15px 0 0;
+  object-fit: cover;
 }
-.largeItem .listHeader span{
+
+.featured .listHeader span{
   font-size: 20px;
   line-height: 25px;
   vertical-align: top;
 }
-.largeItem p{
+.featured p{
   font-size: 17px;
 }
-.largeItem .meta{
+.featured .meta{
   font-size: 15px;
 }
-.largeItem .fa-video-camera, .largeItem .fa-star{
+.featured .fa-video-camera, .featured .fa-star{
   font-size: 20px;
   line-height: 25px;
 
@@ -83,18 +80,16 @@ body {
 }
 .listImage{
   position: relative;
-/*  background: url(../img/flower.jpg);
+  background: url(../img/flower.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 150px;
-  width: 100%;*/
+  width: 100%;
   padding: 0px;
-  box-sizing: border-box;
-  margin: 0px;
-  border: 2px solid #e6e7e8;
-  margin: 0 0 15px 0;
+  border: 1px solid #ccc;
 }
+
 .folder{
   border-color: #3298cb;
   background: url(../img/folder.jpg);
@@ -217,6 +212,7 @@ i:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
   color: white;
+  cursor: pointer;
 }
 
 
