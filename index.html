@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+    <head>
+       	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Single Courge Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+
+      <div class="header">
+        <div class="headerText">
+          <div>Arts & Media 101 - INTRODUCTION TO FILMMAKING</div>
+        </div>
+      </div>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li class="activeitem"><a href="#">Pickn-n-play</a></li>
+            <li><a href="#">MediaManager</a></li>
+            <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Media Inbox</a></li>
+            <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i> Analytics</a></li>
+            <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          <button class="btn upload margins navbar-btn"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Upload</button>
+        </ul>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 vcenter"><h4 class="headline">Arts & Media 101 - INTRODUCTION TO FILMMAKING <i class="fa fa-caret-down" aria-hidden="true"></i></h4></div>
+          <div class="col-md-6 vcenter text-right searchfilter">
+            <button class="btn upload navbar-btn" id="filtertoggle"> Filter / Sort <i class="fa fa-plus standardcolor" aria-hidden="true"></i></button>
+            <input type="text" class="searchbox" placeholder="Search Folder"></input>
+            <span class="cancelsearch"> Cancel </span>
+            <i class="fa fa-search searchicon" aria-hidden="true"></i>
+            <i class="fa fa-th listgridactive" id="grid" aria-hidden="true"></i>
+            <i class="fa fa-list-ul" id="list" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="panel-body filter">
+                <div class="col-xs-6 col-md-6">
+                  <div class="row">Filter</div>
+                  <div class="row">
+
+
+                  <span class="button-checkbox">
+                    <button type="button" class="btn" data-color="primary">Favouries</button>
+                    <input type="checkbox" class="hidden" />
+                  </span>
+                  <span class="button-checkbox">
+                    <button type="button" class="btn" data-color="primary">Foldes</button>
+                    <input type="checkbox" class="hidden" />
+                  </span>
+                  <span class="button-checkbox">
+                    <button type="button" class="btn" data-color="primary">Audio</button>
+                    <input type="checkbox" class="hidden" />
+                  </span>
+                  <span class="button-checkbox">
+                    <button type="button" class="btn" data-color="primary">Document</button>
+                    <input type="checkbox" class="hidden" />
+                  </span>
+                  <span class="button-checkbox">
+                    <button type="button" class="btn" data-color="primary">Images</button>
+                    <input type="checkbox" class="hidden" />
+                  </span>
+                  <span class="button-checkbox">
+                    <button type="button" class="btn" data-color="primary">Podcasts</button>
+                    <input type="checkbox" class="hidden" />
+                  </span>
+                  <span class="button-checkbox">
+                    <button type="button" class="btn" data-color="primary">Video</button>
+                    <input type="checkbox" class="hidden" />
+                  </span>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                  <div class="row">Sort</div>
+                  <div class="row">
+                    <span class="button-checkbox">
+                      <button type="button" class="btn" data-color="primary">Accesses</button>
+                      <input type="checkbox" class="hidden" />
+                    </span>
+                    <span class="button-checkbox">
+                      <button type="button" class="btn" data-color="primary">Contributor</button>
+                      <input type="checkbox" class="hidden" />
+                    </span>
+                    <span class="button-checkbox">
+                      <button type="button" class="btn" data-color="primary">Publish Date</button>
+                      <input type="checkbox" class="hidden" />
+                    </span>
+                    <span class="button-checkbox">
+                      <button type="button" class="btn" data-color="primary">Title</button>
+                      <input type="checkbox" class="hidden" />
+                    </span>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-2 text-right align-bottom filterlinks">
+                  <a href="#" class="filterlink align-text-bottom"><span>Reset</span></a>
+                  <a href="#" class="filterlink boldlink align-bottom"><span id="filtertoggle"><b>Apply</b></span></a>
+                </div>
+            </div>
+
+
+        <div id="products" class="row list-group">
+          <div class="item  col-xs-12 col-lg-3">
+              <div class="thumbnail vcenter">
+                  <img class="group list-group-image" src="http://placehold.it/400x250" alt="" />
+                <!--<div class="listImage"><div class="overlay"><i class="fa fa-play-circle-o fa-4x" aria-hidden="true"></i></div></div>-->
+
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          <i class="fa fa-folder" aria-hidden="true"> <span class="tooltiptext">Folder</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"></i>
+                      </h4>
+                      <p class="group inner list-group-item-text align-middle">
+                          This is a simple description of the video that is too long and extends past the second line</p>
+                          <div class="meta">
+                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                            <span>Published: <b>October 1, 2016</b></br></span>
+                            <span>Accesses: <b>723</b></span>
+                          </div>
+                      <div class="row">
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="item  col-xs-12 col-lg-3">
+              <div class="thumbnail">
+                  <img class="group list-group-image" src="http://placehold.it/400x250" alt="" />
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          <i class="fa fa-folder" aria-hidden="true"> <span class="tooltiptext">Folder</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"></i>
+                      </h4>
+                      <p class="group inner list-group-item-text">
+                          This is a simple description of the video that is too long and extends past the second line</p>
+                          <div class="meta">
+                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                            <span>Published: <b>October 1, 2016</b></br></span>
+                            <span>Accesses: <b>723</b></span>
+                          </div>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-12">
+
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="item  col-xs-12 col-lg-3">
+              <div class="thumbnail">
+                  <img class="group list-group-image" src="http://placehold.it/400x250" alt="" />
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          <i class="fa fa-folder" aria-hidden="true"> <span class="tooltiptext">Folder</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"></i>
+                      </h4>
+                      <p class="group inner list-group-item-text">
+                          This is a simple description of the video that is too long and extends past the second line</p>
+                          <div class="meta">
+                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                            <span>Published: <b>October 1, 2016</b></br></span>
+                            <span>Accesses: <b>723</b></span>
+                          </div>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-12">
+
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="item  col-xs-12 col-lg-3">
+              <div class="thumbnail">
+                  <img class="group list-group-image" src="http://placehold.it/400x250" alt="" />
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          <i class="fa fa-folder" aria-hidden="true"> <span class="tooltiptext">Folder</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"></i>
+                      </h4>
+                      <p class="group inner list-group-item-text">
+                          This is a simple description of the video that is too long and extends past the second line</p>
+                          <div class="meta">
+                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                            <span>Published: <b>October 1, 2016</b></br></span>
+                            <span>Accesses: <b>723</b></span>
+                          </div>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-12">
+
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="item  col-xs-12 col-lg-3">
+              <div class="thumbnail">
+                  <img class="group list-group-image" src="http://placehold.it/400x250" alt="" />
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          <i class="fa fa-folder" aria-hidden="true"> <span class="tooltiptext">Folder</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"></i>
+                      </h4>
+                      <p class="group inner list-group-item-text">
+                          This is a simple description of the video that is too long and extends past the second line</p>
+                          <div class="meta">
+                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                            <span>Published: <b>October 1, 2016</b></br></span>
+                            <span>Accesses: <b>723</b></span>
+                          </div>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-12">
+
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="item  col-xs-12 col-lg-3">
+              <div class="thumbnail">
+                  <img class="group list-group-image" src="http://placehold.it/400x250" alt="" />
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          <i class="fa fa-folder" aria-hidden="true"> <span class="tooltiptext">Folder</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"></i>
+                      </h4>
+                      <p class="group inner list-group-item-text">
+                          This is a simple description of the video that is too long and extends past the second line</p>
+                          <div class="meta">
+                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                            <span>Published: <b>October 1, 2016</b></br></span>
+                            <span>Accesses: <b>723</b></span>
+                          </div>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-12">
+
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        </div>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+    <!--    <div class="row">
+           <div class="col-xs-18 col-sm-12 col-md-12">
+             <div class="thumbnail">
+               <img class="folder" src="http://placehold.it/500x300" alt="">
+                 <div class="caption">
+                   <h4>               <i class="fa fa-folder" aria-hidden="true"> <span class="tooltiptext">Folder</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"></i></h4>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
+               </div>
+             </div>
+           </div>
+        </div>
+
+
+        <div class="row">
+         <div class="col-xs-18 col-sm-6 col-md-3">
+           <div class="thumbnail">
+             <img class="folder" src="http://placehold.it/500x300" alt="">
+               <div class="caption">
+                 <h4>               <i class="fa fa-folder" aria-hidden="true"> <span class="tooltiptext">Folder</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"></i></h4>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
+             </div>
+           </div>
+         </div>
+
+         <div class="col-xs-18 col-sm-6 col-md-3">
+           <div class="thumbnail">
+             <img src="http://placehold.it/500x300" alt="">
+               <div class="caption">
+                 <h4> <i class="fa fa-video-camera" aria-hidden="true">  <span class="tooltiptext">Video</span> </i> Fall 2016 Week 2 <i class="fa fa-star" aria-hidden="true"></i></h4>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
+             </div>
+           </div>
+         </div>
+
+         <div class="col-xs-18 col-sm-6 col-md-3">
+           <div class="thumbnail">
+             <img src="http://placehold.it/500x300" alt="">
+               <div class="caption">
+                 <h4> <i class="fa fa-video-camera" aria-hidden="true">  <span class="tooltiptext">Video</span> </i>  Fall 2016 Week 3 <i class="fa fa-star" aria-hidden="true"></i></h4>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
+             </div>
+           </div>
+         </div>
+
+         <div class="col-xs-18 col-sm-6 col-md-3">
+           <div class="thumbnail">
+             <img src="http://placehold.it/500x300" alt="">
+               <div class="caption">
+                 <h4> <i class="fa fa-video-camera" aria-hidden="true">  <span class="tooltiptext">Video</span> </i> Fall 2016 week 4 with longer name that goes past the end of the second line <i class="fa fa-star" aria-hidden="true"></i></h4>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
+             </div>
+           </div>
+         </div>
+        </div>
+      </div>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="largeItem">
+        <div class="listImage"><div class="overlay"><i class="fa fa-play-circle-o fa-4x" aria-hidden="true"></i></div></div>
+        <div class="itemContent">
+          <div class="listHeader">
+            <i class="fa fa-video-camera" aria-hidden="true">  <span class="tooltiptext">Video</span> </i>
+            <span> Demo Video</span>
+            <i class="fa fa-star" aria-hidden="true"></i>
+          </div>
+          <p>This is a simple description for the video that is currently being featured. he user can go into MediaManager to change featured asset. </p>
+          <div class="meta">
+            Contributor: <b>Instructor 1 (You)</b></br>
+            Published: <b>October 1, 2016</b></br>
+            Accesses: <b>723</b>
+          </div>
+        </div>
+      </div>
+
+      <div class="listContainer">
+          <div class="listItem">
+            <div class="listImage folder"></div>
+            <div class="listHeader">
+              <i class="fa fa-folder" aria-hidden="true"> <span class="tooltiptext">Folder</span> </i>
+              <span> Fall 2016 week 1</span>
+            </div>
+            <p>This is a simple description of a folder </p>
+            <div class="meta">
+              <b>17 Media Assets / 3 Subfolders</b></br>
+              Contributor: <b>Arizona State</b></br>
+              Last Updated: <b>June 15, 2016</b>
+            </div>
+          </div>
+          <div class="listItem">
+            <div class="listImage"><div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div></div>
+            <div class="listHeader">
+              <i class="fa fa-video-camera" aria-hidden="true"> <span class="tooltiptext">Video</span> </i>
+              <span> Fall 2016 week 2</span>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p>This is a simple description of the video that is too long and extends past the second line</p>
+            <div class="meta">
+              Contributor: <b>Instructor 1 (You)</b></br>
+              Published: <b>October 1, 2016</b></br>
+              Accesses: <b>723</b>
+            </div>
+          </div>
+          <div class="listItem">
+            <div class="listImage"><div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div></div>
+            <div class="listHeader">
+              <i class="fa fa-video-camera" aria-hidden="true"> <span class="tooltiptext">Video</span> </i>
+              <span> Fall 2016 week 3</span>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p>This is a simple description of the video that is too long and extends past the second line</p>
+            <div class="meta">
+              Contributor: <b>Instructor 1 (You)</b></br>
+              Published: <b>October 1, 2016</b></br>
+              Accesses: <b>723</b>
+            </div>
+          </div>
+          <div class="listItem">
+            <div class="listImage"><div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div></div>
+            <div class="listHeader">
+              <i class="fa fa-video-camera" aria-hidden="true"> <span class="tooltiptext">Video</span> </i>
+              <span> Fall 2016 week 4 with longer name that goes past the end of the second line</span>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p>This is a simple description of the video that is too long and extends past the second line</p>
+            <div class="meta">
+              Contributor: <b>Instructor 1 (You)</b></br>
+              Published: <b>October 1, 2016</b></br>
+              Accesses: <b>723</b>
+            </div>
+          </div>
+    </body>
+</html>
