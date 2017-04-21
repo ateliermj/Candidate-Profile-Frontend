@@ -15,8 +15,7 @@
 
         <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
+        <script src="http:////cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
     </head>
@@ -51,30 +50,30 @@
                data-toggle="popover"
                data-placement="bottom"
                title="<input type='text' placeholder='Select a subfolder'>"
-               data-content="<div class='breakcrum-dropdown'>
-                 <div class='breakcrum-dropdown-item'><div class='breadcrumb-dropdown-icon home'></div> Course Folder Home</div>
-                 
-
-        <div class='breadcrumb-dropdown-item levelone'>
-           <a href='#fall2016Week1' data-toggle='collapse'>      
-              <i class='fa fa-caret-down' aria-hidden='true'></i>
-            </a>
-         <div class='breadcrumb-dropdown-icon subfolder'></div> <span class='activetect'>Fall 2016 Week 1</span>
-      </div>
-
-      <div id='fall2016Week1' class='collapse in'>
-            <div class='breadcrumb-dropdown-item leveltwo'><div class='breadcrumb-dropdown-icon  subfolder'></div> <span>Assignment 1</span></div>
-             <div class='breadcrumb-dropdown-item levelthree'><div class='breadcrumb-dropdown-icon  subfolder'></div> Problem Set 1</div>
-              <div class='levelthree'><div class='breadcrumb-dropdown-icon  folder'></div> Bonus Problem</div>
-             <div class='leveltwo'><div class='breadcrumb-dropdown-icon  folder'></div> Assignment 2</div>
-             <div class='leveltwo'><div class='breadcrumb-dropdown-icon  folder'></div> Assignment 3</div>
-
-       </div>
-              <div class='levelone'><div class='breadcrumb-dropdown-icon  subfolder'></div> Fall 2016 Week 2</div>
-        </div>"
+               data-content="<div>
+               <ul>
+                 <li><i class='fa fa-home' aria-hidden='true'></i> Course Folder Home</li>
+                 <li><i class='fa fa-folder levelone' aria-hidden='true'></i> <span class='activetect'>Fall 2016 Week 1</span></li>
+                 <li><i class='fa fa-folder leveltwo' aria-hidden='true'></i> Assignment 1</li>
+                 <li><i class='fa fa-folder levelthree' aria-hidden='true'></i> Problem Set 1</li>
+                 <li><i class='fa fa-folder levelthree' aria-hidden='true'></i> Bonus Problem</li>
+                 <li><i class='fa fa-folder leveltwo' aria-hidden='true'></i> Assignment 1</li>
+               </ul>
+               </div>"
             >
           </i>
-            </h5></div>
+             >
+             <span class="breadcrumbelipsis" tabindex="0"
+               role="button"
+               data-html="true"
+               data-toggle="popover"
+               data-trigger="focus"
+               data-placement="bottom"
+               data-content="<div>
+               <a href='#'>Fall 2016 Week 1 </a> > <a href='#'>Assignment 1</a> > <a href='#'>Problem Set 1</a>
+             </div>" >
+            ...</span> >
+            Extra Reading</h5></div>
           <div class="col-md-4 vcenter text-right searchfilter">
             <button class="btn upload navbar-btn" id="filtertoggle"> <span class="filtertext">Filter / Sort</span> <i class="fa fa-plus standardcolor" aria-hidden="true"></i></button>
             <input type="text" class="searchbox" placeholder="Search Folder"></input>

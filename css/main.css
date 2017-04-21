@@ -13,7 +13,7 @@ body {
    min-height: 1000px;
    widows: 100%;
 }
-.header{
+.course-header{
   position: relative;
   width: 100vw;
   height: 130px;
@@ -237,7 +237,7 @@ p.group.inner.list-group-item-text
   color: #636463;
 }
 .boldlink{
-  color: #0098bc;
+  color: #009bbb;
 }
 
 .btn.btn-default {
@@ -249,7 +249,7 @@ p.group.inner.list-group-item-text
   margin: 3px 3px;
 }
 .btn.btn-primary.active {
-  color: #0098bc;
+  color: #009bbb;
   background: white;
   border: none;
   border-radius: 0;
@@ -260,43 +260,94 @@ p.group.inner.list-group-item-text
 }
 button.btn-primary.active:hover {
   background-color: white;
-  color: #0098bc;
+  color: #009bbb;
 
 }
 .btn.btn-primary:hover, .btn.btn-primary:focus {
-  color: #0098bc;
+  color: #009bbb;
   background: white;
 }
 
-.navbar.navbar-inverse{
+.navbar>li>a {
+  padding-bottom: 0px;
+}
+
+.navbar{
     background-color: #fff;
     border: none;
-    border-bottom: 1px solid #c6c6c6;
-    padding: 0 10vw;
+    border-bottom: 1px solid #c6c6c6 !important;
+    padding: 0 50px;
 }
-.navbar.navbar-inverse ul>li>a{
+.navbar ul>li>a{
   color: #3c3c3b;
 }
-.navbar.navbar-inverse ul>li>a:hover{
+.navbar ul>li>a:focus, .navbar ul>li>a:hover{
   color: #282828;
+  background-color: #f9f9f9;
 }
-.navbar.navbar-inverse ul>li>a>i{
-  color: #0098bc;
+.navbar ul>li>a>i{
+  color: #009bbb;
   margin: 0 4px 0 0;
 }
 .upload{
   background: rgba(0, 152, 188, 0.05);
-  color: #0098bc;
+  color: #009bbb;
   margin-right: 20px;
   margin: 0;
 }
 .upload .margins{
   margin: 8px 0;
 }
-.navbar.navbar-inverse .navbar-nav > .activeitem{
-    border-bottom: 3px solid #0098bc;
+
+.navbar-nav > li {
+  border-bottom: none;
+  font-weight: 400;
+}
+
+
+.navbar .navbar-nav > .activeitem{
+    border-bottom: 5px solid #009bbb;
     font-weight: 600;
 }
+
+.navbar-icon {
+  width: 15px;
+  height: 15px;
+  float: left;
+  margin-right: 5px;
+  margin-top: 2px;
+}
+
+.navbar-icon.pnp {
+  background: url('../img/icon-sprite.gif') 0px 0px;
+  background-size: auto 100%;
+}
+
+.navbar-icon.media-manager {
+  background: url('../img/icon-sprite.gif') -15px 0px;
+  background-size: auto 100%;
+}
+
+.navbar-icon.media-inbox {
+  background: url('../img/icon-sprite.gif') -30px 0px;
+  background-size: auto 100%;
+}
+
+.navbar-icon.analytics {
+  background: url('../img/icon-sprite.gif') -45px 0px;
+  background-size: auto 100%;
+}
+
+.navbar-icon.settings {
+  background: url('../img/icon-sprite.gif') -60px 0px;
+  background-size: auto 100%;
+}
+
+.navbar-icon.upload {
+  background: url('../img/icon-sprite.gif') -75px 0px;
+  background-size: auto 100%;
+}
+
 .searchfilter i{
   color: #ededed;
   cursor: pointer;
@@ -306,7 +357,7 @@ button.btn-primary.active:hover {
   color: #706f6f;
 }
 .headline{
-  color: #0098bc;
+  color: #009bbb;
   font-size: 16px;
 }
 .vcenter{
@@ -413,13 +464,25 @@ button.btn-primary.active:hover {
 
 .popover{
   min-width: 200px;
-  border-radius: 0px;
+  border-radius: 0px !important;
 }
+
+.popover-title {
+    padding: 5px !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+}
+
+.popover-title input {
+  width: 100% !important;
+  color: #000;
+}
+
 .popover div{
-  font-size: 12px;
+  font-size: 13px;
 }
 .popover a{
-  color: #0098bc;
+  color: #009bbb;
 
 }
 .popover ul{
@@ -427,14 +490,23 @@ button.btn-primary.active:hover {
   padding: 0;
 }
 .popover ul li{
-  margin: 0;
-  padding: 0;
+  margin: 5px;
   list-style: none;
 }
 .activetect{
   font-weight: bolder;
-  color: #0098bc;
+  color: #009bbb;
 }
+
+.popover .fa {
+  float: left;
+  font-size: 10px;
+  margin: 2px 0px;
+  color: #999;
+  cursor: pointer;
+}
+
+
 
 .overlayimage{
   position: relative;
@@ -470,16 +542,46 @@ button.btn-primary.active:hover {
   color: #ef9717;
 }
 
+div.collapsed span.fa-caret-down {
+  display: none;
+}
+
+span.fa-caret-down, 
+span.fa-caret-right {
+  display: inline;
+}
+
+.breadcrumb-dropdown-icon {
+  width: 30px;
+  height: 17px;
+  float: left;
+}
+
+
+.breadcrumb-dropdown-icon.home {
+  width: 16px;
+  margin-right: 5px;
+  background: url('../img/icon-sprite.gif') -101px 0px;
+  background-size: auto 100%;
+}
+
+.breadcrumb-dropdown-icon.subfolder {
+  background: url('../img/asset-type-sprite.gif') 0px 0px;
+  background-size: auto 100%;
+}
+
+.breadcrumb-dropdown-icon.folder {
+  background: url('../img/asset-type-sprite.gif') -30px 0px;
+  background-size: auto 100%;
+}
+
 .levelone{
-  margin-left: 10px;
-  margin-bottom: 5px;
+  padding-left: 5px;
 }
 .leveltwo{
-  margin-left: 20px;
-  margin-bottom: 5px;
+  padding-left: 20px ;
 }
 .levelthree{
-  margin-left: 30px;
-  margin-bottom: 5px;
+  padding-left: 35px;
 
 }
