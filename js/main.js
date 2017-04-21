@@ -14,27 +14,48 @@ $( document ).ready(function() {
       $('#list').removeClass('listgridactive');
     });
 
+    $(document).on("click", "#collapsecontroller", function() {
+      if(!$('#collapsable').hasClass('in')){
+        $('.collapsearrow').toggleClass('fa-caret-down');
+        $('.collapsearrow').toggleClass('fa-caret-right');
+      }else{
+        $('.collapsearrow').toggleClass('fa-caret-down');
+        $('.collapsearrow').toggleClass('fa-caret-right');
+
+      }
+    });
+
 
   $(function(){
       // Enables popover
       $("[data-toggle=popover]").popover();
+  });
 
+  var sortby = "nothing";
+
+  $( '.sortby' ).click(function() {
+    sortby = $(this).text();
+
+    $('.sortby').removeClass("actveSort");
+
+    $(this).toggleClass('actveSort');
+    console.log(sortby);
   });
 
 
-
   $( '.applyfilters' ).click(function() {
-    toggleFilter();
+    $('.filter').toggleClass('filteractive')
     var totalfilters = $('input[name="filterchecks"]:checked').length;
-    var sortby = $('input[name="sortby"]:checked').parent().text();
+    //var sortby = $('input[name="sortby"]:checked').parent().text();
     //$(this).find('input[name="filterchecks"]:checked').length;
-    console.log(sortby);
+    //console.log(sortby);
     if($('input[name="sortby"]:checked').length > 1){
       sortby = 'multiple';
     }
     $('.filtertext').html('<b>' + totalfilters + ' Filters </b>/ Sort By <b>' +sortby + '</b>');
-    $('.filter').toggleClass('filteractive')
-  });
+    });
+
+
 
   $('.navbar li').click(function() {
     $('li.activeitem').removeClass('activeitem');
@@ -45,6 +66,7 @@ $( document ).ready(function() {
   $( '.fa-star' ).click(function() {
       $(this).toggleClass('activestar');
   });
+
   $( '.searchicon' ).click(function() {
       $('.searchbox').toggleClass('activesearch');
       $('.cancelsearch').toggleClass('activesearch');
@@ -64,7 +86,10 @@ $( document ).ready(function() {
 
   });
   $( '#filtertoggle' ).click(function() {
-      toggleFilter();
+    $('.filter').toggleClass('filteractive')
+  });
+  $( '.closefilter' ).click(function() {
+    $('.filter').toggleClass('filteractive')
   });
   $( '.fa-camera' ).hover(function() {
   });
@@ -76,7 +101,6 @@ $( document ).ready(function() {
 
 
 $(function () {
-
 
     $('.button-checkbox').each(function () {
 

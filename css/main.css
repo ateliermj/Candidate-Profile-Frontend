@@ -499,6 +499,9 @@ button.btn-primary.active:hover {
     border: none;
     font-size: 120%;
 }
+.item.col-xs-12.col-lg-12.featureditem .caption{
+  margin-left: 410px !important;
+}
 
 .list-group-image:hover, .overlay:hover {
   cursor: pointer;
@@ -575,7 +578,7 @@ button.btn-primary.active:hover {
   margin: 5px;
   list-style: none;
 }
-.activetect{
+.activetext{
   font-weight: bolder;
   color: #009bbb;
 }
@@ -630,7 +633,7 @@ div.collapsed span.fa-caret-down {
   display: none;
 }
 
-span.fa-caret-down, 
+span.fa-caret-down,
 span.fa-caret-right {
   display: inline;
 }
@@ -668,4 +671,31 @@ span.fa-caret-right {
 .levelthree{
   padding-left: 35px;
 
+}
+ul.pagination>li>a{
+  border: none;
+  color: #009bbb;
+  border-radius: 0px;
+}
+ul.pagination>li>a:hover{
+  background: transparent;
+  font-weight: bolder;
+  color: #009bbb;
+
+}
+
+ul.pagination>li.active>a{
+  border: none;
+  background: none;
+  color: #009bbb;
+  font-weight: 600;
+  text-decoration: underline;
+}
+ul.pagination>li.active>a:hover{
+  background: transparent;
+  color: #009bbb;
+}
+.btn.sortby.btn-default.actveSort {
+  font-weight: 600;
+  color: #009bbb;
 }
