@@ -26,6 +26,8 @@ body {
   position: absolute;
   display: block;
   bottom: 0px;
+  height: 50px;
+  padding-top: 5px;
   text-align: center;
   width: 100vw;
   color: #fff;
@@ -123,7 +125,8 @@ i{
   -webkit-text-stroke: 1px #ef962b;
 }
 .fa-star:hover{
-  color: #ef962b;
+  color: rgba(239, 150, 43, 0.3);
+  cursor: pointer;
   -webkit-text-stroke: 1px #ef962b;
 }
 .activestar{
@@ -148,7 +151,7 @@ i .tooltiptext {
     transition: opacity 0.3s;
 }
 
-i .tooltiptext.favourite{
+i .tooltiptext.favorite{
   background-color: #ef9717;
   color: #fff;
   -webkit-text-stroke: 0px;
@@ -166,13 +169,20 @@ i:hover .tooltiptext {
   margin-top: 158px;
 
 }
-.thumbnail
+.asset-card
 {
     margin-bottom: 20px;
-    padding: 0px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
+    border: 1px solid #ccc;
+    padding: 15px;
     border-radius: 0px;
+}
+
+.item[class*="col-"] {
+  padding: 0px 5px 0px 5px;
+}
+
+.list-group-item[class*="col-"] {
+  padding: 5px 0px 0px 5px;
 }
 
 .item.list-group-item
@@ -184,9 +194,10 @@ i:hover .tooltiptext {
     border: none;
 }
 
-.item.list-group-item .list-group-image{
+.item .list-group-image{
+  border: 1px solid #ccc;
 }
-.item.list-group-item .thumbnail
+.item.list-group-item .asset-card
 {
     margin-bottom: 0px;
 }
@@ -215,9 +226,25 @@ p.group.inner.list-group-item-text
 {
   margin-bottom: 11px;
 }
+
+
+.list-group-item-heading:hover {
+  cursor: pointer;
+}
+
 .nopadding{
   padding: 0;
 }
+
+#control-panel {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#control-panel.filteractive{
+  display: none;
+}
+
 .filter{
     margin: 20px 0;
     background-color: #F6FAF9;
@@ -236,6 +263,15 @@ p.group.inner.list-group-item-text
   padding-left: 10px;
   color: #636463;
 }
+
+.filterlink:hover, .filterlink:active, .filterlink:focus {
+  text-decoration: none;
+}
+
+.applyfilters:hover {
+  color: #009bbb;
+}
+
 .boldlink{
   color: #009bbb;
 }
@@ -248,6 +284,15 @@ p.group.inner.list-group-item-text
   text-align: left;
   margin: 3px 3px;
 }
+
+.btn.btn-primary {
+  background-color: #fff;
+}
+
+.btn.btn-primary:hover {
+  background-color: #f9f9f9 !important;
+}
+
 .btn.btn-primary.active {
   color: #009bbb;
   background: white;
@@ -259,13 +304,28 @@ p.group.inner.list-group-item-text
   margin: 3px 3px;
 }
 button.btn-primary.active:hover {
-  background-color: white;
+  background-color: #f9f9f9 !important;
   color: #009bbb;
-
 }
+
 .btn.btn-primary:hover, .btn.btn-primary:focus {
-  color: #009bbb;
-  background: white;
+  color: #009bbb !important;
+  background-color: #fff !important;
+}
+
+.btn-close {
+    float: right;
+    font-size: 1.5em;
+    color: #999;
+}
+
+.btn-blank {
+    border: none;
+    background-color: transparent;
+}
+
+.btn-blank:hover {
+    text-decoration: none;
 }
 
 .navbar>li>a {
@@ -289,14 +349,20 @@ button.btn-primary.active:hover {
   color: #009bbb;
   margin: 0 4px 0 0;
 }
-.upload{
+
+.button-light {
   background: rgba(0, 152, 188, 0.05);
-  color: #009bbb;
   margin-right: 20px;
   margin: 0;
 }
-.upload .margins{
+
+.button-light.upload{
+  color: #009bbb;
   margin: 8px 0;
+}
+
+.button-light.upload:hover {
+  color: #009bbb;
 }
 
 .navbar-nav > li {
@@ -356,10 +422,20 @@ button.btn-primary.active:hover {
 .searchfilter i.listgridactive{
   color: #706f6f;
 }
-.headline{
+.course-breadcrumb{
   color: #009bbb;
   font-size: 16px;
 }
+
+.course-breadcrumb a, .course-breadcrumb a:hover {
+  color: #009bbb;
+}
+
+.course-breadcrumb a:visited, .course-breadcrumb a:focus {
+  color: #009bbb;
+  text-decoration: none;
+}
+
 .vcenter{
   vertical-align: middle;
 }
@@ -371,11 +447,13 @@ button.btn-primary.active:hover {
 .searchbox{
   border-radius: 13px;
   height: 26px;
+  width: 200px;
   outline: none;
-  border: 1px solid #706f6f;
+  border: 1px solid #ccc;
   padding: 0 10px;
   font-size: 12px;
   display: none;
+  margin: 10px 5px;
 }
 
 .cancelsearch{
@@ -386,7 +464,7 @@ button.btn-primary.active:hover {
   display: inline-block;
 }
 
-.fa.fa-plus.standardcolor{
+.fa.standardcolor{
   color: #706f6f;
 
 }
@@ -405,14 +483,14 @@ button.btn-primary.active:hover {
   position: absolute;
   display: block;
   bottom: 10px;
-  right: 0px;
+  right: 10px;
   text-align: center;
   z-index: 9;
 }
 
 
 
-.item.col-xs-12.col-lg-12.featureditem{
+.featureditem{
 
     float: none;
     width: 100%;
@@ -422,31 +500,35 @@ button.btn-primary.active:hover {
     font-size: 120%;
 }
 
-.item.col-xs-12.col-lg-12.featureditem .list-group-image
+.list-group-image:hover, .overlay:hover {
+  cursor: pointer;
+}
+
+.featureditem .list-group-image
 {
 }
-.item.col-xs-12.col-lg-12.featureditem .thumbnail
+.featureditem .asset-card
 {
     margin-bottom: 0px;
 }
-.item.col-xs-12.col-lg-12.featureditem .caption
+.featureditem .caption
 {
     padding: 9px 9px 9px 9px;
     margin-left: 410px;
     margin-top: 0px;
 }
 
-.item.col-xs-12.col-lg-12.featureditem:before, .item.col-xs-12.col-lg-12.featureditem:after
+.item.featureditem:before, .item.featureditem:after
 {
     display: table;
     content: " ";
 }
 
-.item.col-xs-12.col-lg-12.featureditem img
+.item.featureditem img
 {
     float: left;
 }
-.item.col-xs-12.col-lg-12.featureditem:after
+.item.featureditem:after
 {
     clear: both;
 }
@@ -454,7 +536,7 @@ button.btn-primary.active:hover {
 {
     margin: 0 0 11px;
 }
-.item.col-xs-12.col-lg-12.featureditem .group.list-group-image {
+.item.featureditem .group.list-group-image {
   max-height: 250px;
   max-width: 100%;
   position: relative;
@@ -534,9 +616,11 @@ button.btn-primary.active:hover {
 }
 .overlay i.fa{
   color: white;
+  opacity: 0.8;
 }
+
 .overlayimage:hover .overlay{
-  opacity:1;
+  opacity:1.0;
 }
 .newmessage{
   color: #ef9717;

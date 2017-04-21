@@ -22,14 +22,9 @@ $( document ).ready(function() {
   });
 
 
-  $('.breadcrumb-dropdown-icon').click(function() {
-    alert('what');
-
-  });
-
-
 
   $( '.applyfilters' ).click(function() {
+    toggleFilter();
     var totalfilters = $('input[name="filterchecks"]:checked').length;
     var sortby = $('input[name="sortby"]:checked').parent().text();
     //$(this).find('input[name="filterchecks"]:checked').length;
@@ -48,24 +43,28 @@ $( document ).ready(function() {
 
 
   $( '.fa-star' ).click(function() {
-      $(this).toggleClass('activestar')
+      $(this).toggleClass('activestar');
   });
   $( '.searchicon' ).click(function() {
-      $('.searchbox').toggleClass('activesearch')
-      $('.cancelsearch').toggleClass('activesearch')
-      $('.searchicon').hide()
-      $('#filtertoggle').hide()
+      $('.searchbox').toggleClass('activesearch');
+      $('.cancelsearch').toggleClass('activesearch');
+      $('.searchicon').hide();
+      $('#filtertoggle').hide();
+      $('#grid').hide();
+      $('#list').hide();
 
   });
   $( '.cancelsearch' ).click(function() {
-      $('.searchbox').toggleClass('activesearch')
-      $('.cancelsearch').toggleClass('activesearch')
-      $('.searchicon').show()
-      $('#filtertoggle').show()
+      $('.searchbox').toggleClass('activesearch');
+      $('.cancelsearch').toggleClass('activesearch');
+      $('.searchicon').show();
+      $('#filtertoggle').show();
+      $('#grid').show();
+      $('#list').show();
 
   });
   $( '#filtertoggle' ).click(function() {
-      $('.filter').toggleClass('filteractive')
+      toggleFilter();
   });
   $( '.fa-camera' ).hover(function() {
   });
@@ -74,7 +73,11 @@ $( document ).ready(function() {
   });
 
 
+
+
 $(function () {
+
+
     $('.button-checkbox').each(function () {
 
         // Settings
@@ -84,10 +87,10 @@ $(function () {
             color = $button.data('color'),
             settings = {
                 on: {
-                    icon: 'glyphicon glyphicon-check'
+                    icon: 'fa fa-check-square '
                 },
                 off: {
-                    icon: 'glyphicon glyphicon-unchecked'
+                    icon: 'fa fa-square-o'
                 }
             };
 
@@ -141,3 +144,8 @@ $(function () {
 });
 
 });
+
+function toggleFilter() {
+  $('#control-panel').toggleClass('filteractive');
+      $('.filter').toggleClass('filteractive');
+}
