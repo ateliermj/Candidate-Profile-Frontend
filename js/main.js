@@ -1,11 +1,27 @@
 $( document ).ready(function() {
 
+     $("[data-toggle=popover]").popover();
+
+$(document).on('click', function (e) {
+    $('[data-toggle="popover"],[data-original-title]').each(function () {
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {                
+            (($(this).popover('hide').data('bs.popover')||{}).inState||{}).click = false  // fix for BS 3.3.6
+        }
+
+    });
+});
+
+
+     $('#assets .item').addClass('grid-group-item');
+
       $('#list').click(function(event){
       event.preventDefault();
+      $('#assets .item').removeClass('grid-group-item');
       $('#assets .item').addClass('list-group-item');
       $('#list').addClass('listgridactive');
       $('#grid').removeClass('listgridactive');
     });
+
     $('#grid').click(function(event){
       event.preventDefault();
       $('#assets .item').removeClass('list-group-item');
@@ -23,35 +39,27 @@ $( document ).ready(function() {
         $('.collapsearrow').toggleClass('fa-caret-right');
 
       }
+
     });
 
 
-  $(function(){
-      // Enables popover
-      $("[data-toggle=popover]").popover();
-  });
+
 
   var sortby = "nothing";
 
   $( '.sortby' ).click(function() {
     sortby = $(this).text();
 
-    $('.sortby').removeClass("actveSort");
+    $('.sortby').removeClass("activeSort");
 
-    $(this).toggleClass('actveSort');
-    console.log(sortby);
+    $(this).toggleClass('activeSort');
   });
 
 
   $( '.applyfilters' ).click(function() {
-    $('.filter').toggleClass('filteractive')
+    toggleFilter();
     var totalfilters = $('input[name="filterchecks"]:checked').length;
-    //var sortby = $('input[name="sortby"]:checked').parent().text();
-    //$(this).find('input[name="filterchecks"]:checked').length;
-    //console.log(sortby);
-    if($('input[name="sortby"]:checked').length > 1){
-      sortby = 'multiple';
-    }
+
     $('.filtertext').html('<b>' + totalfilters + ' Filters </b>/ Sort By <b>' +sortby + '</b>');
     });
 
@@ -86,10 +94,10 @@ $( document ).ready(function() {
 
   });
   $( '#filtertoggle' ).click(function() {
-    $('.filter').toggleClass('filteractive')
+    toggleFilter();
   });
   $( '.closefilter' ).click(function() {
-    $('.filter').toggleClass('filteractive')
+    toggleFilter();
   });
   $( '.fa-camera' ).hover(function() {
   });
@@ -169,7 +177,20 @@ $(function () {
 
 });
 
+
+function resetFilter() {
+  $('input[name="filterchecks"]:checked').each(function() {
+    $(this).trigger('click');
+  });
+
+  $('.activeSort').each(function() {
+    $(this).removeClass('activeSort');
+  })
+
+  $('.filtertext').html('Filter / Sort');
+}
+
 function toggleFilter() {
   $('#control-panel').toggleClass('filteractive');
-      $('.filter').toggleClass('filteractive');
+  $('.filter').toggleClass('filteractive');
 }

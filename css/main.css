@@ -103,9 +103,18 @@ body {
 .meta{
   font-size: 12px;
 }
-.meta span{
+
+.meta span b {
+  color: #333;
+}
+
+.grid-group-item .meta span{
+  display: block;
+}
+
+.list-group-item .meta span{
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 i{
@@ -120,11 +129,16 @@ i{
 
 
 }
+
+.grid-group-item .fa-star:not(.featured) {
+  float: right;
+}
+
 .fa-star{
   color: transparent;
   -webkit-text-stroke: 1px #ef962b;
 }
-.fa-star:hover{
+.fa-star:not(.activestar):hover{
   color: rgba(239, 150, 43, 0.3);
   cursor: pointer;
   -webkit-text-stroke: 1px #ef962b;
@@ -194,9 +208,7 @@ i:hover .tooltiptext {
     border: none;
 }
 
-.item .list-group-image{
-  border: 1px solid #ccc;
-}
+
 .item.list-group-item .asset-card
 {
     margin-bottom: 0px;
@@ -204,7 +216,6 @@ i:hover .tooltiptext {
 .item.list-group-item .caption
 {
     padding: 9px 9px 10px 9px;
-    margin-left: 256px;
     margin-top: 0px;
 }
 
@@ -225,6 +236,12 @@ i:hover .tooltiptext {
 p.group.inner.list-group-item-text
 {
   margin-bottom: 11px;
+      overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    max-height: 3em;
 }
 
 
@@ -385,32 +402,32 @@ button.btn-primary.active:hover {
 }
 
 .navbar-icon.pnp {
-  background: url('../img/icon-sprite.gif') 0px 0px;
+  background: url('../img/icon-sprite.png') 0px 0px;
   background-size: auto 100%;
 }
 
 .navbar-icon.media-manager {
-  background: url('../img/icon-sprite.gif') -15px 0px;
+  background: url('../img/icon-sprite.png') -15px 0px;
   background-size: auto 100%;
 }
 
 .navbar-icon.media-inbox {
-  background: url('../img/icon-sprite.gif') -30px 0px;
+  background: url('../img/icon-sprite.png') -30px 0px;
   background-size: auto 100%;
 }
 
 .navbar-icon.analytics {
-  background: url('../img/icon-sprite.gif') -45px 0px;
+  background: url('../img/icon-sprite.png') -45px 0px;
   background-size: auto 100%;
 }
 
 .navbar-icon.settings {
-  background: url('../img/icon-sprite.gif') -60px 0px;
+  background: url('../img/icon-sprite.png') -60px 0px;
   background-size: auto 100%;
 }
 
 .navbar-icon.upload {
-  background: url('../img/icon-sprite.gif') -75px 0px;
+  background: url('../img/icon-sprite.png') -75px 0px;
   background-size: auto 100%;
 }
 
@@ -468,12 +485,60 @@ button.btn-primary.active:hover {
   color: #706f6f;
 
 }
-.group.list-group-image {
+.grid-group-item .group.list-group-image {
   max-height: 160px;
   max-width: 100%;
   position: relative;
   display: block;
   z-index: 9;
+  width: 100%;
+  height: 100%;
+}
+
+.list-group-item:not(.featureditem) > .group.list-group-image  {
+  width: 100px !important;
+}
+
+.group.list-group-image.default {
+  width: 100px;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.list-group-image.default.subfolder {
+  height: 75.5px;
+  background: url('../img/asset-type-sprite.png') 0px 0px;
+  background-size: auto 100%;
+}
+
+.list-group-image.default.folder {
+  height: 75.5px;
+  background: url('../img/asset-type-sprite.png') -100px 0px;
+  background-size: auto 100%;
+}
+
+.list-group-image.default.pdf {
+  width: 70px;
+  height: 75.5px;
+  background: url('../img/asset-type-sprite.png') -189px 0px;
+  background-size: auto 100%;
+  opacity: 0.5;
+}
+
+.list-group-image.default.doc {
+   width: 70px;
+  height: 75.5px;
+  background: url('../img/asset-type-sprite.png') -259px 0px;
+  background-size: auto 100%;
+  opacity: 0.5;
+}
+
+.list-group-image.default.audio {
+  width: 71px;
+  height: 75.5px;
+  background: url('../img/asset-type-sprite.png') -331px 0px;
+  background-size: auto 100%;
 }
 
 .videolength{
@@ -591,7 +656,26 @@ button.btn-primary.active:hover {
   cursor: pointer;
 }
 
+.grid-group-item:not(.featureditem) .overlayimage {
+   margin-bottom: 10px;
+   width: 100%;
+   height: 140px;
+}
 
+
+.list-group-item:not(.featureditem) .overlayimage {
+      width: 25%;
+      min-width: 200px;
+      max-width: 400px;
+    height: 130px;
+    margin-right: 20px
+}
+
+
+
+.list-group-item:not(.featureditem) .overlayimage img {
+   max-width: 100%;
+}
 
 .overlayimage{
   position: relative;
@@ -599,7 +683,11 @@ button.btn-primary.active:hover {
   z-index: 10;
   float: left;
   overflow: hidden;
+   border: 1px solid #ccc;
+}
 
+.overlayimage.audio {
+  background-color: #999;
 }
 
 .overlay{
@@ -620,6 +708,9 @@ button.btn-primary.active:hover {
 .overlay i.fa{
   color: white;
   opacity: 0.8;
+    position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .overlayimage:hover .overlay{
@@ -639,26 +730,52 @@ span.fa-caret-right {
 }
 
 .breadcrumb-dropdown-icon {
-  width: 30px;
-  height: 17px;
-  float: left;
+    width: 15px;
+    height: 12px;
+    float: left;
+    margin: 3px;
 }
 
 
 .breadcrumb-dropdown-icon.home {
-  width: 16px;
+  width: 11px;
   margin-right: 5px;
-  background: url('../img/icon-sprite.gif') -101px 0px;
+  background: url('../img/icon-sprite.png') -71px 0px;
   background-size: auto 100%;
 }
 
 .breadcrumb-dropdown-icon.subfolder {
-  background: url('../img/asset-type-sprite.gif') 0px 0px;
+  background: url('../img/asset-type-sprite.png') 0px 0px;
   background-size: auto 100%;
 }
 
 .breadcrumb-dropdown-icon.folder {
-  background: url('../img/asset-type-sprite.gif') -30px 0px;
+  background: url('../img/asset-type-sprite.png') -15px 0px;
+  background-size: auto 100%;
+}
+
+.asset-type-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.asset-type-icon.folder {
+  background: url('../img/asset-type-icon-sprite.png') 0px 0px;
+  background-size: auto 100%;
+}
+
+.asset-type-icon.video {
+  background: url('../img/asset-type-icon-sprite.png') -15px 0px;
+  background-size: auto 100%;
+}
+
+.asset-type-icon.doc {
+  background: url('../img/asset-type-icon-sprite.png') -30px 0px;
+  background-size: auto 100%;
+}
+
+.asset-type-icon.audio {
+  background: url('../img/asset-type-icon-sprite.png') -46px 0px;
   background-size: auto 100%;
 }
 
@@ -695,7 +812,13 @@ ul.pagination>li.active>a:hover{
   background: transparent;
   color: #009bbb;
 }
-.btn.sortby.btn-default.actveSort {
+
+.btn.sortby.btn-default {
+  font-weight: 400;
+  color: #000;
+}
+
+.btn.sortby.btn-default.activeSort {
   font-weight: 600;
   color: #009bbb;
 }

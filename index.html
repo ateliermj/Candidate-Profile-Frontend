@@ -141,7 +141,7 @@
                     </div>
                 </div>
                 <div class="col-xs-6 col-md-2 text-right align-bottom filterlinks">
-                  <a href="#" class="filterlink align-text-bottom" onclick="toggleFilter()"><span>Reset</span></a>
+                  <a href="#" class="filterlink align-text-bottom" onclick="resetFilter()"><span>Reset</span></a>
                   <a href="#" class="filterlink boldlink align-bottom applyfilters"><span id="filtertoggle"><b>Apply</b></span></a>
                 </div>
             </div>
@@ -157,7 +157,7 @@
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading featureditem">
-                          <i class="fa fa-folder" aria-hidden="true"> <span class="tooltiptext">Folder</span> </i> Demo Video <i class="fa fa-star" aria-hidden="true"> <span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon video"> <span class="tooltiptext">Video</span> </i> Demo Video <i class="fa fa-star featured" aria-hidden="true"> <span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner featureditem-text align-middle">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -174,13 +174,13 @@
           </div>
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card vcenter">
-                <div class="overlayimage">
-                  <img class="group list-group-image" src="img/folder.jpg" alt=""/>
-                  </div>
+                <a href="subfolder.html"><div class="overlayimage">
+                  <div class="group list-group-image default subfolder"></div>
+                  </div></a>
 
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="fa fa-folder" aria-hidden="true"> <span class="tooltiptext">Folder</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"> <span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon folder"> <span class="tooltiptext">Folder</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"> <span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text align-middle">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -205,7 +205,7 @@
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="fa fa-video-camera" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon video"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 2 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -227,12 +227,12 @@
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
                 <div class="overlayimage">
-                  <img class="group list-group-image" src="img/doc.jpg" alt="" />
+                  <div class="group list-group-image default pdf"></div>
 
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="fa fa-video-camera" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> Webinar Transcript <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -253,15 +253,15 @@
           </div>
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
-                <div class="overlayimage">
-                  <img class="group list-group-image" src="img/audio.jpg" alt="" />
+                <div class="overlayimage audio">
+                  <div class="group list-group-image default audio"></div>
                   <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                   <div class="videolength">1:25</div>
 
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="fa fa-video-camera" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon audio" aria-hidden="true"> <span class="tooltiptext">Audio</span> </i> Webinar Recording <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -283,12 +283,12 @@
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
                 <div class="overlayimage">
-                  <img class="group list-group-image" src="img/doc.jpg" alt="" />
+                  <div class="group list-group-image default doc"></div>
 
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="fa fa-video-camera" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> Week 1 Syllabus <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -317,7 +317,7 @@
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="fa fa-video-camera" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon video" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 3 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>

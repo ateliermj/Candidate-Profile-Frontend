@@ -10,13 +10,14 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-        <script src="http:////cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+
         <script src="js/main.js"></script>
     </head>
     <body>
@@ -42,24 +43,35 @@
       </nav>
 
       <div class="container">
-        <div class="row">
-          <div class="col-md-8 vcenter"><h5 class="headline">Arts & Media 101 - INTRODUCTION TO FILMMAKING <i class="fa fa-caret-down" aria-hidden="true"
+        <div id="control-panel" class="row">
+          <div class="col-md-7 vcenter"><h5 class="course-breadcrumb"><a href="index.html">Arts & Media 101 - INTRODUCTION TO FILMMAKING </a><i class="fa fa-caret-down" aria-hidden="true"
             tabindex="0"
                role="button"
                data-html="true"
                data-toggle="popover"
                data-placement="bottom"
                title="<input type='text' placeholder='Select a subfolder'>"
-               data-content="<div>
-               <ul>
-                 <li><i class='fa fa-home' aria-hidden='true'></i> Course Folder Home</li>
-                 <li><i class='fa fa-folder levelone' aria-hidden='true'></i> <span class='activetect'>Fall 2016 Week 1</span></li>
-                 <li><i class='fa fa-folder leveltwo' aria-hidden='true'></i> Assignment 1</li>
-                 <li><i class='fa fa-folder levelthree' aria-hidden='true'></i> Problem Set 1</li>
-                 <li><i class='fa fa-folder levelthree' aria-hidden='true'></i> Bonus Problem</li>
-                 <li><i class='fa fa-folder leveltwo' aria-hidden='true'></i> Assignment 1</li>
-               </ul>
-               </div>"
+               data-content="<div class='breakcrum-dropdown '>
+                 <div class='breakcrum-dropdown-item collapsecontroller'><div class='breadcrumb-dropdown-icon home'></div> Course Folder Home</div>
+
+
+        <div class='breadcrumb-dropdown-item levelone' id='collapsecontroller' data-toggle='collapse' data-target='#collapsable'>
+           <a href'#'>
+              <i id='collapsearrow' class='fa fa-caret-down collapsearrow' aria-hidden='true'></i>
+            </a>
+         <div class='breadcrumb-dropdown-icon subfolder'></div> <span class='activetext'>Fall 2016 Week 1</span>
+      </div>
+
+      <div id='collapsable' class='collapse in'>
+            <div class='breadcrumb-dropdown-item leveltwo'><div class='breadcrumb-dropdown-icon  subfolder'></div> <span>Assignment 1</span></div>
+             <div class='breadcrumb-dropdown-item levelthree'><div class='breadcrumb-dropdown-icon  subfolder'></div> Problem Set 1</div>
+              <div class='levelthree'><div class='breadcrumb-dropdown-icon  folder'></div> Bonus Problem</div>
+             <div class='leveltwo'><div class='breadcrumb-dropdown-icon  folder'></div> Assignment 2</div>
+             <div class='leveltwo'><div class='breadcrumb-dropdown-icon  folder'></div> Assignment 3</div>
+
+       </div>
+              <div class='levelone'><div class='breadcrumb-dropdown-icon  subfolder'></div> Fall 2016 Week 2</div>
+        </div>"
             >
           </i>
              >
@@ -74,9 +86,10 @@
              </div>" >
             ...</span> >
             Extra Reading</h5></div>
-          <div class="col-md-4 vcenter text-right searchfilter">
-            <button class="btn upload navbar-btn" id="filtertoggle"> <span class="filtertext">Filter / Sort</span> <i class="fa fa-plus standardcolor" aria-hidden="true"></i></button>
-            <input type="text" class="searchbox" placeholder="Search Folder"></input>
+         
+         <div class="col-md-5 vcenter text-right searchfilter">
+            <button class="btn button-light navbar-btn" id="filtertoggle"> <span class="filtertext">Filter / Sort</span> <i class="fa fa-plus standardcolor" aria-hidden="true"></i></button>
+            <input type="text" class="searchbox" placeholder="Search Course Folder"></input>
             <span class="cancelsearch"> Cancel </span>
             <i class="fa fa-search searchicon" aria-hidden="true"></i>
             <i class="fa fa-th listgridactive" id="grid" aria-hidden="true"></i>
@@ -85,17 +98,18 @@
         </div>
 
         <div class="panel-body filter">
+            <button type="button" class="fa fa-times btn-blank btn-close closefilter"></button>
                 <div class="col-xs-6 col-md-6">
                   <div class="row">Filter</div>
                   <div class="row">
 
 
                   <span class="button-checkbox">
-                    <button type="button" class="btn filterchecks" data-color="primary">Favouries</button>
+                    <button type="button" class="btn filterchecks" data-color="primary">Favorites</button>
                     <input type="checkbox" name="filterchecks" class="hidden" />
                   </span>
                   <span class="button-checkbox">
-                    <button type="button" class="btn filterchecks" data-color="primary">Foldes</button>
+                    <button type="button" class="btn filterchecks" data-color="primary">Folders</button>
                     <input type="checkbox" name="filterchecks" class="hidden" />
                   </span>
                   <span class="button-checkbox">
@@ -103,7 +117,7 @@
                     <input type="checkbox" name="filterchecks" class="hidden" />
                   </span>
                   <span class="button-checkbox">
-                    <button type="button" class="btn filterchecks" data-color="primary">Document</button>
+                    <button type="button" class="btn filterchecks" data-color="primary">Documents</button>
                     <input type="checkbox" name="filterchecks" class="hidden" />
                   </span>
                   <span class="button-checkbox">
@@ -123,65 +137,37 @@
                 <div class="col-xs-6 col-md-4">
                   <div class="row">Sort</div>
                   <div class="row">
-                    <span class="button-checkbox">
-                      <button type="button" class="btn" data-color="primary">Accesses</button>
-                      <input type="checkbox" name="sortby" class="hidden" />
+                    <span class="button-radio">
+                      <button type="button" class="btn sortby btn-default" data-color="primary">Accesses</button>
                     </span>
-                    <span class="button-checkbox">
-                      <button type="button" class="btn" data-color="primary">Contributor</button>
-                      <input type="checkbox" name="sortby" class="hidden" />
+                    <span class="button-radio">
+                      <button type="button" class="btn sortby btn-default" data-color="primary">Contributor</button>
                     </span>
-                    <span class="button-checkbox">
-                      <button type="button" class="btn" data-color="primary">Publish Date</button>
-                      <input type="checkbox" name="sortby" class="hidden" />
+                    <span class="button-radio">
+                      <button type="button" class="btn sortby btn-default" data-color="primary">Publish Date</button>
                     </span>
-                    <span class="button-checkbox">
-                      <button type="button" class="btn" data-color="primary">Title</button>
-                      <input type="checkbox" name="sortby" class="hidden" />
+                    <span class="button-radio">
+                      <button type="button" class="btn sortby btn-default" data-color="primary">Title</button>
                     </span>
                     </div>
                 </div>
                 <div class="col-xs-6 col-md-2 text-right align-bottom filterlinks">
-                  <a href="#" class="filterlink align-text-bottom"><span>Reset</span></a>
+                  <a href="#" class="filterlink align-text-bottom" onclick="resetFilter()"><span>Reset</span></a>
                   <a href="#" class="filterlink boldlink align-bottom applyfilters"><span id="filtertoggle"><b>Apply</b></span></a>
                 </div>
             </div>
 
         <div id="assets" class="row list-group">
-          <div class="item col-xs-12 col-lg-12 featureditem">
-              <div class="thumbnail vcenter">
+          
+          <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <div class="asset-card vcenter">
                 <div class="overlayimage">
-                  <img class="group list-group-image"  src="img/audio.jpg" alt="" />
-                  <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
-                  <div class="videolength">3:54</div>
-
-                </div>
-                  <div class="caption">
-                      <h4 class="group inner featureditem-heading">
-                          <i class="fa fa-folder" aria-hidden="true"> <span class="tooltiptext">Folder</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"> <span class="tooltiptext favourite">Favourite</span></i>
-                      </h4>
-                      <p class="group inner featureditem-text align-middle">
-                          This is a simple description of the video that is too long and extends past the second line</p>
-                          <div class="meta">
-                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
-                            <span>Published: <b>October 1, 2016</b></br></span>
-                            <span>Accesses: <b>723</b></span>
-                          </div>
-                      <div class="row">
-
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="item  col-xs-12 col-lg-3">
-              <div class="thumbnail vcenter">
-                <div class="overlayimage">
-                  <img class="group list-group-image" src="img/folder.jpg" alt=""/>
+                  <div class="group list-group-image default subfolder"></div>
                   </div>
 
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="fa fa-folder" aria-hidden="true"> <span class="tooltiptext">Folder</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"> <span class="tooltiptext favourite">Favourite</span></i>
+                          <i class="asset-type-icon folder"> <span class="tooltiptext">Folder</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"> <span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text align-middle">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -196,8 +182,8 @@
                   </div>
               </div>
           </div>
-          <div class="item  col-xs-12 col-lg-3">
-              <div class="thumbnail">
+          <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <div class="asset-card">
                 <div class="overlayimage">
                   <img class="group list-group-image" src="img/flowers.jpg" alt="" />
                   <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
@@ -206,7 +192,7 @@
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="fa fa-video-camera" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favourite">Favourite</span></i>
+                          <i class="asset-type-icon video"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 2 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -225,15 +211,15 @@
                   </div>
               </div>
           </div>
-          <div class="item  col-xs-12 col-lg-3">
-              <div class="thumbnail">
+          <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <div class="asset-card">
                 <div class="overlayimage">
-                  <img class="group list-group-image" src="img/doc.jpg" alt="" />
+                  <div class="group list-group-image default pdf"></div>
 
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="fa fa-video-camera" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favourite">Favourite</span></i>
+                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> Webinar Transcript <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -252,17 +238,17 @@
                   </div>
               </div>
           </div>
-          <div class="item  col-xs-12 col-lg-3">
-              <div class="thumbnail">
-                <div class="overlayimage">
-                  <img class="group list-group-image" src="img/audio.jpg" alt="" />
+          <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <div class="asset-card">
+                <div class="overlayimage audio">
+                  <div class="group list-group-image default audio"></div>
                   <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                   <div class="videolength">1:25</div>
 
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="fa fa-video-camera" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favourite">Favourite</span></i>
+                          <i class="asset-type-icon audio" aria-hidden="true"> <span class="tooltiptext">Audio</span> </i> Webinar Recording <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -281,15 +267,15 @@
                   </div>
               </div>
           </div>
-          <div class="item  col-xs-12 col-lg-3">
-              <div class="thumbnail">
+          <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <div class="asset-card">
                 <div class="overlayimage">
-                  <img class="group list-group-image" src="img/doc.jpg" alt="" />
+                  <div class="group list-group-image default doc"></div>
 
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="fa fa-video-camera" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favourite">Favourite</span></i>
+                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> Week 1 Syllabus <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -308,8 +294,8 @@
                   </div>
               </div>
           </div>
-          <div class="item  col-xs-12 col-lg-3">
-              <div class="thumbnail">
+          <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <div class="asset-card">
                 <div class="overlayimage">
                   <img class="group list-group-image" src="img/flowers.jpg" alt="" />
                   <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
@@ -318,7 +304,7 @@
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="fa fa-video-camera" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favourite">Favourite</span></i>
+                          <i class="asset-type-icon video" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 3 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -339,7 +325,16 @@
           </div>
 
         </div>
+        <div class="row text-center">
+          <ul class="pagination">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
       </div>
+
 
   </body>
 </html>
