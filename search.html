@@ -22,6 +22,15 @@
     </head>
     <body>
 
+      <script>
+      $( document ).ready(function() {
+        $('#assets .item').removeClass('grid-group-item');
+        $('#assets .item').addClass('list-group-item');
+        $('#list').addClass('listgridactive');
+        $('#grid').removeClass('listgridactive');
+      });
+      </script>
+
       <div class="course-header">
         <div class="headerText">
           <div>Arts & Media 101 - INTRODUCTION TO FILMMAKING</div>
@@ -44,7 +53,7 @@
 
       <div class="container">
         <div id="control-panel" class="row">
-          <div class="col-md-7 vcenter"><h5 class="course-breadcrumb"><a href="index.html">Arts & Media 101 - INTRODUCTION TO FILMMAKING </a><i class="fa fa-caret-down" aria-hidden="true"
+          <div class="col-md-6 vcenter"><h5 class="course-breadcrumb"><a href="#">Arts & Media 101 - INTRODUCTION TO FILMMAKING </a><i class="fa fa-caret-down" aria-hidden="true"
             tabindex="0"
                role="button"
                data-html="true"
@@ -74,27 +83,17 @@
         </div>"
             >
           </i>
-             >
-             <span class="breadcrumbelipsis" tabindex="0"
-               role="button"
-               data-html="true"
-               data-toggle="popover"
-               data-trigger="focus"
-               data-placement="bottom"
-               data-content="<div>
-               <a href='#'>Fall 2016 Week 1 </a> > <a href='#'>Assignment 1</a> > <a href='#'>Problem Set 1</a>
-             </div>" >
-            ...</span> >
-            Extra Reading</h5></div>
-
-         <div class="col-md-5 vcenter text-right searchfilter">
-            <button class="btn button-light navbar-btn" id="filtertoggle"> <span class="filtertext">Filter / Sort</span> <i class="fa fa-plus standardcolor" aria-hidden="true"></i></button>
-            <input type="text" id="searchbox" class="searchbox" placeholder="Search Course Folder"></input>
-            <span class="cancelsearch"> Cancel </span>
-            <i class="fa fa-search searchicon" aria-hidden="true"></i>
-            <i class="fa fa-th listgridactive" id="grid" aria-hidden="true"></i>
-            <i class="fa fa-list-ul" id="list" aria-hidden="true"></i>
+            </h5></div>
+          <div class="col-md-6 vcenter text-right searchfilter">
+            <button class="btn button-light navbar-btn" id="filtertoggle" style="display: none;"> <span class="filtertext">Filter / Sort</span> <i class="fa fa-plus standardcolor" aria-hidden="true"></i></button>
+            <input type="text" class="searchbox activesearch" id="searchbox" placeholder="Search Course Folder" value="Assignment"></input>
+            <span class="cancelsearch activesearch"> Cancel </span>
+            <i class="fa fa-search searchicon" aria-hidden="true" style="display: none;"></i>
+            <i class="fa fa-th listgridactive" id="grid" aria-hidden="true" style="display: none;"></i>
+            <i class="fa fa-list-ul" id="list" aria-hidden="true" style="display: none;"></i>
           </div>
+          <div class="col-md-12 searchresultstext"><b>18 results for "Assignment"</b></div>
+          <div class="col-md-12">3 results in <a href="#" class="folderlinktext">Arts & Media 101 - INTRODUCTION TO FILMMAKING</a></div>
         </div>
 
         <div class="panel-body filter">
@@ -160,29 +159,6 @@
         <div id="assets" class="row list-group">
 
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
-              <div class="asset-card vcenter">
-                <div class="overlayimage">
-                  <div class="group list-group-image default subfolder"></div>
-                  </div>
-
-                  <div class="caption">
-                      <h4 class="group inner list-group-item-heading">
-                          <i class="asset-type-icon folder"> <span class="tooltiptext">Folder</span> </i> Fall 2016 Week 1 <i class="fa fa-star" aria-hidden="true"> <span class="tooltiptext favorite">Favorite</span></i>
-                      </h4>
-                      <p class="group inner list-group-item-text align-middle">
-                          This is a simple description of the video that is too long and extends past the second line</p>
-                          <div class="meta">
-                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
-                            <span>Published: <b>October 1, 2016</b></br></span>
-                            <span>Accesses: <b>723</b></span>
-                          </div>
-                      <div class="row">
-
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
                 <div class="overlayimage">
                   <img class="group list-group-image" src="img/flowers.jpg" alt="" />
@@ -192,7 +168,7 @@
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="asset-type-icon video"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 2 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon video"> <span class="tooltiptext">Video</span> </i> <span class="searchsimilar">Assignment </span> 2 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -219,7 +195,7 @@
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> Webinar Transcript <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> List of <span class="searchsimilar"> Assignment</span>s <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -248,7 +224,42 @@
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="asset-type-icon audio" aria-hidden="true"> <span class="tooltiptext">Audio</span> </i> Webinar Recording <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon audio" aria-hidden="true"> <span class="tooltiptext">Audio</span> </i> Public Speaking <span class="searchsimilar"> Assignment</span> <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                      </h4>
+                      <p class="group inner list-group-item-text">
+                          This is a simple description of the video that is too long and extends past the second line</p>
+                          <div class="meta">
+                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                            <span>Published: <b>October 1, 2016</b></br></span>
+                            <span>Accesses: <b>723</b></span>
+                          </div>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-12">
+
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <div id="control-panel" class="row">
+
+          <div class="col-md-12">7 results in <span class="folderlinktext"><a href="#">Arts & Media 101 - INTRODUCTION TO FILMMAKING</a> > <a href="#"> Fall 2016</a> > <a href="#"> Assignments</a> </span></div>
+        </div>
+
+        <div id="assets" class="row list-group">
+          <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <div class="asset-card">
+                <div class="overlayimage">
+                  <div class="group list-group-image default pdf"></div>
+
+                </div>
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> <span class="searchsimilar">Assignment</span> 1 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -270,12 +281,12 @@
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
                 <div class="overlayimage">
-                  <div class="group list-group-image default doc"></div>
+                  <div class="group list-group-image default pdf"></div>
 
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> Week 1 Syllabus <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> <span class="searchsimilar">Assignment</span> 2 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -297,14 +308,12 @@
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
                 <div class="overlayimage">
-                  <img class="group list-group-image" src="img/flowers.jpg" alt="" />
-                  <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
-                  <div class="videolength">1:25</div>
+                  <div class="group list-group-image default pdf"></div>
 
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="asset-type-icon video" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> Fall 2016 Week 3 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> <span class="searchsimilar">Assignment</span> 3 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -323,6 +332,117 @@
                   </div>
               </div>
           </div>
+          <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <div class="asset-card">
+                <div class="overlayimage">
+                  <div class="group list-group-image default pdf"></div>
+
+                </div>
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> <span class="searchsimilar">Assignment</span> 4 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                      </h4>
+                      <p class="group inner list-group-item-text">
+                          This is a simple description of the video that is too long and extends past the second line</p>
+                          <div class="meta">
+                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                            <span>Published: <b>October 1, 2016</b></br></span>
+                            <span>Accesses: <b>723</b></span>
+                          </div>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-12">
+
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <div class="asset-card">
+                <div class="overlayimage">
+                  <div class="group list-group-image default pdf"></div>
+
+                </div>
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> <span class="searchsimilar">Assignment</span> 5 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                      </h4>
+                      <p class="group inner list-group-item-text">
+                          This is a simple description of the video that is too long and extends past the second line</p>
+                          <div class="meta">
+                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                            <span>Published: <b>October 1, 2016</b></br></span>
+                            <span>Accesses: <b>723</b></span>
+                          </div>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-12">
+
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <div class="asset-card">
+                <div class="overlayimage">
+                  <div class="group list-group-image default pdf"></div>
+
+                </div>
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> <span class="searchsimilar">Assignment</span> 6 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                      </h4>
+                      <p class="group inner list-group-item-text">
+                          This is a simple description of the video that is too long and extends past the second line</p>
+                          <div class="meta">
+                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                            <span>Published: <b>October 1, 2016</b></br></span>
+                            <span>Accesses: <b>723</b></span>
+                          </div>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-12">
+
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
+              <div class="asset-card">
+                <div class="overlayimage">
+                  <div class="group list-group-image default pdf"></div>
+
+                </div>
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> <span class="searchsimilar">Assignment</span> 7 <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                      </h4>
+                      <p class="group inner list-group-item-text">
+                          This is a simple description of the video that is too long and extends past the second line</p>
+                          <div class="meta">
+                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                            <span>Published: <b>October 1, 2016</b></br></span>
+                            <span>Accesses: <b>723</b></span>
+                          </div>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-12">
+
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+
 
         </div>
         <div class="row text-center">

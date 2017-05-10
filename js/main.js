@@ -1,15 +1,26 @@
 $( document ).ready(function() {
 
-     $("[data-toggle=popover]").popover();
+    $("[data-toggle=popover]").popover();
 
-$(document).on('click', function (e) {
-    $('[data-toggle="popover"],[data-original-title]').each(function () {
-        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {                
-            (($(this).popover('hide').data('bs.popover')||{}).inState||{}).click = false  // fix for BS 3.3.6
-        }
+    $(document).on('click', function (e) {
+        $('[data-toggle="popover"],[data-original-title]').each(function () {
+            if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                (($(this).popover('hide').data('bs.popover')||{}).inState||{}).click = false  // fix for BS 3.3.6
+            }
 
+        });
     });
-});
+
+
+
+    $('#searchbox').keypress(function(event){
+
+    	var keycode = (event.keyCode ? event.keyCode : event.which);
+    	if(keycode == '13'){
+        window.location.replace("search.html");
+    	}
+    	event.stopPropagation();
+    });
 
 
      $('#assets .item').addClass('grid-group-item');
@@ -41,6 +52,34 @@ $(document).on('click', function (e) {
       }
 
     });
+
+    $('.togglefolder').click(function(event){
+      event.preventDefault();
+      $(this).parent().next(".list-group").toggleClass('collapsedsection');
+    });
+    $('.rowselection').click(function(event){
+      $(this).parent().parent().toggleClass('rowselected');
+    });
+
+
+        //select all checkboxes
+        $(".checkall").change(function(){  //"select all" change
+            $(".rowselection").prop('checked', $(this).prop("checked")); //change all ".checkbox" checked status
+            $(".rowselection").parent().parent().toggleClass('rowselected');
+
+        });
+
+        //".checkbox" change
+        $('.checkbox').change(function(){
+            //uncheck "select all", if one of the listed checkbox item is unchecked
+            if(false == $(this).prop("checked")){ //if this item is unchecked
+                $(".checkall").prop('checked', false); //change "select all" checked status to false
+            }
+            //check "select all" if all checkbox items are checked
+            if ($('.checkbox:checked').length == $('.checkbox').length ){
+                $(".checkall").prop('checked', true);
+            }
+        });
 
 
 
