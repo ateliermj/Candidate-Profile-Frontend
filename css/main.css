@@ -686,6 +686,7 @@ button.btn-primary.active:hover {
    border: 1px solid #ccc;
 }
 
+
 .overlayimage.audio {
   background-color: #999;
 }
@@ -704,6 +705,28 @@ button.btn-primary.active:hover {
   vertical-align: middle;
   text-align: center;
   padding-top: 25%;
+}
+.new{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  vertical-align: middle;
+  text-align: center;
+  border: 2px solid orange;
+  margin: 0;
+  color: white;
+}
+.newtext{
+  position: absolute;
+  background: orange;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2px 0;
 }
 .overlay i.fa{
   color: white;
@@ -821,4 +844,35 @@ ul.pagination>li.active>a:hover{
 .btn.sortby.btn-default.activeSort {
   font-weight: 600;
   color: #009bbb;
+}
+
+.folderlinktext{
+  color: #009bbb;
+  font-weight: 500;
+  cursor: pointer;
+}
+.folderlinktext a{
+  color: #009bbb;
+  font-weight: 500;
+}
+.folderlinktext a:hover{
+  color: #009bbb;
+}
+.searchresultstext{
+  margin: 10px 0 5px 0;
+  font-size: 110%;
+}
+.searchsimilar{
+  color: #009bbb;
+  font-weight: bolder;
+}
+
+.mediasortby{
+  margin-left: 20px;
+}
+.collapsedsection{
+  display: none;
+}
+.rowselected{
+  background: rgb(241, 248, 252);
 }
