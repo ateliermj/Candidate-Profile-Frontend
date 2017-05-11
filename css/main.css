@@ -704,7 +704,7 @@ button.btn-primary.active:hover {
       min-width: 200px;
       max-width: 400px;
     height: 130px;
-    padding-right: 20px;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -941,7 +941,7 @@ ul.pagination>li.active>a:hover{
 .collapsedsection{
   display: none;
 }
-.rowselected{
+div.item.rowselected{
   background: rgb(241, 248, 252);
 }
 .col-xs-1.rowcheck{
