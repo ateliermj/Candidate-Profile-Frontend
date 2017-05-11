@@ -137,6 +137,8 @@ i{
 .fa-star{
   color: transparent;
   -webkit-text-stroke: 1px #ef962b;
+  margin-top: -1em;
+  float: right;
 }
 .fa-star:not(.activestar):hover{
   color: rgba(239, 150, 43, 0.3);
@@ -178,17 +180,17 @@ i:hover .tooltiptext {
 }
 
 
-.glyphicon { margin-right:5px; }
-.caption{
-  margin-top: 158px;
-
+.glyphicon { 
+  margin-right:5px; 
 }
+
 .asset-card
 {
     margin-bottom: 20px;
     border: 1px solid #ccc;
     padding: 15px;
     border-radius: 0px;
+    height: 320px;
 }
 
 .item[class*="col-"] {
@@ -244,7 +246,33 @@ p.group.inner.list-group-item-text
     max-height: 3em;
 }
 
+.asset-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    height: 1.2em;
+    width: 80%;
+  }
 
+/*.asset-title:before {
+  content: '';
+  width: 15px;
+  height: 15px;
+}
+
+.asset-title.video:before {
+    background: url(../img/asset-type-icon-sprite.png) -15px 0px;
+    background-size: auto 100%;
+}
+
+.asset-title:after {
+  content: '\f006';
+  font-family: 'FontAwesome';
+  color: #ef962b;
+}
+*/
 .list-group-item-heading:hover {
   cursor: pointer;
 }
@@ -780,7 +808,10 @@ span.fa-caret-right {
 .asset-type-icon {
   width: 15px;
   height: 15px;
+  float: left;
+  margin-right: 5px;
 }
+
 
 .asset-type-icon.folder {
   background: url('../img/asset-type-icon-sprite.png') 0px 0px;
@@ -801,6 +832,34 @@ span.fa-caret-right {
   background: url('../img/asset-type-icon-sprite.png') -46px 0px;
   background-size: auto 100%;
 }
+
+.featureditem .asset-type-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.featureditem .asset-type-icon.folder {
+  background: url('../img/asset-type-icon-sprite.png') 0px 0px;
+  background-size: auto 100%;
+}
+
+.featureditem .asset-type-icon.video {
+  background: url('../img/asset-type-icon-sprite.png') -20px 0px;
+  background-size: auto 100%;
+}
+
+
+.featureditem .asset-type-icon.doc {
+  background: url('../img/asset-type-icon-sprite.png') -41px 0px;
+  background-size: auto 100%;
+}
+
+.featureditem .asset-type-icon.audio {
+  background: url('../img/asset-type-icon-sprite.png') -61px 0px;
+  background-size: auto 100%;
+}
+
+
 
 .levelone{
   padding-left: 5px;
