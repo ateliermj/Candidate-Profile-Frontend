@@ -112,6 +112,10 @@ body {
   display: block;
 }
 
+.grid-group-item .asset-card {
+  height: 320px;
+}
+
 .list-group-item .meta span{
   display: inline-block;
   margin-right: 15px;
@@ -190,7 +194,7 @@ i:hover .tooltiptext {
     border: 1px solid #ccc;
     padding: 15px;
     border-radius: 0px;
-    height: 320px;
+
 }
 
 .item[class*="col-"] {
