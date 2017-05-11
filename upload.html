@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Single Page Course</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+        <script src="js/main.js"></script>
+    </head>
+    <body class="uploadbody">
+
+      <div class="course-header">
+        <div class="headerText">
+          Arts & Media 101 - INTRODUCTION TO FILMMAKING
+        </div>
+      </div>
+      <nav class="navbar">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li class="activeitem"><a href="#"><div class="navbar-icon pnp"></div>Pick-n-play</a></li>
+            <li><a href="#"><div class="navbar-icon media-manager"></div>MediaManager</a></li>
+            <li><a href="mediainbox.html"><div class="navbar-icon media-inbox"></div> Media Inbox <span class="newmessage"> (4 New) </span> </a> </li>
+            <li><a href="#"><div class="navbar-icon analytics"></div> Analytics</a></li>
+            <li><a href="#"><div class="navbar-icon settings"></div> Settings</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          <button class="btn button-light upload margins navbar-btn"><div class="navbar-icon upload"></div> Upload</button>
+        </ul>
+        </div>
+      </nav>
+
+
+      <article id="main-container" class="container-fluid  " role="main" aria-label="Main Content">
+          <section class="container noborder nobg">
+              <section class="row boxed centered uploader">
+                  <div class="row-inner">
+
+                      <a class="inner" href="uploaded.html">
+                          <div class="fileUpload btn btn-primary">
+                              <span>
+                                  <div class="element svg-upload"></div>
+                                  <div class="element select-files">
+                                      Select files to upload <br/> Or drag and drop
+                                  </div>
+                              </span>
+                              <input type="file" class="upload" />
+                          </div>
+                      </a>
+                      <!--phase 2 placeholder panel for advanced upload features-->
+                  </div>
+              </section>
+          </section>
+      </article>
+
+
+  </body>
+</html>
