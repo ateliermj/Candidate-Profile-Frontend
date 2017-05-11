@@ -34,7 +34,7 @@
 
           </ul>
           <ul class="nav navbar-nav navbar-right">
-          <button class="btn button-light upload margins navbar-btn"><div class="navbar-icon submit"></div> Submit Media to Instructor</button>
+          <button class="btn button-light upload margins navbar-btn"  data-toggle="modal" data-target="#submitModal"><div class="navbar-icon submit"></div> Submit Media to Instructor</button>
         </ul>
         </div>
       </nav>
@@ -141,6 +141,177 @@
                   <a href="#" class="filterlink align-text-bottom" onclick="resetFilter()"><span>Reset</span></a>
                   <a href="#" class="filterlink boldlink align-bottom applyfilters"><span id="filtertoggle"><b>Apply</b></span></a>
                 </div>
+            </div>
+
+            <!-- Modal -->
+            <div id="submitModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Submit Media to Inscructor</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="col-md-4">
+                      <div class="submitthumbnail"><div class="submitthumbnailicon"></div></div>
+                      Thumbnail will be generated once the file has been uploaded.
+                    </div>
+                    <div class="col-md-8">
+
+                      <div class="inputfield">
+                        <label>Title (required):</label>
+                        <input type="text" name="title"></input>
+                      </div>
+
+                      <div class="inputfield">
+                        <div class="col-md-9 nopadding">
+                          <label>Description:</label>
+                        </div>
+                        <div class="col-md-3 nopadding text-right">
+                          <b>0/500</b>
+                        </div>
+                        <textarea name="description"></textarea>
+                      </div>
+
+                      <div class="inputfield">
+                        <label>Attachments:</label>
+                        <input type="file" name="file" id="file" class="inputfile" />
+                        <label for="file"><div class="inputfilealign"><img src="img/upload.jpg" height="13px"></img>Select files to upload Or drag and drop</div></label>
+                      </div>
+
+                      <div class="inputfield checklabel">
+                          <div class="col-md-1 nopadding">
+                            <input type="checkbox" name="notify"></input>
+                          </div>
+                        <div class="col-md-10">
+                          <label>
+                            Notify me in ShareStream when my media for this Assignment is recieved by the Instructor.
+                          </label>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" data-toggle="modal" data-target="#submitedModal" class="btn btn-default publish" data-dismiss="modal">Upload</button>
+                    <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+            <!-- Modal SUBMITTED -->
+            <div id="submitedModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Submit Media to Inscructor</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="col-md-12"> Uploading... 67% complete, 2 minutes remaining</div>
+                    <div class="col-md-12 progresswrapper">
+                      <div class="col-md-10 progressbar">
+                        <div class="currentprogress"></div>
+                      </div>
+                      <div class="col-md-2 redtext text-right"> Cancel</div>
+                    </div>
+
+                    <div class="col-md-12 uploadedcontainer">
+                      <div class="col-md-4">
+                        <div class="submitthumbnail"><div class="submitthumbnailicon"></div></div>
+                        Thumbnail will be generated once the file has been uploaded.
+                      </div>
+                      <div class="col-md-8">
+
+                        <div class="inputfield">
+                          <label>Title (required):</label>
+                          <div>Fall 2016_Sample Video 1</div>
+                        </div>
+
+                        <div class="inputfield">
+                            <label>Description:</label>
+                            <div>This is a sample description for this individulal file</div>
+                        </div>
+
+                        <div class="inputfield">
+                          <label>Attachments:</label>
+                          <div>Submissions Transcript.pdf</div>
+                        </div>
+
+                        <div class="inputfield checklabel">
+                          <div><i>You will receive a notification in ShareStream when your media file for this Assignment is received by the Instructor.</i></div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                  <!-- TO BE REMOED-->
+                    <button type="button" data-toggle="modal" data-target="#completedModal" class="btn btn-default publish" data-dismiss="modal">View Completed</button>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+            <!-- Modal COMPLETED -->
+            <div id="completedModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Submit Media to Inscructor</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="col-md-12 progresswrapper">
+                      <div class="col-md-12 uploadcomplete"><i class="fa fa-check-circle" aria-hidden="true"></i> File upload complete</div>
+                    </div>
+                    <div class="col-md-12 uploadedcontainer">
+                      <div class="col-md-4">
+                        <div class="submitthumbnail"><div class="submitthumbnailicon"></div></div>
+                        Thumbnail will be generated once the file has been uploaded.
+                      </div>
+                      <div class="col-md-8">
+
+                        <div class="inputfield">
+                          <label>Title (required):</label>
+                          <div>Fall 2016_Sample Video 1</div>
+                        </div>
+
+                        <div class="inputfield">
+                            <label>Description:</label>
+                            <div>This is a sample description for this individulal file</div>
+                        </div>
+
+                        <div class="inputfield">
+                          <label>Attachments:</label>
+                          <div>Submissions Transcript.pdf</div>
+                        </div>
+
+                        <div class="inputfield checklabel">
+                          <div><i>You will receive a notification in ShareStream when your media file for this Assignment is received by the Instructor.</i></div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+
+                  </div>
+                </div>
+
+              </div>
             </div>
 
         <div id="assets" class="row list-group">

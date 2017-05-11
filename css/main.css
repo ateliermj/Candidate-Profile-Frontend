@@ -704,7 +704,8 @@ button.btn-primary.active:hover {
       min-width: 200px;
       max-width: 400px;
     height: 130px;
-    margin-right: 20px
+    padding-right: 20px;
+    box-sizing: border-box;
 }
 
 
@@ -1048,4 +1049,114 @@ div.modal-footer .publish{
 }
 .folderselect li img{
   margin: 0 20px 0 35px;
+}
+
+div.item.list-group-item{
+  padding: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 0;
+}
+div.dropdown{
+  text-align: right;
+}
+.inputfield{
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+.inputfield label{
+  display: block;
+  color: rgb(127, 130, 128);
+}
+.inputfield input, textarea{
+  display: block;
+  width: 100%;
+  outline: none;
+  max-width: 100%;
+  border: 1px solid #b4b5b3;
+}
+.inputfield i{
+  font-size: inherit;
+}
+.inputfield.checklabel input{
+  display: inline-block;
+  width: auto;
+}
+.inputfield.checklabel label{
+  display: inline-block;
+  width: auto;
+  font-weight: 300;
+}
+.inputfile{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+
+}
+.inputfile + label{
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #ccc;
+  color: #ccc;
+
+}
+.inputfilealign{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inputfilealign img{
+  margin-right: 5px;
+}
+.submitthumbnail{
+  width: 100%;
+  height: 90px;
+  margin-bottom: 10px;
+  background-color: #b4b5b3;
+}
+.submitthumbnailicon{
+  height: 100%;
+  width: 100%;
+  background: url(../img/fileicon.png);
+  background-position: center;
+  background-size: 40px;
+  background-repeat: no-repeat;
+}
+div.nopadding{
+  padding: 0;
+}
+.redtext{
+  color: red;
+  line-height: 25px;
+}
+.progressbar{
+  width: 100%;
+  height: 25px;
+  position: relative;
+  background: #efefef;
+}
+.currentprogress{
+  background: rgb(44,115,172);
+  width: 67%;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  left:0;
+  top: 0;
+}
+.progresswrapper{
+  border-bottom: 1px solid #efefef;
+  padding: 10px 0 20px;
+}
+.uploadedcontainer{
+  margin-top: 20px;
+}
+.uploadcomplete{
+  color: rgb(0, 141, 133);
+  font-weight: 500;
 }
