@@ -250,7 +250,7 @@ p.group.inner.list-group-item-text
     max-height: 3em;
 }
 
-.asset-title {
+.grid-group-item .asset-title {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
