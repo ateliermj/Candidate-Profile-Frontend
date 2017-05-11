@@ -184,8 +184,8 @@ i:hover .tooltiptext {
 }
 
 
-.glyphicon { 
-  margin-right:5px; 
+.glyphicon {
+  margin-right:5px;
 }
 
 .asset-card
@@ -460,6 +460,10 @@ button.btn-primary.active:hover {
 
 .navbar-icon.upload {
   background: url('../img/icon-sprite.png') -75px 0px;
+  background-size: auto 100%;
+}
+.navbar-icon.submit {
+  background: url('../img/icon-sprite.png') -102px 0px;
   background-size: auto 100%;
 }
 
@@ -938,4 +942,110 @@ ul.pagination>li.active>a:hover{
 }
 .rowselected{
   background: rgb(241, 248, 252);
+}
+.col-xs-1.rowcheck{
+  height: 130px;
+  text-align: center;
+  padding: 60px 0;
+}
+.col-xs-1.dropdowncontroller{
+  background: red;
+  height: 130px;
+  text-align: center;
+  padding: 60px 0;
+}
+.dropdown-menu li a img{
+  margin-right: 10px;
+}
+ul.dropdown-menu{
+  width: 250px;
+}
+ul.dropdown-menu li{
+  width: 100%;
+}
+.fileoptions{
+  color: #009d93;
+  font-weight: bolder;
+  font-size: 16px;
+  line-height: 16px;
+}
+.fileoptions a{
+  color: inherit;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.fileoptions a:hover{
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+div.modal-content{
+  border-radius: 0px;
+}
+div.modal-header{
+  border: none;
+  padding: 15px 25px;
+
+}
+div.modal-body{
+  padding: 15px 25px;
+}
+div.modal-footer{
+  border: none;
+  padding: 15px 25px;
+  text-align: center;
+}
+div.modal-footer .btn{
+ text-align: center;
+}
+div.modal-footer .cancel{
+ background-color: #636267;
+ color: white;
+}
+div.modal-footer .delete{
+  background-color: #c2001a;
+  color: white;
+}
+div.modal-footer .publish{
+  background-color: #009d93;
+  color: white;
+}
+.folderselect{
+  border: 1px solid #efefef;
+}
+.folderlist{
+  margin: 0;
+  padding: 0;
+  height: 250px;
+  overflow-y: scroll;
+}
+.folderselect input{
+  width: 100%;
+  outline: none;
+  padding: 5px 10px;
+}
+.folderselect li{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 50px;
+  border-bottom: 1px solid #efefef;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.folderselect li.selected{
+  background: rgb(226, 239, 248);
+  font-weight: 600;
+  color: #009bbb;
+}
+.folderselect li.sub{
+  padding-left: 20px;
+}
+.folderselect li i{
+  margin: 0 20px 0 15px;
+  color: #009bbb;
+  margin-right: -25px;
+}
+.folderselect li img{
+  margin: 0 20px 0 35px;
 }

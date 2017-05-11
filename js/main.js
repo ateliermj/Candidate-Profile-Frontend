@@ -94,6 +94,11 @@ $( document ).ready(function() {
     $(this).toggleClass('activeSort');
   });
 
+  $( '.folderlist li' ).click(function() {
+    $(".folderlist li").removeClass("selected");
+    $(this).toggleClass('selected');
+  });
+
 
   $( '.applyfilters' ).click(function() {
     toggleFilter();

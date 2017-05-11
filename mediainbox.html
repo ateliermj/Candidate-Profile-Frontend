@@ -53,8 +53,16 @@
 
       <div class="container">
         <div id="control-panel" class="row">
-          <div class="col-md-6 vcenter"> <input type="checkbox" class="checkall"></input> </div>
-          <div class="col-md-6 vcenter text-right searchfilter">
+          <div class="col-md-8 vcenter">
+             <input type="checkbox" class="checkall"></input>
+             <span class="fileoptions">
+               <a href="#" data-toggle="modal" data-target="#publishModal"><img src="img/publishcolor.jpg" height="15px"> Publish to Course Folder</a>
+               <a href="#"><img src="img/markasnewcolor.jpg" height="15px"> Mark as New</a>
+               <a href="#"><img src="img/downloadcolor.jpg" height="15px"> Download</a>
+               <a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/deletecolor.jpg" height="15px"> Delete</a>
+             </span>
+           </div>
+          <div class="col-md-4 vcenter text-right searchfilter">
             <button class="btn button-light navbar-btn" id="filtertoggle" style="display: none;"> <span class="filtertext">Filter / Sort</span> <i class="fa fa-plus standardcolor" aria-hidden="true"></i></button>
             <input type="text" class="searchbox activesearch" id="searchbox" placeholder="Search Media Inbox"></input>
             <span class="mediasortby"> Sort by: <b>Date <i class="fa fa-caret-down" aria-hidden="true"></i></b></span>
@@ -63,6 +71,63 @@
             <i class="fa fa-list-ul" id="list" aria-hidden="true" style="display: none;"></i>
           </div>
           <div class="col-md-12 folderlinktext togglefolder"> <i class="fa fa-caret-down" aria-hidden="true"></i> STUDENT MEDIA SUBMISSIONS (6)</div>
+        </div>
+
+        <!-- Modal -->
+        <div id="deleteModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Delete 3 Assets</h4>
+              </div>
+              <div class="modal-body">
+                <p>Are you sure that you want to permanently delete 2 assets from the Media Inbox? This action cannot be undone.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default delete" data-dismiss="modal">Delete</button>
+                <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="publishModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Publish Selected Assets</h4>
+              </div>
+              <div class="modal-body">
+                <p>Choose the folder to publish the selected Assets to:</p>
+                <div class="folderselect">
+                  <input type="text" placeholder="Search for a folder"></input>
+                  <ul class="folderlist">
+                    <li><i class="fa fa-minus-square-o" aria-hidden="true"></i><img src="img/folder.png" height="25px">Arts & Media 101 - INTRODUCTION TO FILM MAKING</li>
+                    <li class="sub selected"><img src="img/folder.png" height="25px">Student Media Submissions</li>
+                    <li class="sub"><i class="fa fa-plus-square-o" aria-hidden="true"></i><img src="img/folder.png" height="25px">Fall 2016 Week 1</li>
+                    <li class="sub"><img src="img/folder.png" height="25px">Fall 2016 Week 2</li>
+                    <li class="sub"><i class="fa fa-plus-square-o" aria-hidden="true"></i><img src="img/folder.png" height="25px">Fall 2016 Week 3</li>
+                    <li class="sub"><img src="img/folder.png" height="25px">Fall 2016 Week 4</li>
+                    <li class="sub"><img src="img/folder.png" height="25px">Fall 2016 Week 5</li>
+
+                  </ul>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default publish" data-dismiss="modal">Publish</button>
+                <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+
+          </div>
         </div>
 
         <div class="panel-body filter">
@@ -129,7 +194,7 @@
 
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
-                <div class="rowcheck">
+                <div class="col-xs-1 rowcheck">
                   <input type="checkbox" class="rowselection"></input>
                 </div>
                 <div class="overlayimage">
@@ -151,18 +216,22 @@
                             <span>Accesses: <b>723</b></span>
                           </div>
                       <div class="row">
-                          <div class="col-xs-12 col-md-12">
-
-                          </div>
-                          <div class="col-xs-12 col-md-6">
-                          </div>
                       </div>
+                  </div>
+                  <div class="col-xs-1 dropdown">
+                    <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
+                    <ul class="dropdown-menu">
+                      <li><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
+                      <li><a href="#"><img src="img/markasnew.jpg" height="15px"></img>Make as New</a></li>
+                      <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
+                      <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                    </ul>
                   </div>
               </div>
           </div>
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
-                <div class="rowcheck">
+                <div class="col-xs-1 rowcheck">
                   <input type="checkbox" class="rowselection"></input>
                 </div>
                 <div class="overlayimage">
@@ -195,7 +264,7 @@
           </div>
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
-                <div class="rowcheck">
+                <div class="col-xs-1 rowcheck">
                   <input type="checkbox" class="rowselection"></input>
                 </div>
                 <div class="overlayimage">
@@ -228,7 +297,7 @@
           </div>
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
-                <div class="rowcheck">
+                <div class="col-xs-1 rowcheck">
                   <input type="checkbox" class="rowselection"></input>
                 </div>
                 <div class="overlayimage">
@@ -261,7 +330,7 @@
           </div>
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
-                <div class="rowcheck">
+                <div class="col-xs-1 rowcheck">
                   <input type="checkbox" class="rowselection"></input>
                 </div>
                 <div class="overlayimage">
@@ -294,7 +363,7 @@
           </div>
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
-                <div class="rowcheck">
+                <div class="col-xs-1 rowcheck">
                   <input type="checkbox" class="rowselection"></input>
                 </div>
                 <div class="overlayimage">
@@ -336,7 +405,7 @@
 
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
-                <div class="rowcheck">
+                <div class="col-xs-1 rowcheck">
                   <input type="checkbox" class="rowselection"></input>
                 </div>
                 <div class="overlayimage">
@@ -369,7 +438,7 @@
           </div>
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
-                <div class="rowcheck">
+                <div class="col-xs-1 rowcheck">
                   <input type="checkbox" class="rowselection"></input>
                 </div>
                 <div class="overlayimage">
@@ -402,7 +471,7 @@
           </div>
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card">
-                <div class="rowcheck">
+                <div class="col-xs-1 rowcheck">
                   <input type="checkbox" class="rowselection"></input>
                 </div>
                 <div class="overlayimage">
