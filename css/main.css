@@ -106,6 +106,7 @@ body {
 
 .meta span b {
   color: #333;
+  display: inline-block;
 }
 
 .grid-group-item .meta span{
@@ -668,7 +669,7 @@ button.btn-primary.active:hover {
 }
 
 .popover div{
-  font-size: 13px;
+  font-size: 15px;
 }
 .popover a{
   color: #009bbb;
@@ -681,6 +682,12 @@ button.btn-primary.active:hover {
 .popover ul li{
   margin: 5px;
   list-style: none;
+}
+div.popover{
+  width: 500px;
+}
+div.breakcrum-dropdown-item{
+  font-size: 15px;
 }
 .activetext{
   font-weight: bolder;
@@ -795,7 +802,7 @@ span.fa-caret-right {
 
 .breadcrumb-dropdown-icon {
     width: 15px;
-    height: 12px;
+    height: 15px;
     float: left;
     margin: 3px;
 }
@@ -1053,7 +1060,7 @@ div.dropdown{
   width: 100%;
   margin: 0 0 20px 0;
 }
-.inputfield label{
+.inputfield label,b{
   display: block;
   color: rgb(127, 130, 128);
 }
@@ -1062,6 +1069,7 @@ div.dropdown{
   width: 100%;
   outline: none;
   max-width: 100%;
+  padding: 5px 10px;
   border: 1px solid #b4b5b3;
 }
 .inputfield i{
@@ -1075,6 +1083,8 @@ div.dropdown{
   display: inline-block;
   width: auto;
   font-weight: 300;
+  color: black;
+  margin-bottom: 30px;
 }
 .inputfile{
   width: 0.1px;
@@ -1123,6 +1133,7 @@ div.nopadding{
 .redtext{
   color: red;
   line-height: 25px;
+  font-weight: bold;
 }
 .progressbar{
   width: 100%;
@@ -1153,7 +1164,43 @@ div.nopadding{
 .uploadbody{
   background: rgb(242, 241, 241);
 }
+div.item.mediainbox{
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  margin-bottom: 0;
+}
+div.item.mediainbox:first-child{
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+  margin-bottom: 0;
+}
+div.item.mediainbox .overlayimage{
+  margin-right: 0;
+}
+i.thumbnailcaption{
+  font-size: 11px;
+}
+div.modal .modal-content .modal-header h4.modal-title{
+  font-size: 20px;
+}
+.completed{
+  margin-bottom: 10px;
+}
+.completed label{
+  margin-bottom: 0px;
+}
+.uploadicon{
+  margin-right: 5px;
+}
+ul.nav-pills>li.active>a{
+  color: black;
+  background: none;
+}
 
+ul.nav-pills>li.active>a:hover{
+  color: inherit;
+  background: none;
+}
 
 
 
@@ -1638,11 +1685,39 @@ ul.folder-list li a.active {
     height: auto;
 }
 #main-container .boxed {
-    border: 1px solid #d5d5d5;
+    /*border: 1px solid #d5d5d5;*/
     background: #fff;
     margin: 0 0 15px;
     /*padding: 20px 5px 35px;*/
     position: relative;
+    height: 400px;
+}
+#main-container .boxed.uploadedbox {
+    /*border: 1px solid #d5d5d5;*/
+    background: #fff;
+    margin: 0 0 15px;
+    /*padding: 20px 5px 35px;*/
+    position: relative;
+    height: 100px;
+    transition: all 0.3s ease;
+}
+#main-container .boxed.uploadedbox:hover {
+    /*border: 1px solid #d5d5d5;*/
+    background: #fff;
+    margin: 0 0 15px;
+    /*padding: 20px 5px 35px;*/
+    position: relative;
+    height: 400px;
+}
+#main-container .boxed.uploadedbox:hover .customfileupload {
+  display: none;
+}
+#main-container .boxed.uploadedbox .customfileuploadhovered {
+  display: none;
+}
+
+#main-container .boxed.uploadedbox:hover .customfileuploadhovered {
+  display: block;
 }
 #main-container .boxed:after {
     clear: both;
@@ -3025,12 +3100,16 @@ li.dropdown.profile {
 }
 
 .publish .item .title:after {
-    font-family: 'FontAwesome';
-    font-size: 0.8em;
-    content: '\f08e';
+    /*8font-family: 'FontAwesome';
+    font-size: 0.8em;*/
+    content: '';
+    background: url(../img/link.png) center center no-repeat;
+    height: 15px;
+    width: 15px;
+    background-size: contain;
     display: inline-block;
     color: #ccc;
-    margin-left: 5px;
+    margin-left: 15px;
 
 }
 
@@ -3874,7 +3953,7 @@ li.section {
     overflow: hidden;
     margin: 0px auto 0;
     display: inline-block;
-    padding: 30px 50px 30px 50px;
+    padding: 100px 50px 30px 50px;
     text-align: center;
     /* font-family: 'Open Sans Condensed', sans-serif;*/
     font-size: 1.4em;
@@ -3883,7 +3962,26 @@ li.section {
     border: none;
     background: #fff;
     color: #bbb;
+    vertical-align: middle;
 
+}
+.btn.fileUpload.customfileupload {
+
+    width: 100%;
+
+    position: relative;
+    overflow: hidden;
+    margin: 0px auto 0;
+    display: inline-block;
+    padding: 0px 50px 0px 50px;
+    text-align: center;
+    /* font-family: 'Open Sans Condensed', sans-serif;*/
+    font-size: 1.4em;
+    font-weight: 300;
+    border-radius: 0;
+    border: none;
+    background: #fff;
+    color: #bbb;
     vertical-align: middle;
 
 }
@@ -3966,6 +4064,20 @@ button.show-advanced:focus {
 .advanced-upload-options button.file-submit {
     float: right;
 }
+.inlineupload{
+  display: inline-block;
+}
+.select-files.inlineupload {
+  width: auto;
+  margin: 0;
+  font-size: 0.5em;
+}
+.svg-upload.inlineupload {
+  margin: 0;
+  height: 0.5em;
+  width: 30px;
+}
+
 .select-files {
     margin: 20px auto;
     width: 100%;
@@ -4278,7 +4390,7 @@ fieldset.file-fields .input-group.captioning {
 .collapsable fieldset.file-fields {
     margin: 0;
 }
-.popover {
+/*.popover {
     width: 224px;
     height: 300px;
     background: rgba(255, 255, 255, 0.95);
@@ -4336,7 +4448,7 @@ fieldset.file-fields .input-group.captioning {
     font-size: 20px;
     line-height: 1.1em;
     margin: 0 0 10px;
-}
+}*/
 .modal .modal-backdrop {
     z-index: 99;
 }
