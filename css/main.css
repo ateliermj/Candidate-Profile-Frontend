@@ -1201,8 +1201,22 @@ ul.nav-pills>li.active>a:hover{
   color: inherit;
   background: none;
 }
-
-
+div.item.batch{
+  font-size: 20px;
+}
+.grey{
+  color: #ccc;
+  font-size: 110%;
+}
+a.accordion-toggle{
+  color: black;
+  font-size: 20px;
+}
+button.btn.btn-apply {
+  border-radius: 0px;
+  color: white;
+  padding: 5px 40px;
+}
 
 
 
@@ -2949,17 +2963,10 @@ li.dropdown.profile {
     width: 100%;
     max-width: 200px;
     padding: 5px;
+    height: 80px;
 }
 
-.more-files:before {
-    content: "+3 files";
-    position: absolute;
-    width: 100%;
-    top: 30%;
-    color: #fff;
-    font-size: 1.5em;
-    text-align: center;
-}
+
 
 .file-thumbnail {
     width: 100%;
