@@ -183,6 +183,9 @@ i:hover .tooltiptext {
     visibility: visible;
     opacity: 0.9;
 }
+i:hover {
+    opacity: 1;
+}
 
 
 .glyphicon {
@@ -513,7 +516,13 @@ button.btn-primary.active:hover {
   font-size: 12px;
   display: none;
   margin: 0px 5px;
+  position: relative;
+  background: url(../img/search.png);
+  background-position: calc(100% - 10px) center;
+  background-size: 12px;
+  background-repeat: no-repeat;
 }
+
 
 .cancelsearch{
   display: none;
@@ -525,8 +534,9 @@ button.btn-primary.active:hover {
 
 .fa.standardcolor{
   color: #706f6f;
-
 }
+
+
 .grid-group-item .group.list-group-image {
   max-height: 160px;
   max-width: 100%;
@@ -573,6 +583,11 @@ button.btn-primary.active:hover {
 
 .list-group-image.default.audio {
   background: url('../img/asset-type-sprite.png') -425px 0px;
+  background-size: auto 100%;
+}
+
+.list-group-image.default.pdf {
+  background: url('../img/asset-type-sprite.png') -650px 0px;
   background-size: auto 100%;
 }
 
@@ -801,7 +816,7 @@ span.fa-caret-right {
 }
 
 .breadcrumb-dropdown-icon {
-    width: 15px;
+    width: 20px;
     height: 15px;
     float: left;
     margin: 3px;
@@ -809,19 +824,19 @@ span.fa-caret-right {
 
 
 .breadcrumb-dropdown-icon.home {
-  width: 11px;
+  width: 15px;
   margin-right: 5px;
-  background: url('../img/icon-sprite.png') -71px 0px;
+  background: url('../img/icon-sprite.png') -92px 0px;
   background-size: auto 100%;
 }
 
 .breadcrumb-dropdown-icon.subfolder {
-  background: url('../img/asset-type-sprite.png') 0px 0px;
+  background: url('../img/asset-type-sprite.png') -1px 0px;
   background-size: auto 100%;
 }
 
 .breadcrumb-dropdown-icon.folder {
-  background: url('../img/asset-type-sprite.png') -15px 0px;
+  background: url('../img/asset-type-sprite.png') -1px 0px;
   background-size: auto 100%;
 }
 
@@ -965,7 +980,7 @@ ul.dropdown-menu li{
   color: #009d93;
   font-weight: bolder;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 26px;
 }
 .fileoptions a{
   color: inherit;
@@ -1014,7 +1029,7 @@ div.modal-footer .publish{
 .folderlist{
   margin: 0;
   padding: 0;
-  height: 250px;
+  max-height: 250px;
   overflow-y: scroll;
 }
 .folderselect input{
@@ -1039,6 +1054,15 @@ div.modal-footer .publish{
 .folderselect li.sub{
   padding-left: 20px;
 }
+.folderselect li.subtwo{
+  padding-left: 40px;
+}
+.folderselect .publishcollabsable{
+  display: none;
+}
+.folderselect .publishcollabsable.open{
+  display: block;
+}
 .folderselect li i{
   margin: 0 20px 0 15px;
   color: #009bbb;
@@ -1055,6 +1079,7 @@ div.item.list-group-item{
 div.dropdown{
   text-align: right;
   cursor: pointer;
+  padding: 9px 0 0 0;
 }
 .inputfield{
   width: 100%;
@@ -1219,6 +1244,30 @@ button.btn.btn-apply {
 }
 div.togglefolder{
   margin: 20px 0;
+}
+h5.course-breadcrumb{
+  line-height: 30px;
+}
+.searchstar{
+  float: none;
+}
+.sortbydropdown{
+  display: inline-block;
+}
+
+.sortbydropdown ul.dropdown-menu{
+  width: auto;
+  float: none;
+  left: auto;
+}
+.sortbydropdown ul.dropdown-menu li a.activesortby{
+  font-weight: bold;
+}
+.notnew{
+  display: none;
+}
+.publishedtext{
+  color:#009bbb;
 }
 
 

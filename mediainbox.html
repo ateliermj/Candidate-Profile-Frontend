@@ -39,7 +39,7 @@
       <nav class="navbar">
         <div class="container-fluid">
           <ul class="nav navbar-nav">
-            <li><a href="index.html"><div class="navbar-icon pnp"></div>Pick-n-play</a></li>
+            <li><a href="index.html"><div class="navbar-icon pnp"></div>Pick-n-Play</a></li>
             <li><a href="#"><div class="navbar-icon media-manager"></div>MediaManager</a></li>
             <li class="activeitem"><a href="#"><div class="navbar-icon media-inbox"></div> Media Inbox <span class="newmessage"> (4 New) </span> </a> </li>
             <li><a href="#"><div class="navbar-icon analytics"></div> Analytics</a></li>
@@ -66,7 +66,91 @@
             <div class="col-md-4 vcenter text-right searchfilter">
               <button class="btn button-light navbar-btn" id="filtertoggle" style="display: none;"> <span class="filtertext">Filter / Sort</span> <i class="fa fa-plus standardcolor" aria-hidden="true"></i></button>
               <input type="text" class="searchbox activesearch" id="searchbox" placeholder="Search Media Inbox"></input>
-              <span class="mediasortby"> Sort by: <b>Date <i class="fa fa-caret-down" aria-hidden="true"></i></b></span>
+
+              <div class="sortbydropdown">
+                <span class="mediasortby" data-toggle="dropdown"> Sort by: <b>Date <i class="fa fa-caret-down" aria-hidden="true"></i></b></span>
+                <ul class="dropdown-menu nowidth">
+                  <li><a class="activesortby" href="#">Date</a></li>
+                  <li><a href="#">Contributor</a></li>
+                  <li><a href="#">Accesses</a></li>
+                  <li><a href="#">Title</a></li>
+                </ul>
+              </div>
+              <!-- Modal -->
+              <div id="deleteModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Delete 3 Assets</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>Are you sure that you want to permanently delete 2 assets from the Media Inbox? This action cannot be undone.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default delete" data-dismiss="modal">Delete</button>
+                      <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Modal -->
+              <div id="publishModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Publish Selected Assets</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>Choose the folder to publish the selected Assets to:</p>
+                      <div class="folderselect">
+                        <input type="text" placeholder="Search for a folder"></input>
+                        <ul class="folderlist">
+
+                          <li><i class="fa fa-minus-square-o publishcollabsablecontroller" aria-hidden="true"></i><img src="img/folder.png" height="25px">Arts & Media 101 - INTRODUCTION TO FILM MAKING</li>
+                            <div class="publishcollabsable open">
+                              <li class="sub selected"><img src="img/folder.png" height="25px">Student Media Submissions</li>
+
+                              <li class="sub"><i class="fa fa-plus-square-o publishcollabsablecontroller" aria-hidden="true"></i><img src="img/folder.png" height="25px">Fall 2016 Week 1</li>
+                                <div class="publishcollabsable">
+                                  <li class="subtwo"><img src="img/folder.png" height="25px">Subfolder</li>
+                                  <li class="subtwo"><img src="img/folder.png" height="25px">Subfolder</li>
+                                </div>
+
+                                  <li class="sub"><img src="img/folder.png" height="25px">Fall 2016 Week 2</li>
+
+                                  <li class="sub"><i class="fa fa-plus-square-o publishcollabsablecontroller" aria-hidden="true"></i><img src="img/folder.png" height="25px">Fall 2016 Week 3</li>
+                                  <div class="publishcollabsable">
+                                    <li class="subtwo"><img src="img/folder.png" height="25px">Subfolder</li>
+                                    <li class="subtwo"><img src="img/folder.png" height="25px">Subfolder</li>
+                                  </div>
+
+                                  <li class="sub"><img src="img/folder.png" height="25px">Fall 2016 Week 4</li>
+                                  <li class="sub"><img src="img/folder.png" height="25px">Fall 2016 Week 5</li>
+                            </div>
+
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default publish" data-dismiss="modal">Publish</button>
+                      <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+
+
               <i class="fa fa-search searchicon" aria-hidden="true" style="display: none;"></i>
               <i class="fa fa-th listgridactive" id="grid" aria-hidden="true" style="display: none;"></i>
               <i class="fa fa-list-ul" id="list" aria-hidden="true" style="display: none;"></i>
@@ -75,126 +159,7 @@
           <div class="col-md-12 folderlinktext togglefolder"> <i class="fa fa-caret-down" aria-hidden="true"></i> STUDENT MEDIA SUBMISSIONS (6)</div>
         </div>
 
-        <!-- Modal -->
-        <div id="deleteModal" class="modal fade" role="dialog">
-          <div class="modal-dialog">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Delete 3 Assets</h4>
-              </div>
-              <div class="modal-body">
-                <p>Are you sure that you want to permanently delete 2 assets from the Media Inbox? This action cannot be undone.</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default delete" data-dismiss="modal">Delete</button>
-                <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Modal -->
-        <div id="publishModal" class="modal fade" role="dialog">
-          <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Publish Selected Assets</h4>
-              </div>
-              <div class="modal-body">
-                <p>Choose the folder to publish the selected Assets to:</p>
-                <div class="folderselect">
-                  <input type="text" placeholder="Search for a folder"></input>
-                  <ul class="folderlist">
-                    <li><i class="fa fa-minus-square-o" aria-hidden="true"></i><img src="img/folder.png" height="25px">Arts & Media 101 - INTRODUCTION TO FILM MAKING</li>
-                    <li class="sub selected"><img src="img/folder.png" height="25px">Student Media Submissions</li>
-                    <li class="sub"><i class="fa fa-plus-square-o" aria-hidden="true"></i><img src="img/folder.png" height="25px">Fall 2016 Week 1</li>
-                    <li class="sub"><img src="img/folder.png" height="25px">Fall 2016 Week 2</li>
-                    <li class="sub"><i class="fa fa-plus-square-o" aria-hidden="true"></i><img src="img/folder.png" height="25px">Fall 2016 Week 3</li>
-                    <li class="sub"><img src="img/folder.png" height="25px">Fall 2016 Week 4</li>
-                    <li class="sub"><img src="img/folder.png" height="25px">Fall 2016 Week 5</li>
-
-                  </ul>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default publish" data-dismiss="modal">Publish</button>
-                <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="panel-body filter">
-            <button type="button" class="fa fa-times btn-blank btn-close closefilter"></button>
-                <div class="col-xs-6 col-md-6">
-                  <div class="row">Filter</div>
-                  <div class="row">
-
-
-                  <span class="button-checkbox">
-                    <button type="button" class="btn filterchecks" data-color="primary">Favorites</button>
-                    <input type="checkbox" name="filterchecks" class="hidden" />
-                  </span>
-                  <span class="button-checkbox">
-                    <button type="button" class="btn filterchecks" data-color="primary">Folders</button>
-                    <input type="checkbox" name="filterchecks" class="hidden" />
-                  </span>
-                  <span class="button-checkbox">
-                    <button type="button" class="btn filterchecks" data-color="primary">Audio</button>
-                    <input type="checkbox" name="filterchecks" class="hidden" />
-                  </span>
-                   <span class="button-checkbox">
-                    <button type="button" class="btn filterchecks" data-color="primary">Composites</button>
-                    <input type="checkbox" name="filterchecks" class="hidden" />
-                  </span>
-                  <span class="button-checkbox">
-                    <button type="button" class="btn filterchecks" data-color="primary">Documents</button>
-                    <input type="checkbox" name="filterchecks" class="hidden" />
-                  </span>
-                  <span class="button-checkbox">
-                    <button type="button" class="btn filterchecks" data-color="primary">Images</button>
-                    <input type="checkbox" name="filterchecks" class="hidden" />
-                  </span>
-                  <span class="button-checkbox">
-                    <button type="button" class="btn filterchecks" data-color="primary">Podcasts</button>
-                    <input type="checkbox" name="filterchecks" class="hidden" />
-                  </span>
-                  <span class="button-checkbox">
-                    <button type="button" class="btn filterchecks" data-color="primary">Video</button>
-                    <input type="checkbox" name="filterchecks" class="hidden" />
-                  </span>
-                  </div>
-                </div>
-                <div class="col-xs-6 col-md-4">
-                  <div class="row">Sort</div>
-                  <div class="row">
-                    <span class="button-radio">
-                      <button type="button" class="btn sortby btn-default" data-color="primary">Accesses</button>
-                    </span>
-                    <span class="button-radio">
-                      <button type="button" class="btn sortby btn-default" data-color="primary">Contributor</button>
-                    </span>
-                    <span class="button-radio">
-                      <button type="button" class="btn sortby btn-default" data-color="primary">Publish Date</button>
-                    </span>
-                    <span class="button-radio">
-                      <button type="button" class="btn sortby btn-default" data-color="primary">Title</button>
-                    </span>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-md-2 text-right align-bottom filterlinks">
-                  <a href="#" class="filterlink align-text-bottom" onclick="resetFilter()"><span>Reset</span></a>
-                  <a href="#" class="filterlink boldlink align-bottom applyfilters"><span id="filtertoggle"><b>Apply</b></span></a>
-                </div>
-            </div>
 
         <div id="assets" class="row list-group">
 
@@ -204,7 +169,7 @@
                 </div>
                 <div class="overlayimage col-xs-2">
                   <img class="group list-group-image" src="img/flowers.jpg" alt="" />
-                  <div class="new"><span class="newtext">NEW</span></div>
+                  <div class="new notnew"><span class="newtext">NEW</span></div>
                   <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                   <div class="videolength">1:25</div>
 
@@ -227,7 +192,7 @@
                     <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
                     <ul class="dropdown-menu">
                       <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li><a href="#"><img src="img/markasnew.jpg" height="15px"></img>Make as New</a></li>
+                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
                       <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
                     </ul>
@@ -262,7 +227,7 @@
                     <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
                     <ul class="dropdown-menu">
                       <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li><a href="#"><img src="img/markasnew.jpg" height="15px"></img>Make as New</a></li>
+                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
                       <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
                     </ul>
@@ -297,7 +262,7 @@
                     <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
                     <ul class="dropdown-menu">
                       <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li><a href="#"><img src="img/markasnew.jpg" height="15px"></img>Make as New</a></li>
+                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
                       <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
                     </ul>
@@ -332,7 +297,7 @@
                     <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
                     <ul class="dropdown-menu">
                       <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li><a href="#"><img src="img/markasnew.jpg" height="15px"></img>Make as New</a></li>
+                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
                       <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
                     </ul>
@@ -344,6 +309,7 @@
                 </div>
                 <div class="overlayimage col-xs-2">
                   <img class="group list-group-image" src="img/flowers.jpg" alt="" />
+                  <div class="new notnew"><span class="newtext">NEW</span></div>
                   <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                   <div class="videolength">1:25</div>
 
@@ -352,6 +318,9 @@
                       <h4 class="group inner list-group-item-heading">
                         Submission 4
                       </h4>
+                      <p class="group inner list-group-item-text publishedtext">
+                        publised to the <b>Student Media Submissions</b> folder
+                      </p>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
                           <div class="meta">
@@ -366,7 +335,7 @@
                     <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
                     <ul class="dropdown-menu">
                       <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li><a href="#"><img src="img/markasnew.jpg" height="15px"></img>Make as New</a></li>
+                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
                       <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
                     </ul>
@@ -378,6 +347,7 @@
                 </div>
                 <div class="overlayimage col-xs-2">
                   <img class="group list-group-image" src="img/flowers.jpg" alt="" />
+                  <div class="new notnew"><span class="newtext">NEW</span></div>
                   <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                   <div class="videolength">1:25</div>
 
@@ -400,16 +370,12 @@
                     <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
                     <ul class="dropdown-menu">
                       <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li><a href="#"><img src="img/markasnew.jpg" height="15px"></img>Make as New</a></li>
+                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
                       <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
                     </ul>
                   </div>
           </div>
-
-
-
-
         </div>
 
         <div id="control-panel" class="row">
@@ -448,7 +414,7 @@
                     <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
                     <ul class="dropdown-menu">
                       <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li><a href="#"><img src="img/markasnew.jpg" height="15px"></img>Make as New</a></li>
+                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
                       <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
                     </ul>
@@ -483,7 +449,7 @@
                     <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
                     <ul class="dropdown-menu">
                       <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li><a href="#"><img src="img/markasnew.jpg" height="15px"></img>Make as New</a></li>
+                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
                       <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
                     </ul>
@@ -518,7 +484,7 @@
                     <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
                     <ul class="dropdown-menu">
                       <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li><a href="#"><img src="img/markasnew.jpg" height="15px"></img>Make as New</a></li>
+                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
                       <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
                     </ul>
@@ -553,7 +519,7 @@
                     <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
                     <ul class="dropdown-menu">
                       <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li><a href="#"><img src="img/markasnew.jpg" height="15px"></img>Make as New</a></li>
+                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
                       <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
                     </ul>

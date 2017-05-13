@@ -55,31 +55,35 @@ $( document ).ready(function() {
 
     $('.togglefolder').click(function(event){
       event.preventDefault();
+      $(this).children('i').toggleClass('fa-caret-down');
+      $(this).children('i').toggleClass('fa-caret-right');
       $(this).parent().next(".list-group").toggleClass('collapsedsection');
     });
+
+
     $('.rowselection').click(function(event){
       $(this).parent().parent().toggleClass('rowselected');
     });
 
 
         //select all checkboxes
-        $(".checkall").change(function(){  //"select all" change
-            $(".rowselection").prop('checked', $(this).prop("checked")); //change all ".checkbox" checked status
-            $(".rowselection").parent().parent().toggleClass('rowselected');
+        $(".checkall").click(function(){  //"select all" change
+        if ($('.checkall').is(':checked')) {
+          console.log('checked');
+          $(".checkall").prop('checked', true);
+
+          $(".rowselection").prop('checked', true); //change all ".checkbox" checked status
+          $(".rowselection").parent().parent().addClass('rowselected');
+        }else{
+          console.log('unchecked');
+          $(".checkall").prop('checked', false);
+          $(".rowselection").prop('checked', false); //change all ".checkbox" checked status
+          $(".rowselection").parent().parent().removeClass('rowselected');
+        }
+
 
         });
 
-        //".checkbox" change
-        $('.checkbox').change(function(){
-            //uncheck "select all", if one of the listed checkbox item is unchecked
-            if(false == $(this).prop("checked")){ //if this item is unchecked
-                $(".checkall").prop('checked', false); //change "select all" checked status to false
-            }
-            //check "select all" if all checkbox items are checked
-            if ($('.checkbox:checked').length == $('.checkbox').length ){
-                $(".checkall").prop('checked', true);
-            }
-        });
 
 
 
@@ -97,6 +101,38 @@ $( document ).ready(function() {
   $( '.folderlist li' ).click(function() {
     $(".folderlist li").removeClass("selected");
     $(this).toggleClass('selected');
+  });
+
+  $( '.publishcollabsablecontroller' ).click(function() {
+    if($(this).hasClass('fa-minus-square-o')){
+      $(this).removeClass('fa-minus-square-o');
+      $(this).addClass('fa-plus-square-o');
+    }else{
+      $(this).removeClass('fa-plus-square-o');
+      $(this).addClass('fa-minus-square-o');
+    }
+    $(this).parent().next().toggleClass('open');
+  });
+
+$('.markasnew').each(function(){
+  console.log('done');
+    if( $(this).parent().parent().siblings('.overlayimage').children('.new').hasClass('notnew')) {
+      $(this).children('a').children('.markasnewtext').text('Mark As New');
+    }else{
+      $(this).children('a').children('.markasnewtext').text('Unmark As New');
+    }
+  });
+
+
+  $( '.markasnew' ).click(function() {
+    if( $(this).parent().parent().siblings('.overlayimage').children('.new').hasClass('notnew')) {
+      $(this).children('a').children('.markasnewtext').text('Unmark As New');
+    }else{
+      $(this).children('a').children('.markasnewtext').text('Mark As New');
+    }
+    $(this).parent().parent().siblings('.overlayimage').children('.new').toggleClass('notnew');
+    return false;
+
   });
 
 
