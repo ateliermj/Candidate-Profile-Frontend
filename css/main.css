@@ -506,13 +506,13 @@ button.btn-primary.active:hover {
 .searchbox{
   border-radius: 13px;
   height: 26px;
-  width: 200px;
+  width: 150px;
   outline: none;
   border: 1px solid #ccc;
   padding: 0 10px;
   font-size: 12px;
   display: none;
-  margin: 10px 5px;
+  margin: 0px 5px;
 }
 
 .cancelsearch{
@@ -1060,7 +1060,7 @@ div.dropdown{
   width: 100%;
   margin: 0 0 20px 0;
 }
-.inputfield label,b{
+.inputfield label, .inputfield b{
   display: block;
   color: rgb(127, 130, 128);
 }
@@ -1166,7 +1166,7 @@ div.nopadding{
 }
 div.item.mediainbox{
   border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+  padding: 25px 0;
   margin-bottom: 0;
 }
 div.item.mediainbox:first-child{
@@ -1217,6 +1217,11 @@ button.btn.btn-apply {
   color: white;
   padding: 5px 40px;
 }
+div.togglefolder{
+  margin: 20px 0;
+}
+
+
 
 
 
@@ -1539,9 +1544,9 @@ button:focus {
     left: 0;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
-.searchbox {
+/*.searchbox {
     width: 260px;
-}
+}*/
 .searchbox .SearchField {
     width: 216px;
     border-radius: 3px 0 0 3px;
