@@ -1,543 +1,541 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Single Page Course</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!doctype html>
+  <html>
+      <head>
+          <meta charset="utf-8">
+          <meta http-equiv="x-ua-compatible" content="ie=edge">
+          <title>Single Page Course</title>
+          <meta name="description" content="">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+          <link rel="stylesheet" href="css/normalize.css">
+          <link rel="stylesheet" href="css/main.css">
+          <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+          <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+          <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
-        <script src="js/main.js"></script>
-    </head>
-    <body>
+          <script src="js/main.js"></script>
+      </head>
+      <body>
 
-      <script>
-      $( document ).ready(function() {
-        $('#assets .item').removeClass('grid-group-item');
-        $('#assets .item').addClass('list-group-item');
-        $('#list').addClass('listgridactive');
-        $('#grid').removeClass('listgridactive');
-      });
-      </script>
+        <script>
+        $( document ).ready(function() {
+          $('#assets .item').removeClass('grid-group-item');
+          $('#assets .item').addClass('list-group-item');
+          $('#list').addClass('listgridactive');
+          $('#grid').removeClass('listgridactive');
+        });
+        </script>
 
-      <div class="course-header">
-        <div class="headerText">
-          <div>Arts & Media 101 - INTRODUCTION TO FILMMAKING</div>
-        </div>
-      </div>
-      <nav class="navbar">
-        <div class="container-fluid">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html"><div class="navbar-icon pnp"></div>Pick-n-Play</a></li>
-            <li><a href="#"><div class="navbar-icon media-manager"></div>MediaManager</a></li>
-            <li class="activeitem"><a href="#"><div class="navbar-icon media-inbox"></div> Media Inbox <span class="newmessage"> (4 New) </span> </a> </li>
-            <li><a href="#"><div class="navbar-icon analytics"></div> Analytics</a></li>
-            <li><a href="#"><div class="navbar-icon settings"></div> Settings</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-          <a href="upload.html"><button class="btn upload margins navbar-btn"><div class="navbar-icon upload"></div> Upload</button></a>
-        </ul>
-        </div>
-      </nav>
+         <!-- Delete Modal -->
+                <div id="deleteModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
 
-      <div class="container">
-        <div id="control-panel" class="row">
-          <div class="col-md-12">
-            <div class="col-md-8 vcenter">
-               <input type="checkbox" class="checkall"></input>
-               <span class="fileoptions">
-                 <a href="#" data-toggle="modal" data-target="#publishModal"><img src="img/publishcolor.jpg" height="15px"> Publish to Course Folder</a>
-                 <a href="#"><img src="img/markasnewcolor.jpg" height="15px"> Mark as New</a>
-                 <a href="#"><img src="img/downloadcolor.jpg" height="15px"> Download</a>
-                 <a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/deletecolor.jpg" height="15px"> Delete</a>
-               </span>
-             </div>
-            <div class="col-md-4 vcenter text-right searchfilter">
-              <button class="btn button-light navbar-btn" id="filtertoggle" style="display: none;"> <span class="filtertext">Filter / Sort</span> <i class="fa fa-plus standardcolor" aria-hidden="true"></i></button>
-              <input type="text" class="searchbox activesearch" id="searchbox" placeholder="Search Media Inbox"></input>
-
-              <div class="sortbydropdown">
-                <span class="mediasortby" data-toggle="dropdown"> Sort by: <b>Date <i class="fa fa-caret-down" aria-hidden="true"></i></b></span>
-                <ul class="dropdown-menu nowidth">
-                  <li><a class="activesortby" href="#">Date</a></li>
-                  <li><a href="#">Contributor</a></li>
-                  <li><a href="#">Accesses</a></li>
-                  <li><a href="#">Title</a></li>
-                </ul>
-              </div>
-              <!-- Modal -->
-              <div id="deleteModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-
-                  <!-- Modal content-->
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="modal-title">Delete 3 Assets</h4>
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Delete 3 Assets</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Are you sure that you want to permanently delete 2 assets from the Media Inbox? This action cannot be undone.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default delete" data-dismiss="modal">Delete</button>
+                        <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+                      </div>
                     </div>
-                    <div class="modal-body">
-                      <p>Are you sure that you want to permanently delete 2 assets from the Media Inbox? This action cannot be undone.</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default delete" data-dismiss="modal">Delete</button>
-                      <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
-                    </div>
+
                   </div>
-
                 </div>
-              </div>
+                <!-- End of Delete Modal -->
 
-              <!-- Modal -->
-              <div id="publishModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
+                <!-- Publish Modal -->
+                <div id="publishModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
 
-                  <!-- Modal content-->
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="modal-title">Publish Selected Assets</h4>
-                    </div>
-                    <div class="modal-body">
-                      <p>Choose the folder to publish the selected Assets to:</p>
-                      <div class="folderselect">
-                        <input type="text" placeholder="Search for a folder"></input>
-                        <ul class="folderlist">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Publish Selected Assets</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Choose the folder to publish the selected Assets to:</p>
+                        <div class="folderselect">
+                          <input type="text" placeholder="Search for a folder"></input>
+                          <ul class="folderlist">
 
-                          <li><i class="fa fa-minus-square-o publishcollabsablecontroller" aria-hidden="true"></i><img src="img/folder.png" height="25px">Arts & Media 101 - INTRODUCTION TO FILM MAKING</li>
-                            <div class="publishcollabsable open">
-                              <li class="sub selected"><img src="img/folder.png" height="25px">Student Media Submissions</li>
+                            <li><i class="fa fa-minus-square-o publishcollabsablecontroller" aria-hidden="true"></i><div class="modal-folderlist breadcrumb-dropdown-icon folder"></div>Arts & Media 101 - INTRODUCTION TO FILM MAKING</li>
+                              <div class="publishcollabsable open">
+                                <li class="sub selected"><div class="modal-folderlist breadcrumb-dropdown-icon subfolder"></div>Student Media Submissions</li>
 
-                              <li class="sub"><i class="fa fa-plus-square-o publishcollabsablecontroller" aria-hidden="true"></i><img src="img/folder.png" height="25px">Fall 2016 Week 1</li>
-                                <div class="publishcollabsable">
-                                  <li class="subtwo"><img src="img/folder.png" height="25px">Subfolder</li>
-                                  <li class="subtwo"><img src="img/folder.png" height="25px">Subfolder</li>
-                                </div>
-
-                                  <li class="sub"><img src="img/folder.png" height="25px">Fall 2016 Week 2</li>
-
-                                  <li class="sub"><i class="fa fa-plus-square-o publishcollabsablecontroller" aria-hidden="true"></i><img src="img/folder.png" height="25px">Fall 2016 Week 3</li>
+                                <li class="sub"><i class="fa fa-plus-square-o publishcollabsablecontroller" aria-hidden="true"></i><div class="modal-folderlist breadcrumb-dropdown-icon folder"></div>Fall 2016 Week 1</li>
                                   <div class="publishcollabsable">
-                                    <li class="subtwo"><img src="img/folder.png" height="25px">Subfolder</li>
-                                    <li class="subtwo"><img src="img/folder.png" height="25px">Subfolder</li>
+                                    <li class="subtwo"><div class="modal-folderlist breadcrumb-dropdown-icon subfolder"></div>Subfolder</li>
+                                    <li class="subtwo"><div class="modal-folderlist breadcrumb-dropdown-icon subfolder"></div>Subfolder</li>
                                   </div>
 
-                                  <li class="sub"><img src="img/folder.png" height="25px">Fall 2016 Week 4</li>
-                                  <li class="sub"><img src="img/folder.png" height="25px">Fall 2016 Week 5</li>
-                            </div>
+                                    <li class="sub"><div class="modal-folderlist breadcrumb-dropdown-icon folder"></div>Fall 2016 Week 2</li>
 
-                        </ul>
+                                    <li class="sub"><i class="fa fa-plus-square-o publishcollabsablecontroller" aria-hidden="true"></i><div class="modal-folderlist breadcrumb-dropdown-icon folder"></div>Fall 2016 Week 3</li>
+                                    <div class="publishcollabsable">
+                                      <li class="subtwo"><div class="modal-folderlist breadcrumb-dropdown-icon subfolder"></div>Subfolder</li>
+                                      <li class="subtwo"><div class="modal-folderlist breadcrumb-dropdown-icon subfolder"></div>Subfolder</li>
+                                    </div>
+
+                                    <li class="sub"><div class="modal-folderlist breadcrumb-dropdown-icon folder"></div>Fall 2016 Week 4</li>
+                                    <li class="sub"><div class="modal-folderlist breadcrumb-dropdown-icon subfolder"></div>Fall 2016 Week 5</li>
+                              </div>
+
+                          </ul>
+                        </div>
+                        <!-- folderselect-->
+                      </div>
+
+                      <!-- modal body-->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default publish" data-dismiss="modal">Publish</button>
+                        <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
                       </div>
                     </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default publish" data-dismiss="modal">Publish</button>
-                      <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
-                    </div>
+                    <!-- End of Modal content-->
                   </div>
-
                 </div>
+                <!-- End of Publish Modal -->
+
+        <div class="course-header">
+          <div class="headerText">
+            <div>Arts & Media 101 - INTRODUCTION TO FILMMAKING</div>
+          </div>
+        </div>
+        <nav class="navbar">
+          <div class="container-fluid">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html"><div class="navbar-icon pnp"></div>Pick-n-Play</a></li>
+              <li><a href="#"><div class="navbar-icon media-manager"></div>MediaManager</a></li>
+              <li class="activeitem"><a href="#"><div class="navbar-icon media-inbox"></div> Media Inbox <span class="newmessage"> (4 New) </span> </a> </li>
+              <li><a href="#"><div class="navbar-icon analytics"></div> Analytics</a></li>
+              <li><a href="#"><div class="navbar-icon settings"></div> Settings</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            <a href="upload.html"><button class="btn upload margins navbar-btn"><div class="navbar-icon upload"></div> Upload</button></a>
+          </ul>
+          </div>
+        </nav>
+
+        <div class="container">
+          <div class="row control-panel">
+            <div class="col-md-12 mediainbox controlsrow">
+              <div class="col-md-8 vcenter">
+                 <input type="checkbox" class="checkall"></input>
+                 <span class="fileoptions">
+                   <a href="#" data-toggle="modal" data-target="#publishModal"><img src="img/publishcolor.jpg" height="15px"> Publish to Course Folder</a>
+                   <a href="#"><img src="img/markasnewcolor.jpg" height="15px"> Mark as New</a>
+                   <a href="#"><img src="img/downloadcolor.jpg" height="15px"> Download</a>
+                   <a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/deletecolor.jpg" height="15px"> Delete</a>
+                 </span>
+               </div>
+               <!-- end of first section -->
+              <div class="col-md-4 vcenter text-right searchfilter">
+                <button class="btn button-light navbar-btn" id="filtertoggle" style="display: none;"> <span class="filtertext">Filter / Sort</span> <i class="fa fa-plus standardcolor" aria-hidden="true"></i></button>
+                <input type="text" class="searchbox activesearch" id="searchbox" placeholder="Search Media Inbox" />
+
+                <div class="sortbydropdown">
+                  <span class="mediasortby" data-toggle="dropdown"> Sort by: <b>Date <i class="fa fa-caret-down" aria-hidden="true"></i></b></span>
+                  <ul class="dropdown-menu nowidth">
+                    <li><a class="activesortby" href="#">Date</a></li>
+                    <li><a href="#">Contributor</a></li>
+                    <li><a href="#">Accesses</a></li>
+                    <li><a href="#">Title</a></li>
+                  </ul>
+                </div>
+
+                <i class="fa fa-search searchicon" aria-hidden="true" style="display: none;"></i>
+                <i class="fa fa-th listgridactive" id="grid" aria-hidden="true" style="display: none;"></i>
+                <i class="fa fa-list-ul" id="list" aria-hidden="true" style="display: none;"></i>
               </div>
+              <!-- end of second section -->
+            </div>
+            <!-- end of controlsrow -->
 
+             </div>  
 
+             <div class="row">
+            <div class="col-md-12 folderlinktext togglefolder"> <i class="fa fa-caret-down" aria-hidden="true"></i> STUDENT MEDIA SUBMISSIONS (6)</div>
+            </div>
 
+          <div id="assets" class="row list-group">
 
-              <i class="fa fa-search searchicon" aria-hidden="true" style="display: none;"></i>
-              <i class="fa fa-th listgridactive" id="grid" aria-hidden="true" style="display: none;"></i>
-              <i class="fa fa-list-ul" id="list" aria-hidden="true" style="display: none;"></i>
+            <div class="item mediainbox newasset col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="col-xs-1 rowcheck">
+                    <input type="checkbox" class="rowselection"></input>
+                  </div>
+                  <div class="overlayimage col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                    <img class="group list-group-image" src="img/flowers.jpg" alt="" />
+                    <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
+                    <div class="videolength">1:25</div>
+
+                  </div>
+                    <div class="col-xs-7 caption">
+                        <h4 class="group inner list-group-item-heading">
+                          Public Speaking
+                        </h4>
+                        <p class="group inner list-group-item-text">
+                            This is a simple description of the video that is too long and extends past the second line</p>
+                            <div class="meta">
+                              <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                              <span>Published: <b>October 1, 2016</b></br></span>
+                              <span>Accesses: <b>723</b></span>
+                            </div>
+                        <div class="row">
+                        </div>
+                    </div>
+                    <div class="col-xs-1 text-right dropdown">
+                      <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
+                      <ul class="dropdown-menu">
+                        <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
+                        <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                      </ul>
+                    </div>
+            </div>
+            <div class="item mediainbox newasset col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="col-xs-1 rowcheck">
+                    <input type="checkbox" class="rowselection"></input>
+                  </div>
+                  <div class="overlayimage col-xs-2">
+                    <img class="group list-group-image" src="img/flowers.jpg" alt="" />
+                    <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
+                    <div class="videolength">1:25</div>
+
+                  </div>
+                    <div class=" col-xs-7 caption">
+                        <h4 class="group inner list-group-item-heading">
+                          Submission 1
+                        </h4>
+                        <p class="group inner list-group-item-text">
+                            This is a simple description of the video that is too long and extends past the second line</p>
+                            <div class="meta">
+                              <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                              <span>Published: <b>October 1, 2016</b></br></span>
+                              <span>Accesses: <b>723</b></span>
+                            </div>
+                        <div class="row">
+                        </div>
+                    </div>
+                    <div class="col-xs-1 dropdown">
+                      <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
+                      <ul class="dropdown-menu">
+                        <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
+                        <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                      </ul>
+                    </div>
+            </div>
+            <div class="item mediainbox newasset col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="col-xs-1 rowcheck">
+                    <input type="checkbox" class="rowselection"></input>
+                  </div>
+                  <div class="overlayimage col-xs-2">
+                    <img class="group list-group-image" src="img/flowers.jpg" alt="" />
+                    <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
+                    <div class="videolength">1:25</div>
+
+                  </div>
+                    <div class=" col-xs-7 caption">
+                        <h4 class="group inner list-group-item-heading">
+                          Submission 2
+                        </h4>
+                        <p class="group inner list-group-item-text">
+                            This is a simple description of the video that is too long and extends past the second line</p>
+                            <div class="meta">
+                              <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                              <span>Published: <b>October 1, 2016</b></br></span>
+                              <span>Accesses: <b>723</b></span>
+                            </div>
+                        <div class="row">
+                        </div>
+                    </div>
+                    <div class="col-xs-1 dropdown">
+                      <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
+                      <ul class="dropdown-menu">
+                        <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
+                        <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                      </ul>
+                    </div>
+            </div>
+            <div class="item mediainbox newasset col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="col-xs-1 rowcheck">
+                    <input type="checkbox" class="rowselection"></input>
+                  </div>
+                  <div class="overlayimage col-xs-2">
+                    <img class="group list-group-image" src="img/flowers.jpg" alt="" />
+                    <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
+                    <div class="videolength">1:25</div>
+
+                  </div>
+                    <div class=" col-xs-7 caption">
+                        <h4 class="group inner list-group-item-heading">
+                          Submission 3
+                        </h4>
+                        <p class="group inner list-group-item-text">
+                            This is a simple description of the video that is too long and extends past the second line</p>
+                            <div class="meta">
+                              <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                              <span>Published: <b>October 1, 2016</b></br></span>
+                              <span>Accesses: <b>723</b></span>
+                            </div>
+                        <div class="row">
+                        </div>
+                    </div>
+                    <div class="col-xs-1 dropdown">
+                      <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
+                      <ul class="dropdown-menu">
+                        <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
+                        <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                      </ul>
+                    </div>
+            </div>
+            <div class="item mediainbox newasset col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="col-xs-1 rowcheck">
+                    <input type="checkbox" class="rowselection"></input>
+                  </div>
+                  <div class="overlayimage col-xs-2">
+                    <img class="group list-group-image" src="img/flowers.jpg" alt="" />
+                    <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
+                    <div class="videolength">1:25</div>
+
+                  </div>
+                    <div class=" col-xs-7 caption">
+                        <h4 class="group inner list-group-item-heading">
+                          Submission 4
+                        </h4>
+                        <p class="group inner list-group-item-text publishedtext">
+                          publised to the <b>Student Media Submissions</b> folder
+                        </p>
+                        <p class="group inner list-group-item-text">
+                            This is a simple description of the video that is too long and extends past the second line</p>
+                            <div class="meta">
+                              <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                              <span>Published: <b>October 1, 2016</b></br></span>
+                              <span>Accesses: <b>723</b></span>
+                            </div>
+                        <div class="row">
+                        </div>
+                    </div>
+                    <div class="col-xs-1 dropdown">
+                      <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
+                      <ul class="dropdown-menu">
+                        <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
+                        <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                      </ul>
+                    </div>
+            </div>
+            <div class="item mediainbox col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="col-xs-1 rowcheck">
+                    <input type="checkbox" class="rowselection"></input>
+                  </div>
+                  <div class="overlayimage col-xs-2">
+                    <img class="group list-group-image" src="img/flowers.jpg" alt="" />
+                    <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
+                    <div class="videolength">1:25</div>
+
+                  </div>
+                    <div class=" col-xs-7 caption">
+                        <h4 class="group inner list-group-item-heading">
+                          Submission 5
+                        </h4>
+                        <p class="group inner list-group-item-text">
+                            This is a simple description of the video that is too long and extends past the second line</p>
+                            <div class="meta">
+                              <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                              <span>Published: <b>October 1, 2016</b></br></span>
+                              <span>Accesses: <b>723</b></span>
+                            </div>
+                        <div class="row">
+                        </div>
+                    </div>
+                    <div class="col-xs-1 dropdown">
+                      <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
+                      <ul class="dropdown-menu">
+                        <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
+                        <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                      </ul>
+                    </div>
             </div>
           </div>
-          <div class="col-md-12 folderlinktext togglefolder"> <i class="fa fa-caret-down" aria-hidden="true"></i> STUDENT MEDIA SUBMISSIONS (6)</div>
-        </div>
 
+          <div class="row control-panel">
 
-
-        <div id="assets" class="row list-group">
-
-          <div class="item mediainbox col-xs-12 col-sm-3 col-md-3 col-lg-3">
-            <div class="col-xs-1 rowcheck">
-                  <input type="checkbox" class="rowselection"></input>
-                </div>
-                <div class="overlayimage col-xs-2">
-                  <img class="group list-group-image" src="img/flowers.jpg" alt="" />
-                  <div class="new notnew"><span class="newtext">NEW</span></div>
-                  <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
-                  <div class="videolength">1:25</div>
-
-                </div>
-                  <div class=" col-xs-7 caption">
-                      <h4 class="group inner list-group-item-heading">
-                        Public Speaking
-                      </h4>
-                      <p class="group inner list-group-item-text">
-                          This is a simple description of the video that is too long and extends past the second line</p>
-                          <div class="meta">
-                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
-                            <span>Published: <b>October 1, 2016</b></br></span>
-                            <span>Accesses: <b>723</b></span>
-                          </div>
-                      <div class="row">
-                      </div>
-                  </div>
-                  <div class="col-xs-1 text-right dropdown">
-                    <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
-                    <ul class="dropdown-menu">
-                      <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                      <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
-                    </ul>
-                  </div>
+            <div class="col-md-12 folderlinktext togglefolder"><i class="fa fa-caret-down" aria-hidden="true"></i> STUDENT MEDIA SUBMISSIONS FOR LEARNING MANAGEMENT SYSTEM ASSIGNMENTS (11)</div>
           </div>
-          <div class="item mediainbox col-xs-12 col-sm-3 col-md-3 col-lg-3">
-            <div class="col-xs-1 rowcheck">
-                  <input type="checkbox" class="rowselection"></input>
-                </div>
-                <div class="overlayimage col-xs-2">
-                  <img class="group list-group-image" src="img/flowers.jpg" alt="" />
-                  <div class="new"><span class="newtext">NEW</span></div>
-                  <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
-                  <div class="videolength">1:25</div>
 
-                </div>
-                  <div class=" col-xs-7 caption">
-                      <h4 class="group inner list-group-item-heading">
-                        Submission 1
-                      </h4>
-                      <p class="group inner list-group-item-text">
-                          This is a simple description of the video that is too long and extends past the second line</p>
-                          <div class="meta">
-                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
-                            <span>Published: <b>October 1, 2016</b></br></span>
-                            <span>Accesses: <b>723</b></span>
-                          </div>
-                      <div class="row">
-                      </div>
+          <div id="assets" class="row list-group">
+
+            <div class="item mediainbox newasset col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="col-xs-1 rowcheck">
+                    <input type="checkbox" class="rowselection"></input>
                   </div>
-                  <div class="col-xs-1 dropdown">
-                    <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
-                    <ul class="dropdown-menu">
-                      <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                      <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
-                    </ul>
+                  <div class="overlayimage col-xs-2">
+                    <img class="group list-group-image" src="img/flowers.jpg" alt="" />
+                    <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
+                    <div class="videolength">1:25</div>
+
                   </div>
+                    <div class=" col-xs-7 caption">
+                        <h4 class="group inner list-group-item-heading">
+                          Public Speaking
+                        </h4>
+                        <p class="group inner list-group-item-text">
+                            This is a simple description of the video that is too long and extends past the second line</p>
+                            <div class="meta">
+                              <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                              <span>Published: <b>October 1, 2016</b></br></span>
+                              <span>Accesses: <b>723</b></span>
+                            </div>
+                        <div class="row">
+                        </div>
+                    </div>
+                    <div class="col-xs-1 dropdown">
+                      <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
+                      <ul class="dropdown-menu">
+                        <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
+                        <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                      </ul>
+                    </div>
+            </div>
+            <div class="item mediainbox newasset col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="col-xs-1 rowcheck">
+                    <input type="checkbox" class="rowselection"></input>
+                  </div>
+                  <div class="overlayimage col-xs-2">
+                    <img class="group list-group-image" src="img/flowers.jpg" alt="" />
+                    <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
+                    <div class="videolength">1:25</div>
+
+                  </div>
+                    <div class=" col-xs-7 caption">
+                        <h4 class="group inner list-group-item-heading">
+                          Submission 1
+                        </h4>
+                        <p class="group inner list-group-item-text">
+                            This is a simple description of the video that is too long and extends past the second line</p>
+                            <div class="meta">
+                              <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                              <span>Published: <b>October 1, 2016</b></br></span>
+                              <span>Accesses: <b>723</b></span>
+                            </div>
+                        <div class="row">
+                        </div>
+                    </div>
+                    <div class="col-xs-1 dropdown">
+                      <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
+                      <ul class="dropdown-menu">
+                        <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
+                        <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                      </ul>
+                    </div>
+            </div>
+            <div class="item mediainbox col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="col-xs-1 rowcheck">
+                    <input type="checkbox" class="rowselection"></input>
+                  </div>
+                  <div class="overlayimage col-xs-2">
+                    <img class="group list-group-image" src="img/flowers.jpg" alt="" />
+                    <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
+                    <div class="videolength">1:25</div>
+
+                  </div>
+                    <div class=" col-xs-7 caption">
+                        <h4 class="group inner list-group-item-heading">
+                          Sumbission 2
+                        </h4>
+                        <p class="group inner list-group-item-text">
+                            This is a simple description of the video that is too long and extends past the second line</p>
+                            <div class="meta">
+                              <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                              <span>Published: <b>October 1, 2016</b></br></span>
+                              <span>Accesses: <b>723</b></span>
+                            </div>
+                        <div class="row">
+                        </div>
+                    </div>
+                    <div class="col-xs-1 dropdown">
+                      <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
+                      <ul class="dropdown-menu">
+                        <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
+                        <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                      </ul>
+                    </div>
+            </div>
+            <div class="item mediainbox col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="col-xs-1 rowcheck">
+                    <input type="checkbox" class="rowselection"></input>
+                  </div>
+                  <div class="overlayimage col-xs-2">
+                    <img class="group list-group-image" src="img/flowers.jpg" alt="" />
+                    <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
+                    <div class="videolength">1:25</div>
+
+                  </div>
+                    <div class=" col-xs-7 caption">
+                        <h4 class="group inner list-group-item-heading">
+                          Sumbission 3
+                        </h4>
+                        <p class="group inner list-group-item-text">
+                            This is a simple description of the video that is too long and extends past the second line</p>
+                            <div class="meta">
+                              <span>Contributor: <b>Instructor 1 (You)</b></br></span>
+                              <span>Published: <b>October 1, 2016</b></br></span>
+                              <span>Accesses: <b>723</b></span>
+                            </div>
+                        <div class="row">
+                        </div>
+                    </div>
+                    <div class="col-xs-1 dropdown">
+                      <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
+                      <ul class="dropdown-menu">
+                        <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
+                        <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                      </ul>
+                    </div>
+            </div>
+
+
           </div>
-          <div class="item mediainbox col-xs-12 col-sm-3 col-md-3 col-lg-3">
-            <div class="col-xs-1 rowcheck">
-                  <input type="checkbox" class="rowselection"></input>
-                </div>
-                <div class="overlayimage col-xs-2">
-                  <img class="group list-group-image" src="img/flowers.jpg" alt="" />
-                  <div class="new"><span class="newtext">NEW</span></div>
-                  <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
-                  <div class="videolength">1:25</div>
-
-                </div>
-                  <div class=" col-xs-7 caption">
-                      <h4 class="group inner list-group-item-heading">
-                        Submission 2
-                      </h4>
-                      <p class="group inner list-group-item-text">
-                          This is a simple description of the video that is too long and extends past the second line</p>
-                          <div class="meta">
-                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
-                            <span>Published: <b>October 1, 2016</b></br></span>
-                            <span>Accesses: <b>723</b></span>
-                          </div>
-                      <div class="row">
-                      </div>
-                  </div>
-                  <div class="col-xs-1 dropdown">
-                    <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
-                    <ul class="dropdown-menu">
-                      <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                      <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
-                    </ul>
-                  </div>
-          </div>
-          <div class="item mediainbox col-xs-12 col-sm-3 col-md-3 col-lg-3">
-            <div class="col-xs-1 rowcheck">
-                  <input type="checkbox" class="rowselection"></input>
-                </div>
-                <div class="overlayimage col-xs-2">
-                  <img class="group list-group-image" src="img/flowers.jpg" alt="" />
-                  <div class="new"><span class="newtext">NEW</span></div>
-                  <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
-                  <div class="videolength">1:25</div>
-
-                </div>
-                  <div class=" col-xs-7 caption">
-                      <h4 class="group inner list-group-item-heading">
-                        Submission 3
-                      </h4>
-                      <p class="group inner list-group-item-text">
-                          This is a simple description of the video that is too long and extends past the second line</p>
-                          <div class="meta">
-                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
-                            <span>Published: <b>October 1, 2016</b></br></span>
-                            <span>Accesses: <b>723</b></span>
-                          </div>
-                      <div class="row">
-                      </div>
-                  </div>
-                  <div class="col-xs-1 dropdown">
-                    <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
-                    <ul class="dropdown-menu">
-                      <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                      <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
-                    </ul>
-                  </div>
-          </div>
-          <div class="item mediainbox col-xs-12 col-sm-3 col-md-3 col-lg-3">
-            <div class="col-xs-1 rowcheck">
-                  <input type="checkbox" class="rowselection"></input>
-                </div>
-                <div class="overlayimage col-xs-2">
-                  <img class="group list-group-image" src="img/flowers.jpg" alt="" />
-                  <div class="new notnew"><span class="newtext">NEW</span></div>
-                  <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
-                  <div class="videolength">1:25</div>
-
-                </div>
-                  <div class=" col-xs-7 caption">
-                      <h4 class="group inner list-group-item-heading">
-                        Submission 4
-                      </h4>
-                      <p class="group inner list-group-item-text publishedtext">
-                        publised to the <b>Student Media Submissions</b> folder
-                      </p>
-                      <p class="group inner list-group-item-text">
-                          This is a simple description of the video that is too long and extends past the second line</p>
-                          <div class="meta">
-                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
-                            <span>Published: <b>October 1, 2016</b></br></span>
-                            <span>Accesses: <b>723</b></span>
-                          </div>
-                      <div class="row">
-                      </div>
-                  </div>
-                  <div class="col-xs-1 dropdown">
-                    <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
-                    <ul class="dropdown-menu">
-                      <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                      <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
-                    </ul>
-                  </div>
-          </div>
-          <div class="item mediainbox col-xs-12 col-sm-3 col-md-3 col-lg-3">
-            <div class="col-xs-1 rowcheck">
-                  <input type="checkbox" class="rowselection"></input>
-                </div>
-                <div class="overlayimage col-xs-2">
-                  <img class="group list-group-image" src="img/flowers.jpg" alt="" />
-                  <div class="new notnew"><span class="newtext">NEW</span></div>
-                  <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
-                  <div class="videolength">1:25</div>
-
-                </div>
-                  <div class=" col-xs-7 caption">
-                      <h4 class="group inner list-group-item-heading">
-                        Submission 5
-                      </h4>
-                      <p class="group inner list-group-item-text">
-                          This is a simple description of the video that is too long and extends past the second line</p>
-                          <div class="meta">
-                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
-                            <span>Published: <b>October 1, 2016</b></br></span>
-                            <span>Accesses: <b>723</b></span>
-                          </div>
-                      <div class="row">
-                      </div>
-                  </div>
-                  <div class="col-xs-1 dropdown">
-                    <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
-                    <ul class="dropdown-menu">
-                      <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                      <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
-                    </ul>
-                  </div>
+          <div class="row text-center">
+            <ul class="pagination">
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
+            </ul>
           </div>
         </div>
 
-        <div id="control-panel" class="row">
 
-          <div class="col-md-12 folderlinktext togglefolder"><i class="fa fa-caret-down" aria-hidden="true"></i> STUDENT MEDIA SUBMISSIONS FOR LEARNING MANAGEMENT SYSTEM ASSIGNMENTS (11)</div>
-        </div>
-
-        <div id="assets" class="row list-group">
-
-          <div class="item mediainbox col-xs-12 col-sm-3 col-md-3 col-lg-3">
-            <div class="col-xs-1 rowcheck">
-                  <input type="checkbox" class="rowselection"></input>
-                </div>
-                <div class="overlayimage col-xs-2">
-                  <img class="group list-group-image" src="img/flowers.jpg" alt="" />
-                  <div class="new"><span class="newtext">NEW</span></div>
-                  <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
-                  <div class="videolength">1:25</div>
-
-                </div>
-                  <div class=" col-xs-7 caption">
-                      <h4 class="group inner list-group-item-heading">
-                        Public Speaking
-                      </h4>
-                      <p class="group inner list-group-item-text">
-                          This is a simple description of the video that is too long and extends past the second line</p>
-                          <div class="meta">
-                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
-                            <span>Published: <b>October 1, 2016</b></br></span>
-                            <span>Accesses: <b>723</b></span>
-                          </div>
-                      <div class="row">
-                      </div>
-                  </div>
-                  <div class="col-xs-1 dropdown">
-                    <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
-                    <ul class="dropdown-menu">
-                      <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                      <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
-                    </ul>
-                  </div>
-          </div>
-          <div class="item mediainbox col-xs-12 col-sm-3 col-md-3 col-lg-3">
-            <div class="col-xs-1 rowcheck">
-                  <input type="checkbox" class="rowselection"></input>
-                </div>
-                <div class="overlayimage col-xs-2">
-                  <img class="group list-group-image" src="img/flowers.jpg" alt="" />
-                  <div class="new"><span class="newtext">NEW</span></div>
-                  <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
-                  <div class="videolength">1:25</div>
-
-                </div>
-                  <div class=" col-xs-7 caption">
-                      <h4 class="group inner list-group-item-heading">
-                        Submission 1
-                      </h4>
-                      <p class="group inner list-group-item-text">
-                          This is a simple description of the video that is too long and extends past the second line</p>
-                          <div class="meta">
-                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
-                            <span>Published: <b>October 1, 2016</b></br></span>
-                            <span>Accesses: <b>723</b></span>
-                          </div>
-                      <div class="row">
-                      </div>
-                  </div>
-                  <div class="col-xs-1 dropdown">
-                    <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
-                    <ul class="dropdown-menu">
-                      <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                      <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
-                    </ul>
-                  </div>
-          </div>
-          <div class="item mediainbox col-xs-12 col-sm-3 col-md-3 col-lg-3">
-            <div class="col-xs-1 rowcheck">
-                  <input type="checkbox" class="rowselection"></input>
-                </div>
-                <div class="overlayimage col-xs-2">
-                  <img class="group list-group-image" src="img/flowers.jpg" alt="" />
-                  <div class="new"><span class="newtext">NEW</span></div>
-                  <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
-                  <div class="videolength">1:25</div>
-
-                </div>
-                  <div class=" col-xs-7 caption">
-                      <h4 class="group inner list-group-item-heading">
-                        Sumbission 2
-                      </h4>
-                      <p class="group inner list-group-item-text">
-                          This is a simple description of the video that is too long and extends past the second line</p>
-                          <div class="meta">
-                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
-                            <span>Published: <b>October 1, 2016</b></br></span>
-                            <span>Accesses: <b>723</b></span>
-                          </div>
-                      <div class="row">
-                      </div>
-                  </div>
-                  <div class="col-xs-1 dropdown">
-                    <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
-                    <ul class="dropdown-menu">
-                      <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                      <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
-                    </ul>
-                  </div>
-          </div>
-          <div class="item mediainbox col-xs-12 col-sm-3 col-md-3 col-lg-3">
-            <div class="col-xs-1 rowcheck">
-                  <input type="checkbox" class="rowselection"></input>
-                </div>
-                <div class="overlayimage col-xs-2">
-                  <img class="group list-group-image" src="img/flowers.jpg" alt="" />
-                  <div class="new"><span class="newtext">NEW</span></div>
-                  <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
-                  <div class="videolength">1:25</div>
-
-                </div>
-                  <div class=" col-xs-7 caption">
-                      <h4 class="group inner list-group-item-heading">
-                        Sumbission 3
-                      </h4>
-                      <p class="group inner list-group-item-text">
-                          This is a simple description of the video that is too long and extends past the second line</p>
-                          <div class="meta">
-                            <span>Contributor: <b>Instructor 1 (You)</b></br></span>
-                            <span>Published: <b>October 1, 2016</b></br></span>
-                            <span>Accesses: <b>723</b></span>
-                          </div>
-                      <div class="row">
-                      </div>
-                  </div>
-                  <div class="col-xs-1 dropdown">
-                    <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
-                    <ul class="dropdown-menu">
-                      <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
-                      <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                      <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
-                    </ul>
-                  </div>
-          </div>
-
-
-        </div>
-        <div class="row text-center">
-          <ul class="pagination">
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
-          </ul>
-        </div>
-      </div>
-
-
-  </body>
-</html>
+    </body>
+  </html>

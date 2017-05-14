@@ -56,17 +56,30 @@
                  <div class='breakcrum-dropdown-item collapsecontroller'><div class='breadcrumb-dropdown-icon home'></div> Course Folder Home</div>
 
 
-        <div class='breadcrumb-dropdown-item levelone' id='collapsecontroller' data-toggle='collapse' data-target='#collapsable'>
+        <div class='breadcrumb-dropdown-item levelone' id='collapsecontroller'>
            <a href'#'>
-              <i id='collapsearrow' class='fa fa-caret-down collapsearrow' aria-hidden='true'></i>
+              <i id='collapsearrow' class='fa fa-caret-down collapsearrow' aria-hidden='true' data-toggle='collapse' data-target='#collapsible'></i>
             </a>
          <div class='breadcrumb-dropdown-icon subfolder'></div> <span class='activetext'>Fall 2016 Week 1</span>
       </div>
 
-      <div id='collapsable' class='collapse in'>
-            <div class='breadcrumb-dropdown-item leveltwo'><div class='breadcrumb-dropdown-icon  subfolder'></div> <span>Assignment 1</span></div>
+      <div id='collapsible' class='collapse in'>
+
+
+
+            <div class='breadcrumb-dropdown-item leveltwo'>        
+
+        <a href'#'>
+          <i id='collapsearrow2' class='fa fa-caret-down collapsearrow' aria-hidden='true' data-toggle='collapse' data-target='#collapsible2'></i>
+        </a>
+        <div class='breadcrumb-dropdown-icon  subfolder'></div> 
+
+            <span>Assignment 1</span></div>
+
+             <div id='collapsible2' class='collapse in'>
              <div class='breadcrumb-dropdown-item levelthree'><div class='breadcrumb-dropdown-icon  subfolder'></div> Problem Set 1</div>
               <div class='levelthree'><div class='breadcrumb-dropdown-icon  folder'></div> Bonus Problem</div>
+              </div>
              <div class='leveltwo'><div class='breadcrumb-dropdown-icon  folder'></div> Assignment 2</div>
              <div class='leveltwo'><div class='breadcrumb-dropdown-icon  folder'></div> Assignment 3</div>
 
@@ -152,15 +165,15 @@
             </div>
 
         <div id="assets" class="row list-group">
-          <div class="item col-xs-12 col-lg-12 featureditem">
-              <div class="asset-card vcenter">
-                <div class="overlayimage">
+          <div class="item col-xs-12 col-sm-12 col-md-12 col-lg-12 featureditem asset-card vcenter">
+
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 overlayimage">
                   <img class="group list-group-image"  src="img/flowers.jpg" alt="" />
                   <div class="overlay"><i class="fa fa-play-circle-o fa-4x" aria-hidden="true"></i></div>
                   <div class="videolength">3:54</div>
 
                 </div>
-                  <div class="caption">
+                  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 caption">
                       <h4 class="group inner list-group-item-heading featureditem">
                           <i class="asset-type-icon video"> <span class="tooltiptext">Video</span> </i> <div class="asset-title video">Demo Video</div> <i class="fa fa-star featured" aria-hidden="true"> <span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
@@ -171,11 +184,7 @@
                             <span>Published: <b>October 1, 2016</b></br></span>
                             <span>Accesses: <b>723</b></span>
                           </div>
-                      <div class="row">
-
-                      </div>
                   </div>
-              </div>
           </div>
           <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card vcenter">

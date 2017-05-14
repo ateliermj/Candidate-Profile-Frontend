@@ -41,15 +41,11 @@ $( document ).ready(function() {
       $('#list').removeClass('listgridactive');
     });
 
-    $(document).on("click", "#collapsecontroller", function() {
-      if(!$('#collapsable').hasClass('in')){
-        $('.collapsearrow').toggleClass('fa-caret-down');
-        $('.collapsearrow').toggleClass('fa-caret-right');
-      }else{
-        $('.collapsearrow').toggleClass('fa-caret-down');
-        $('.collapsearrow').toggleClass('fa-caret-right');
 
-      }
+    $(document).on("click", ".collapsearrow", function() {
+
+      console.log($(this));
+      $(this).toggleClass('fa-caret-right', 'fa-caret-down');
 
     });
 
@@ -114,25 +110,13 @@ $( document ).ready(function() {
     $(this).parent().next().toggleClass('open');
   });
 
-$('.markasnew').each(function(){
-  console.log('done');
-    if( $(this).parent().parent().siblings('.overlayimage').children('.new').hasClass('notnew')) {
-      $(this).children('a').children('.markasnewtext').text('Mark As New');
-    }else{
-      $(this).children('a').children('.markasnewtext').text('Unmark As New');
-    }
-  });
 
 
   $( '.markasnew' ).click(function() {
-    if( $(this).parent().parent().siblings('.overlayimage').children('.new').hasClass('notnew')) {
-      $(this).children('a').children('.markasnewtext').text('Unmark As New');
-    }else{
-      $(this).children('a').children('.markasnewtext').text('Mark As New');
-    }
-    $(this).parent().parent().siblings('.overlayimage').children('.new').toggleClass('notnew');
+    
+    $(this).parents('.mediainbox').toggleClass('newasset');
+    resetMarkNew();
     return false;
-
   });
 
 
@@ -256,6 +240,17 @@ $(function () {
 });
 
 });
+
+function resetMarkNew() {
+  $('.markasnew').each(function(){
+  if( $(this).parents('.mediainbox').hasClass('newasset')) {
+    $(this).children('a').children('.markasnewtext').text('Unmark As New');
+  } else {
+    $(this).children('a').children('.markasnewtext').text('Mark As New');
+  }
+
+  });
+}
 
 
 function resetFilter() {
