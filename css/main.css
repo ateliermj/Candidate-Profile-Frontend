@@ -2,7 +2,7 @@
 html {
     color: #231f20;
     font-size: 1em;
-    line-height: 1.4;
+    line-height: 1em;
     margin: 0;
     padding: 0;
 }
@@ -13,6 +13,15 @@ body {
    min-height: 1000px;
    widows: 100%;
 }
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
 .course-header{
   position: relative;
   width: 100vw;
@@ -109,7 +118,7 @@ body {
   display: inline-block;
 }
 
-.grid-group-item .meta span{
+.grid-group-item .meta span, {
   display: block;
 }
 
@@ -117,7 +126,7 @@ body {
   height: 320px;
 }
 
-.list-group-item .meta span{
+.list-group-item:not(.featureditem) .meta span{
   display: inline-block;
   margin-right: 15px;
 }
@@ -223,11 +232,7 @@ i:hover {
 {
     margin-bottom: 0px;
 }
-.item.list-group-item .caption
-{
-    padding: 9px 9px 10px 9px;
-    margin-top: 0px;
-}
+
 
 .item.list-group-item:before, .item.list-group-item:after
 {
@@ -275,6 +280,7 @@ p.group.inner.list-group-item-text
 
 #control-panel, .control-panel {
   display: block;
+  margin-bottom: 5px;
 }
 
 #control-panel.filteractive{
@@ -496,7 +502,7 @@ button.btn-primary.active:hover {
 .searchbox{
   border-radius: 13px;
   height: 26px;
-  width: 150px;
+  width: 200px;
   outline: none;
   border: 1px solid #ccc;
   padding: 0 10px;
@@ -508,6 +514,7 @@ button.btn-primary.active:hover {
   background-position: calc(100% - 10px) center;
   background-size: 12px;
   background-repeat: no-repeat;
+
 }
 
 
@@ -517,6 +524,8 @@ button.btn-primary.active:hover {
 }
 .activesearch{
   display: inline-block;
+      margin: 10px 5px 5px 0px;
+    height: 30px;
 }
 
 .fa.standardcolor{
@@ -573,10 +582,6 @@ button.btn-primary.active:hover {
   background-size: auto 100%;
 }
 
-.list-group-image.default.pdf {
-  background: url('../img/asset-type-sprite.png') -650px 0px;
-  background-size: auto 100%;
-}
 
 .list-group-image.default.video {
   background: url('../img/asset-type-sprite.png') -530px 0px;
@@ -596,14 +601,11 @@ button.btn-primary.active:hover {
 }
 
 
-
 .featureditem{
-
     float: none;
     width: 100%;
     background: #fff;
     margin-bottom: 10px;
-    border: none;
     font-size: 120%;
 }
 
@@ -611,24 +613,17 @@ button.btn-primary.active:hover {
   cursor: pointer;
 }
 
-.featureditem .list-group-image
+
+.item.featureditem.asset-card
 {
-}
-.featureditem .asset-card
-{
-    margin-bottom: 0px;
+    padding: 20px;
+    border: 1px solid #ccc;
 } 
 .featureditem .caption
 {
-    padding: 10px 20px;
-    margin-top: 0px;
+    padding-left: 20px;
 }
 
-.item.featureditem:before, .item.featureditem:after
-{
-    display: table;
-    content: " ";
-}
 
 .item.featureditem img
 {
@@ -652,18 +647,32 @@ button.btn-primary.active:hover {
 
 .popover{
   min-width: 200px;
+  max-width: 800px !important;
+  width: 500px;
+
   border-radius: 0px !important;
 }
 
 .popover-title {
     padding: 5px !important;
-    font-size: 12px !important;
+    font-size: 14px !important;
     font-weight: 400 !important;
 }
 
 .popover-title input {
   width: 100% !important;
   color: #000;
+  padding: 5px;
+}
+
+.popover-content {
+  padding: 10px !important;
+}
+
+
+div.breadcrumb-dropdown-item{
+  font-size: 15px;
+  padding: 3px 0px;
 }
 
 .popover div{
@@ -681,12 +690,7 @@ button.btn-primary.active:hover {
   margin: 5px;
   list-style: none;
 }
-div.popover{
-  width: 500px;
-}
-div.breakcrum-dropdown-item{
-  font-size: 15px;
-}
+
 .activetext{
   font-weight: bolder;
   color: #009bbb;
@@ -694,8 +698,8 @@ div.breakcrum-dropdown-item{
 
 .popover .fa {
   float: left;
-  font-size: 10px;
-  margin: 2px 0px;
+    font-size: 14px;
+    margin: 3px;
   color: #999;
   cursor: pointer;
 }
@@ -723,6 +727,9 @@ div.breakcrum-dropdown-item{
    max-width: 100%;
 }
 
+.featureditem .overlayimage {
+  padding: 0px;
+}
 
 
 .overlayimage{
@@ -804,7 +811,6 @@ span.fa-caret-right {
     margin: 3px;
 }
 
-
 .breadcrumb-dropdown-icon.home {
   width: 15px;
   margin-right: 5px;
@@ -818,7 +824,7 @@ span.fa-caret-right {
 }
 
 .breadcrumb-dropdown-icon.folder {
-  background: url('../img/asset-type-sprite.png') -1px 0px;
+  background: url('../img/asset-type-sprite.png') -99% 0px;
   background-size: auto 100%;
 }
 
@@ -872,13 +878,13 @@ span.fa-caret-right {
 
 
 
-.levelone{
+.breadcrumb-dropdown-item.levelone{
   padding-left: 5px;
 }
-.leveltwo{
+.breadcrumb-dropdown-item.leveltwo{
   padding-left: 20px ;
 }
-.levelthree{
+.breadcrumb-dropdown-item.levelthree{
   padding-left: 35px;
 
 }
@@ -938,7 +944,7 @@ ul.pagination>li.active>a:hover{
 }
 
 .mediasortby{
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .collapsedsection{
   display: none;
@@ -970,6 +976,7 @@ ul.dropdown-menu li{
   font-weight: bolder;
   font-size: 16px;
   line-height: 26px;
+  font-weight: 400;
 }
 .fileoptions a{
   color: inherit;
@@ -1012,6 +1019,16 @@ div.modal-footer .publish{
   background-color: #009d93;
   color: white;
 }
+
+div.modal-footer .cancel:hover{
+ background-color: #636267 !important;
+ color: white;
+}
+
+div.modal-footer .publish:hover{
+  background-color: #009d93 !important;
+  color: white;
+}
 .folderselect{
   border: 1px solid #efefef;
   height: 300px;
@@ -1035,6 +1052,7 @@ div.modal-footer .publish{
   border-bottom: 1px solid #efefef;
   font-weight: bolder;
   cursor: pointer;
+  font-weight: 400;
 }
 .folderselect li.selected{
   background: rgb(226, 239, 248);
@@ -1088,7 +1106,7 @@ div.dropdown{
   border: 1px solid #b4b5b3;
 }
 .inputfield i{
-  font-size: inherit;
+  font-size: 12px;
 }
 .inputfield.checklabel input{
   display: inline-block;
@@ -1097,7 +1115,7 @@ div.dropdown{
 .inputfield.checklabel label{
   display: inline-block;
   width: auto;
-  font-weight: 300;
+  font-weight: 400;
   color: black;
   margin-bottom: 30px;
 }
@@ -1188,6 +1206,36 @@ div.mediainbox.controlsrow .searchfilter {
   padding: 0px; 
 }
 
+.mediainbox .controls {
+  margin-top: 12px;
+}
+
+.mediainbox.icon {
+  width: 20px;
+  height: 15px;
+}
+
+.mediainbox.icon.publish{
+  background: url('../img/mediainbox-control-sprite.png') 1px 0px;
+  background-size: auto 100%;
+  margin-right: 5px;
+}
+
+.mediainbox.icon.mark{
+  background: url('../img/mediainbox-control-sprite.png') -101% 0px;
+  background-size: auto 100%;
+}
+
+.mediainbox.icon.download{
+  background: url('../img/mediainbox-control-sprite.png') -201% 0px;
+  background-size: auto 100%;
+}
+
+.mediainbox.icon.delete{
+  background: url('../img/mediainbox-control-sprite.png') -305% 0px;
+  background-size: auto 100%;
+}
+
 div.mediainbox .dropdown {
   position: relative;
   left: 5%;
@@ -1239,10 +1287,10 @@ div.item.mediainbox .overlayimage{
   min-width: 0px;
 }
 i.thumbnailcaption{
-  font-size: 11px;
+  font-size: 10.5px;
 }
 div.modal .modal-content .modal-header h4.modal-title{
-  font-size: 20px;
+  font-size: 16px;
 }
 .completed{
   margin-bottom: 10px;
@@ -1313,16 +1361,6 @@ h5.course-breadcrumb{
 
 
 /* UPLOAD STYLES  */
-
-
-
-
-
-
-
-
-
-
 
 
 .element-invisible {
@@ -1629,9 +1667,7 @@ button:focus {
     left: 0;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
-/*.searchbox {
-    width: 260px;
-}*/
+
 .searchbox .SearchField {
     width: 216px;
     border-radius: 3px 0 0 3px;
@@ -4553,10 +4589,12 @@ fieldset.file-fields .input-group.captioning {
 
 .modal .modal-dialog .modal-content {
     background: #fff;
-        border-radius: 0px;
+    border-radius: 0px;
+    padding: 20px;
 }
 .modal .modal-dialog .modal-content .modal-header {
     border-bottom: none;
+    padding: 0px;
 }
 
 .modal .modal-dialog .modal-content .modal-header h3 {
@@ -4573,6 +4611,7 @@ fieldset.file-fields .input-group.captioning {
 
 .modal .modal-dialog .modal-content .modal-body {
     text-align: left;
+    padding: 10px 0px;
 }
 .modal .modal-dialog .modal-content .modal-body textarea {
     width: 100%;
@@ -4686,7 +4725,7 @@ fieldset.file-fields .input-group.captioning {
 }
 .modal .modal-dialog .modal-content .modal-footer {
     border-top: none;
-    padding: 5px 34px 36px;
+    padding: 0px 0px 10px 0px;
 }
 
 .modal-footer {

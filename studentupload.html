@@ -49,26 +49,39 @@
                data-toggle="popover"
                data-placement="bottom"
                title="<input type='text' placeholder='Select a subfolder'>"
-               data-content="<div class='breakcrum-dropdown '>
-                 <div class='breakcrum-dropdown-item collapsecontroller'><div class='breadcrumb-dropdown-icon home'></div> Course Folder Home</div>
+               data-content="<div class='breadcrumb-dropdown '>
+                 <div class='breadcrumb-dropdown-item collapsecontroller'><div class='breadcrumb-dropdown-icon home'></div> Course Folder Home</div>
 
 
-        <div class='breadcrumb-dropdown-item levelone' id='collapsecontroller' data-toggle='collapse' data-target='#collapsable'>
+        <div class='breadcrumb-dropdown-item levelone' id='collapsecontroller'>
            <a href'#'>
-              <i id='collapsearrow' class='fa fa-caret-down collapsearrow' aria-hidden='true'></i>
+              <i id='collapsearrow' class='fa fa-caret-down collapsearrow' aria-hidden='true' data-toggle='collapse' data-target='#collapsible'></i>
             </a>
          <div class='breadcrumb-dropdown-icon subfolder'></div> <span class='activetext'>Fall 2016 Week 1</span>
       </div>
 
-      <div id='collapsable' class='collapse in'>
-            <div class='breadcrumb-dropdown-item leveltwo'><div class='breadcrumb-dropdown-icon  subfolder'></div> <span>Assignment 1</span></div>
-             <div class='breadcrumb-dropdown-item levelthree'><div class='breadcrumb-dropdown-icon  subfolder'></div> Problem Set 1</div>
-              <div class='levelthree'><div class='breadcrumb-dropdown-icon  folder'></div> Bonus Problem</div>
-             <div class='leveltwo'><div class='breadcrumb-dropdown-icon  folder'></div> Assignment 2</div>
-             <div class='leveltwo'><div class='breadcrumb-dropdown-icon  folder'></div> Assignment 3</div>
+      <div id='collapsible' class='collapse in'>
+
+
+
+            <div class='breadcrumb-dropdown-item leveltwo'>        
+
+        <a href'#'>
+          <i id='collapsearrow2' class='fa fa-caret-down collapsearrow' aria-hidden='true' data-toggle='collapse' data-target='#collapsible2'></i>
+        </a>
+        <div class='breadcrumb-dropdown-icon subfolder'></div> 
+
+            <span>Assignment 1</span></div>
+
+             <div id='collapsible2' class='collapse in'>
+             <div class='breadcrumb-dropdown-item levelthree'><div class='breadcrumb-dropdown-icon  folder'></div> Problem Set 1</div>
+              <div class='breadcrumb-dropdown-item levelthree'><div class='breadcrumb-dropdown-icon  folder'></div> Bonus Problem</div>
+              </div>
+             <div class='breadcrumb-dropdown-item leveltwo'><div class='breadcrumb-dropdown-icon  folder'></div> Assignment 2</div>
+             <div class='breadcrumb-dropdown-item leveltwo'><div class='breadcrumb-dropdown-icon  folder'></div> Assignment 3</div>
 
        </div>
-              <div class='levelone'><div class='breadcrumb-dropdown-icon  subfolder'></div> Fall 2016 Week 2</div>
+              <div class='breadcrumb-dropdown-item levelone'><div class='breadcrumb-dropdown-icon  folder'></div> Fall 2016 Week 2</div>
         </div>"
             >
           </i>
@@ -151,7 +164,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Submit Media to Inscructor</h4>
+                    <h4 class="modal-title">Submit Media to Instructor</h4>
                   </div>
                   <div class="modal-body">
                     <div class="col-md-4">
@@ -195,8 +208,8 @@
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" data-toggle="modal" data-target="#submitedModal" class="btn btn-default publish" data-dismiss="modal">Upload</button>
-                    <button type="button" data-toggle="modal" data-target="#completedModal" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+                    <button type="button" data-toggle="modal" data-target="#submittedModal" class="btn btn-default publish" data-dismiss="modal">Upload</button>
+                    <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
                   </div>
                 </div>
 
@@ -205,7 +218,7 @@
 
 
             <!-- Modal SUBMITTED -->
-            <div id="submitedModal" class="modal fade" role="dialog">
+            <div id="submittedModal" class="modal fade" role="dialog">
               <div class="modal-dialog">
 
                 <!-- Modal content-->
@@ -220,13 +233,13 @@
                       <div class="col-md-10 progressbar">
                         <div class="currentprogress"></div>
                       </div>
-                      <div class="col-md-2 redtext text-right"> Cancel</div>
+                      <div class="col-md-2 redtext text-right" data-toggle="modal" data-target="#completedModal"> Cancel</div>
                     </div>
 
                     <div class="col-md-12 uploadedcontainer">
                       <div class="col-md-4">
                         <div class="submitthumbnail"><div class="submitthumbnailicon"></div></div>
-                        Thumbnail will be generated once the file has been uploaded.
+                        <i class="thumbnailcaption">Thumbnail will be generated once the file has been uploaded.</i>
                       </div>
                       <div class="col-md-8">
 

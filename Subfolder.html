@@ -51,31 +51,44 @@
                data-toggle="popover"
                data-placement="bottom"
                title="<input type='text' placeholder='Select a subfolder'>"
-               data-content="<div class='breakcrum-dropdown '>
-                 <div class='breakcrum-dropdown-item collapsecontroller'><div class='breadcrumb-dropdown-icon home'></div> Course Folder Home</div>
+               data-content="<div class='breadcrumb-dropdown '>
+                 <div class='breadcrumb-dropdown-item collapsecontroller'><div class='breadcrumb-dropdown-icon home'></div> Course Folder Home</div>
 
 
-        <div class='breadcrumb-dropdown-item levelone' id='collapsecontroller' data-toggle='collapse' data-target='#collapsable'>
+        <div class='breadcrumb-dropdown-item levelone' id='collapsecontroller'>
            <a href'#'>
-              <i id='collapsearrow' class='fa fa-caret-down collapsearrow' aria-hidden='true'></i>
+              <i id='collapsearrow' class='fa fa-caret-down collapsearrow' aria-hidden='true' data-toggle='collapse' data-target='#collapsible'></i>
             </a>
          <div class='breadcrumb-dropdown-icon subfolder'></div> <span class='activetext'>Fall 2016 Week 1</span>
       </div>
 
-      <div id='collapsable' class='collapse in'>
-            <div class='breadcrumb-dropdown-item leveltwo'><div class='breadcrumb-dropdown-icon  subfolder'></div> <span>Assignment 1</span></div>
-             <div class='breadcrumb-dropdown-item levelthree'><div class='breadcrumb-dropdown-icon  subfolder'></div> Problem Set 1</div>
-              <div class='levelthree'><div class='breadcrumb-dropdown-icon  folder'></div> Bonus Problem</div>
-             <div class='leveltwo'><div class='breadcrumb-dropdown-icon  folder'></div> Assignment 2</div>
-             <div class='leveltwo'><div class='breadcrumb-dropdown-icon  folder'></div> Assignment 3</div>
+      <div id='collapsible' class='collapse in'>
+
+
+
+            <div class='breadcrumb-dropdown-item leveltwo'>        
+
+        <a href'#'>
+          <i id='collapsearrow2' class='fa fa-caret-down collapsearrow' aria-hidden='true' data-toggle='collapse' data-target='#collapsible2'></i>
+        </a>
+        <div class='breadcrumb-dropdown-icon subfolder'></div> 
+
+            <span>Assignment 1</span></div>
+
+             <div id='collapsible2' class='collapse in'>
+             <div class='breadcrumb-dropdown-item levelthree'><div class='breadcrumb-dropdown-icon  folder'></div> Problem Set 1</div>
+              <div class='breadcrumb-dropdown-item levelthree'><div class='breadcrumb-dropdown-icon  folder'></div> Bonus Problem</div>
+              </div>
+             <div class='breadcrumb-dropdown-item leveltwo'><div class='breadcrumb-dropdown-icon  folder'></div> Assignment 2</div>
+             <div class='breadcrumb-dropdown-item leveltwo'><div class='breadcrumb-dropdown-icon  folder'></div> Assignment 3</div>
 
        </div>
-              <div class='levelone'><div class='breadcrumb-dropdown-icon  subfolder'></div> Fall 2016 Week 2</div>
+              <div class='breadcrumb-dropdown-item levelone'><div class='breadcrumb-dropdown-icon  folder'></div> Fall 2016 Week 2</div>
         </div>"
             >
           </i>
              >
-             <span class="breadcrumbelipsis" tabindex="0"
+             <span class="breadcrumbellipsis" tabindex="0"
                role="button"
                data-html="true"
                data-toggle="popover"

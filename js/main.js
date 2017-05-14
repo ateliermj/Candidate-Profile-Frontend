@@ -239,6 +239,21 @@ $(function () {
     });
 });
 
+$('.file-title .fa').click(function() {
+  if($(this).hasClass('fa-angle-double-down')) {
+    $(this).removeClass('fa-angle-double-down').addClass('fa-angle-double-right');
+  } else if ($(this).hasClass('fa-angle-double-right')) {
+    $(this).removeClass('fa-angle-double-right').addClass('fa-angle-double-down');
+  } else if ($(this).hasClass('fa-angle-down')) {
+    $(this).removeClass('fa-angle-down').addClass('fa-angle-right');
+  } else if ($(this).hasClass('fa-angle-right')) {
+    $(this).removeClass('fa-angle-right').addClass('fa-angle-down');
+  }
+});
+
+
+
+
 });
 
 function resetMarkNew() {
