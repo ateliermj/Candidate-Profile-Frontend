@@ -1,6 +1,7 @@
 $( document ).ready(function() {
 
     $("[data-toggle=popover]").popover();
+    resetMarkNew();
 
     $(document).on('click', function (e) {
         $('[data-toggle="popover"],[data-original-title]').each(function () {
@@ -260,8 +261,10 @@ function resetMarkNew() {
   $('.markasnew').each(function(){
   if( $(this).parents('.mediainbox').hasClass('newasset')) {
     $(this).children('a').children('.markasnewtext').text('Unmark As New');
+    return;
   } else {
     $(this).children('a').children('.markasnewtext').text('Mark As New');
+    return
   }
 
   });
