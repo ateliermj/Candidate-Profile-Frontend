@@ -1463,7 +1463,6 @@ input:checked + .slider:before {
   background-color: #009aba;
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 34px;
   width: 50px;

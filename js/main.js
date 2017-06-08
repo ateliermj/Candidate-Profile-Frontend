@@ -1,17 +1,15 @@
 $( document ).ready(function() {
 
-
-
   var height = $('.headerDescription').height();
   if(height > 22){
     $('.headerDescription').toggleClass('collapseddescription');
-  }else {
-    return;
   }
   $('.headerDescriptionToggle').click(function(){
     $('.headerDescription').toggleClass('collapseddescription');
     $(this).hide();
   });
+
+  console.log('initialised');
 
     $("[data-toggle=popover]").popover();
     resetMarkNew();
