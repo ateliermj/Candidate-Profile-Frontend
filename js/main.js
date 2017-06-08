@@ -1,5 +1,19 @@
 $( document ).ready(function() {
 
+  var settingsDescriptionLength = $('.settingsDescriptionTextarea').val().length;
+  $('.charactercount').html(settingsDescriptionLength + '/255');
+
+  var height = $('.headerDescription').height();
+  if(height > 22){
+    $('.headerDescription').toggleClass('collapseddescription');
+  }else {
+    return;
+  }
+  $('.headerDescriptionToggle').click(function(){
+    $('.headerDescription').toggleClass('collapseddescription');
+    $(this).hide();
+  });
+
     $("[data-toggle=popover]").popover();
     resetMarkNew();
 
@@ -114,7 +128,7 @@ $( document ).ready(function() {
 
 
   $( '.markasnew' ).click(function() {
-    
+
     $(this).parents('.mediainbox').toggleClass('newasset');
     resetMarkNew();
     return false;
