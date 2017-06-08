@@ -99,7 +99,7 @@
             </div>
             <div class="col-md-2 text-right">
               <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" checked>
                 <div class="slider round"></div>
               </label>
             </div>
@@ -110,7 +110,7 @@
             </div>
             <div class="col-md-2 text-right">
               <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" checked>
                 <div class="slider round"></div>
               </label>
             </div>
@@ -122,6 +122,9 @@
           <button type="button" class="btn btn-default cancel">Cancel</button><div>
       </div>
 
-
+      <script>
+      var settingsDescriptionLength = $('.settingsDescriptionTextarea').val().length;
+      $('.charactercount').html(settingsDescriptionLength + '/255');
+      </script>
   </body>
 </html>

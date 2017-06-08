@@ -1,7 +1,6 @@
 $( document ).ready(function() {
 
-  var settingsDescriptionLength = $('.settingsDescriptionTextarea').val().length;
-  $('.charactercount').html(settingsDescriptionLength + '/255');
+
 
   var height = $('.headerDescription').height();
   if(height > 22){
