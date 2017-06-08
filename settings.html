@@ -21,7 +21,7 @@
         <script src="js/main.js"></script>
     </head>
     <body>
-
+<div class="single-course-wrapper">
       <div class="course-header">
         <div class="row">
           <div class="col-md-offset-2 col-md-8 headerText">
@@ -32,7 +32,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-offset-3 nopadding col-md-6 text-center headerDescription">
+          <div class="col-md-offset-2 nopadding col-md-8 text-center headerDescription">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
           </div>
@@ -46,7 +46,7 @@
       <nav class="navbar">
         <div class="container-fluid">
           <ul class="nav navbar-nav">
-            <li class="activeitem"><a href="#"><div class="navbar-icon pnp"></div>Pick-n-Play</a></li>
+            <li><a href="index.html"><div class="navbar-icon pnp"></div>Pick-n-Play</a></li>
             <li><a href="#"><div class="navbar-icon media-manager"></div>MediaManager</a></li>
             <li><a href="mediainbox.html"><div class="navbar-icon media-inbox"></div> Media Inbox <span class="newmessage"> (4 New) </span> </a> </li>
             <li><a href="#"><div class="navbar-icon analytics"></div> Analytics</a></li>
@@ -81,7 +81,7 @@
           </div>
           <div class="row">
             <div class="col-md-3">
-              <p>Folder Description</p>
+              <p>Folder Description:</p>
             </div>
             <div class="col-md-9">
               <textarea class="settingsDescriptionTextarea">This course gives you a general introduction to arts and media and relevant filmmaking techniques.</textarea>
@@ -117,8 +117,8 @@
           </div>
         </section>
 
-        <div class="row text-center">
-          <button type="button" class="btn btn-default publish">Save</button>
+        <div class="row text-center btns">
+          <button type="button" class="btn btn-default publish action">Save</button>
           <button type="button" class="btn btn-default cancel">Cancel</button><div>
       </div>
 
@@ -126,5 +126,6 @@
       var settingsDescriptionLength = $('.settingsDescriptionTextarea').val().length;
       $('.charactercount').html(settingsDescriptionLength + '/255');
       </script>
+      </div>
   </body>
 </html>

@@ -22,6 +22,10 @@ a:hover {
   text-decoration: none !important;
 }
 
+.single-course-wrapper {
+  min-width: 1024px;
+}
+
 .course-header{
   position: relative;
   padding: 20px 0;
@@ -216,7 +220,7 @@ i .tooltiptext.tooltipdescription{
   color: #333;
   -webkit-text-stroke: 0px;
   bottom: -40px;
-  left: 100%;
+  left: -100px;
   width: 200px;
   padding: 10px 0;
 }
@@ -1453,15 +1457,16 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(35px);
-  -ms-transform: translateX(35px);
-  transform: translateX(35px);
+  -webkit-transform: translateX(25px);
+  -ms-transform: translateX(25px);
+  transform: translateX(25px);
   background-color: #009aba;
 }
 
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
+  width: 50px;
 }
 
 .slider.round:before {
@@ -2803,6 +2808,9 @@ a.morelink {
     background-position: center;
 }
 
+.row.btns {
+  margin-top: 40px;
+}
 
 
 .btn.wrap {
@@ -2882,6 +2890,16 @@ a.morelink {
   color: #fff;
   margin-top: 10px;
   text-align: center;
+}
+
+.btn.btn-default.cancel:hover, .btn.btn-default.cancel:focus, .btn.btn-default.cancel:active, .btn.btn-default.cancel:visited{
+  background-color: #666666 !important;
+  color: #fff;
+}
+
+.btn.btn-default.action:hover, .btn.btn-default.action:focus, .btn.btn-default.action:active, .btn.btn-default.action:visited {
+    background-color: #29aaaa !important;
+    color: #fff !important;
 }
 
 .search-cell {
