@@ -108,40 +108,46 @@
                 </div>
                 <!-- End of Publish Modal -->
 
-        <div class="course-header">
+       <div class="course-header">
         <div class="row">
-          <div class="col-md-offset-2 col-md-8 headerText">
+          <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 col-xs-offset-0 col-xs-10 headerText">
             Arts & Media 101 - INTRODUCTION TO FILMMAKING
           </div>
-          <div class="col-md-offset-1 col-md-1 headerText">
+          <div class="col-md-offset-1 col-md-1 col-sm-offset-0 col-sm-1 col-xs-offset-0 col-xs-1 nopadding headerText">
             <a href="settings.html"><img src="img/cog.svg" height="25px"></a>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-offset-2 nopadding col-md-8 text-center headerDescription">
+          <div class="col-md-offset-2 nopadding col-md-8 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 text-center headerDescription">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
           </div>
           <div class="col-md-1 nopadding headerDescriptionToggle text-left">
             <i>...
-            <span class="tooltiptext tooltipdescription">Click to Expand Description</span>
+            <i class="tooltiptext tooltipdescription">Click to Expand Description</i>
           </i>
           </div>
         </div>
       </div>
-        <nav class="navbar">
-          <div class="container-fluid">
-            <ul class="nav navbar-nav">
-              <li><a href="index.html"><div class="navbar-icon pnp"></div>Pick-n-Play</a></li>
-              <li><a href="#"><div class="navbar-icon media-manager"></div>MediaManager</a></li>
-              <li class="activeitem"><a href="#"><div class="navbar-icon media-inbox"></div> Media Inbox <span class="newmessage"> (4 New) </span> </a> </li>
-              <li><a href="#"><div class="navbar-icon analytics"></div> Analytics</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-            <a href="upload.html"><button class="btn upload margins navbar-btn"><div class="navbar-icon upload"></div> Upload</button></a>
+       <nav class="navbar navbar-toggleable-sm">
+       
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarContent">
+        <span class="glyphicon glyphicon-menu-hamburger"></span>
+      </button>
+
+       <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html"><div class="navbar-icon pnp"></div>Pick-n-Play</a></li>
+            <li><a href="#"><div class="navbar-icon media-manager"></div>MediaManager</a></li>
+            <li class="activeitem"><a href="#"><div class="navbar-icon media-inbox"></div> Media Inbox <span class="newmessage"> (4 New) </span> </a> </li>
+            <li><a href="mediainbox-empty.html"><div class="navbar-icon media-inbox"></div> Media Inbox</a> </li>
+            <li><a href="#"><div class="navbar-icon analytics"></div> Analytics</a></li>
           </ul>
-          </div>
-        </nav>
+          <ul class="nav navbar-nav navbar-right">
+            <a href="upload.html"><button class="btn upload margins navbar-btn"><div class="navbar-icon upload"></div> Upload</button></a>
+        </ul>
+        </div>
+      </nav>
 
         <div class="container">
           <div class="row control-panel">
@@ -151,7 +157,6 @@
                  <span class="fileoptions">
                    <a href="#" data-toggle="modal" data-target="#publishModal"><div class="mediainbox icon publish"></div>Publish to Course Folder</a>
                    <a href="#"><div class="mediainbox icon mark"></div> Mark as New</a>
-                   <a href="#"><div class="mediainbox icon download"></div> Download</a>
                    <a href="#" data-toggle="modal" data-target="#deleteModal"><div class="mediainbox icon delete"></div>Delete</a>
                  </span>
                </div>
@@ -190,13 +195,13 @@
               <div class="col-xs-1 rowcheck">
                     <input type="checkbox" class="rowselection"></input>
                   </div>
-                  <div class="overlayimage col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                  <div class="overlayimage col-xs-10 col-sm-10 col-md-1 col-lg-1">
                     <img class="group list-group-image" src="img/flowers.jpg" alt="" />
                     <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                     <div class="videolength">1:25</div>
 
                   </div>
-                    <div class="col-xs-7 caption">
+                    <div class="col-xs-12 col-sm-12 col-md-7 caption">
                         <h4 class="group inner list-group-item-heading">
                           Public Speaking
                         </h4>
@@ -215,8 +220,9 @@
                       <ul class="dropdown-menu">
                         <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
                         <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                        <hr>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       </ul>
                     </div>
             </div>
@@ -224,13 +230,13 @@
               <div class="col-xs-1 rowcheck">
                     <input type="checkbox" class="rowselection"></input>
                   </div>
-                  <div class="overlayimage col-xs-2">
+                  <div class="overlayimage col-xs-10 col-sm-10 col-md-1 col-lg-1">
                     <img class="group list-group-image" src="img/flowers.jpg" alt="" />
                     <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                     <div class="videolength">1:25</div>
 
                   </div>
-                    <div class=" col-xs-7 caption">
+                    <div class="col-xs-12 col-sm-12 col-md-7  caption">
                         <h4 class="group inner list-group-item-heading">
                           Submission 1
                         </h4>
@@ -249,8 +255,9 @@
                       <ul class="dropdown-menu">
                         <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
                         <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                        <hr>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       </ul>
                     </div>
             </div>
@@ -258,13 +265,13 @@
               <div class="col-xs-1 rowcheck">
                     <input type="checkbox" class="rowselection"></input>
                   </div>
-                  <div class="overlayimage col-xs-2">
+                  <div class="overlayimage col-xs-10 col-sm-10 col-md-1 col-lg-1">
                     <img class="group list-group-image" src="img/flowers.jpg" alt="" />
                     <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                     <div class="videolength">1:25</div>
 
                   </div>
-                    <div class=" col-xs-7 caption">
+                    <div class="col-xs-12 col-sm-12 col-md-7 caption">
                         <h4 class="group inner list-group-item-heading">
                           Submission 2
                         </h4>
@@ -283,8 +290,9 @@
                       <ul class="dropdown-menu">
                         <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
                         <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                        <hr>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       </ul>
                     </div>
             </div>
@@ -292,13 +300,13 @@
               <div class="col-xs-1 rowcheck">
                     <input type="checkbox" class="rowselection"></input>
                   </div>
-                  <div class="overlayimage col-xs-2">
+                  <div class="overlayimage col-xs-10 col-sm-10 col-md-1 col-lg-1">
                     <img class="group list-group-image" src="img/flowers.jpg" alt="" />
                     <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                     <div class="videolength">1:25</div>
 
                   </div>
-                    <div class=" col-xs-7 caption">
+                    <div class=" col-xs-12 col-sm-12 col-md-7 caption">
                         <h4 class="group inner list-group-item-heading">
                           Submission 3
                         </h4>
@@ -317,8 +325,9 @@
                       <ul class="dropdown-menu">
                         <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
                         <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                        <hr>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       </ul>
                     </div>
             </div>
@@ -326,13 +335,13 @@
               <div class="col-xs-1 rowcheck">
                     <input type="checkbox" class="rowselection"></input>
                   </div>
-                  <div class="overlayimage col-xs-2">
+                  <div class="overlayimage col-xs-10 col-sm-10 col-md-1 col-lg-1">
                     <img class="group list-group-image" src="img/flowers.jpg" alt="" />
                     <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                     <div class="videolength">1:25</div>
 
                   </div>
-                    <div class=" col-xs-7 caption">
+                    <div class=" col-xs-12 col-sm-12 col-md-7 caption">
                         <h4 class="group inner list-group-item-heading">
                           Submission 4
                         </h4>
@@ -354,8 +363,9 @@
                       <ul class="dropdown-menu">
                         <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
                         <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                        <hr>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       </ul>
                     </div>
             </div>
@@ -363,13 +373,13 @@
               <div class="col-xs-1 rowcheck">
                     <input type="checkbox" class="rowselection"></input>
                   </div>
-                  <div class="overlayimage col-xs-2">
+                  <div class="overlayimage col-xs-10 col-sm-10 col-md-1 col-lg-1">
                     <img class="group list-group-image" src="img/flowers.jpg" alt="" />
                     <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                     <div class="videolength">1:25</div>
 
                   </div>
-                    <div class=" col-xs-7 caption">
+                    <div class=" col-xs-12 col-sm-12 col-md-7 caption">
                         <h4 class="group inner list-group-item-heading">
                           Submission 5
                         </h4>
@@ -388,8 +398,9 @@
                       <ul class="dropdown-menu">
                         <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
                         <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                        <hr>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       </ul>
                     </div>
             </div>
@@ -406,13 +417,13 @@
               <div class="col-xs-1 rowcheck">
                     <input type="checkbox" class="rowselection"></input>
                   </div>
-                  <div class="overlayimage col-xs-2">
+                  <div class="overlayimage col-xs-10 col-sm-10 col-md-1 col-lg-1">
                     <img class="group list-group-image" src="img/flowers.jpg" alt="" />
                     <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                     <div class="videolength">1:25</div>
 
                   </div>
-                    <div class=" col-xs-7 caption">
+                    <div class=" col-xs-12 col-sm-12 col-md-7 caption">
                         <h4 class="group inner list-group-item-heading">
                           Public Speaking
                         </h4>
@@ -428,11 +439,12 @@
                     </div>
                     <div class="col-xs-1 dropdown">
                       <img class="dropdown-toggle" data-toggle="dropdown" src="img/ellipsis.jpg" width="20px"></img>
-                      <ul class="dropdown-menu">
+                     <ul class="dropdown-menu">
                         <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
                         <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                        <hr>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       </ul>
                     </div>
             </div>
@@ -440,13 +452,13 @@
               <div class="col-xs-1 rowcheck">
                     <input type="checkbox" class="rowselection"></input>
                   </div>
-                  <div class="overlayimage col-xs-2">
+                  <div class="overlayimage col-xs-10 col-sm-10 col-md-1 col-lg-1">
                     <img class="group list-group-image" src="img/flowers.jpg" alt="" />
                     <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                     <div class="videolength">1:25</div>
 
                   </div>
-                    <div class=" col-xs-7 caption">
+                    <div class=" col-xs-12 col-sm-12 col-md-7 caption">
                         <h4 class="group inner list-group-item-heading">
                           Submission 1
                         </h4>
@@ -465,8 +477,9 @@
                       <ul class="dropdown-menu">
                         <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
                         <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                        <hr>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       </ul>
                     </div>
             </div>
@@ -474,13 +487,13 @@
               <div class="col-xs-1 rowcheck">
                     <input type="checkbox" class="rowselection"></input>
                   </div>
-                  <div class="overlayimage col-xs-2">
+                  <div class="overlayimage col-xs-10 col-sm-10 col-md-1 col-lg-1">
                     <img class="group list-group-image" src="img/flowers.jpg" alt="" />
                     <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                     <div class="videolength">1:25</div>
 
                   </div>
-                    <div class=" col-xs-7 caption">
+                    <div class=" col-xs-12 col-sm-12 col-md-7 caption">
                         <h4 class="group inner list-group-item-heading">
                           Sumbission 2
                         </h4>
@@ -499,8 +512,9 @@
                       <ul class="dropdown-menu">
                         <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
                         <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                        <hr>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       </ul>
                     </div>
             </div>
@@ -508,13 +522,13 @@
               <div class="col-xs-1 rowcheck">
                     <input type="checkbox" class="rowselection"></input>
                   </div>
-                  <div class="overlayimage col-xs-2">
+                  <div class="overlayimage col-xs-10 col-sm-10 col-md-1 col-lg-1">
                     <img class="group list-group-image" src="img/flowers.jpg" alt="" />
                     <div class="overlay"><i class="fa fa-play-circle-o fa-3x" aria-hidden="true"></i></div>
                     <div class="videolength">1:25</div>
 
                   </div>
-                    <div class=" col-xs-7 caption">
+                    <div class=" col-xs-12 col-sm-12 col-md-7 caption">
                         <h4 class="group inner list-group-item-heading">
                           Sumbission 3
                         </h4>
@@ -533,8 +547,9 @@
                       <ul class="dropdown-menu">
                         <li data-toggle="modal" data-target="#publishModal"><a href="#"><img src="img/publish.jpg" height="15px"></img>Publish to Course Folder</a></li>
                         <li class="markasnew"><a href="#"><img src="img/markasnew.jpg" height="15px"></img><span class="markasnewtext">Make as New</span></a></li>
-                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                         <li><a href="#" data-toggle="modal" data-target="#deleteModal"><img src="img/delete.jpg" height="15px"></img>Delete Asset</a></li>
+                        <hr>
+                        <li><a href="#"><img src="img/download.jpg" height="15px"></img>Download</a></li>
                       </ul>
                     </div>
             </div>

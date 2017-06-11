@@ -13,42 +13,49 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
         <script src="js/main.js"></script>
+
     </head>
     <body>
-<div class="single-course-wrapper">
+ 
       <div class="course-header">
         <div class="row">
-          <div class="col-md-offset-2 col-md-8 headerText">
+          <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 col-xs-offset-0 col-xs-10 headerText">
             Arts & Media 101 - INTRODUCTION TO FILMMAKING
           </div>
-          <div class="col-md-offset-1 col-md-1 headerText">
+          <div class="col-md-offset-1 col-md-1 col-sm-offset-0 col-sm-1 col-xs-offset-0 col-xs-1 nopadding headerText">
             <a href="settings.html"><img src="img/cog.svg" height="25px"></a>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-offset-3 nopadding col-md-6 text-center headerDescription">
+          <div class="col-md-offset-2 nopadding col-md-8 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10 text-center headerDescription">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
           </div>
           <div class="col-md-1 nopadding headerDescriptionToggle text-left">
             <i>...
-            <span class="tooltiptext tooltipdescription">Click to Expand Description</span>
+            <i class="tooltiptext tooltipdescription">Click to Expand Description</i>
           </i>
           </div>
         </div>
       </div>
-      <nav class="navbar">
-        <div class="container-fluid">
+      <nav class="navbar navbar-toggleable-sm">
+       
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarContent">
+        <span class="glyphicon glyphicon-menu-hamburger"></span>
+      </button>
+
+       <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="nav navbar-nav">
             <li class="activeitem"><a href="#"><div class="navbar-icon pnp"></div>Pick-n-Play</a></li>
             <li><a href="#"><div class="navbar-icon media-manager"></div>MediaManager</a></li>
             <li><a href="mediainbox.html"><div class="navbar-icon media-inbox"></div> Media Inbox <span class="newmessage"> (4 New) </span> </a> </li>
+            <li><a href="mediainbox-empty.html"><div class="navbar-icon media-inbox"></div> Media Inbox</a> </li>
             <li><a href="#"><div class="navbar-icon analytics"></div> Analytics</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -59,8 +66,8 @@
 
 
       <div class="container">
-        <div id="control-panel" class="row">
-          <div class="col-md-6 vcenter"><h5 class="course-breadcrumb"><a href="#">Arts & Media 101 - INTRODUCTION TO FILMMAKING </a><i class="fa fa-caret-down" aria-hidden="true"
+        <div id="control-panel" class="">
+          <div class="col-md-6 col-sm-6 col-xs-12 vcenter"><h5 class="course-breadcrumb"><a href="#">Arts & Media 101 - INTRODUCTION TO FILMMAKING </a><i class="fa fa-caret-down" aria-hidden="true"
             tabindex="0"
                role="button"
                data-html="true"
@@ -104,13 +111,13 @@
             >
           </i>
             </h5></div>
-          <div class="col-md-6 vcenter text-right searchfilter">
+          <div class="col-md-6 col-sm-6 col-xs-12 vcenter text-right searchfilter">
             <button class="btn button-light navbar-btn" id="filtertoggle"> <span class="filtertext">Filter / Sort</span> <i class="fa fa-plus standardcolor" aria-hidden="true"></i></button>
             <input type="text" class="searchbox" id="searchbox" placeholder="Search Course Folder"></input>
             <span class="cancelsearch"> Cancel </span>
-            <i class="fa fa-search searchicon" aria-hidden="true"></i>
-            <i class="fa fa-th listgridactive view-toggle" id="grid" aria-hidden="true"><span class="tooltiptext">Gallery View</span></i>
-            <i class="fa fa-list-ul view-toggle" id="list" aria-hidden="true"><span class="tooltiptext">List View</span> </i>
+            <i class="fa fa-search icon-tooltip searchicon grey" aria-hidden="true"><span class="tooltiptext">Search</span></i>
+            <i class="fa fa-th icon-tooltip listgridactive grey" id="grid" aria-hidden="true"><span class="tooltiptext">Gallery View</span></i>
+            <i class="fa fa-list-ul icon-tooltip grey" id="list" aria-hidden="true"><span class="tooltiptext">List View</span> </i>
           </div>
         </div>
 
@@ -182,15 +189,15 @@
         <div id="assets" class="row list-group">
           <div class="item col-xs-12 col-sm-12 col-md-12 col-lg-12 featureditem asset-card vcenter">
 
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 overlayimage">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 overlayimage">
                   <img class="group list-group-image"  src="img/flowers.jpg" alt="" />
                   <div class="overlay"><i class="fa fa-play-circle-o fa-4x" aria-hidden="true"></i></div>
                   <div class="videolength">3:54</div>
 
                 </div>
-                  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 caption">
+                  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 caption">
                       <h4 class="group inner list-group-item-heading featureditem">
-                          <i class="asset-type-icon video"> <span class="tooltiptext">Video</span> </i> <div class="asset-title video">Demo Video</div> <i class="fa fa-star featured" aria-hidden="true"> <span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon icon-tooltip video"> <span class="tooltiptext">Video</span> </i> <div class="asset-title icon-tooltip video">Demo Video</div> <i class="fa fa-star icon-tooltip featured" aria-hidden="true"> <span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner featureditem-text align-middle">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -201,15 +208,16 @@
                           </div>
                   </div>
           </div>
-          <div class="item  col-xs-12 col-sm-3 col-md-3 col-lg-3">
+          <div class="item col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <div class="asset-card vcenter">
-                <a href="subfolder.html"><div class="overlayimage">
+                <a href="subfolder.html">
+                <div class="overlayimage">
                   <div class="group list-group-image default subfolder"></div>
                   </div></a>
 
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="asset-type-icon folder"> <span class="tooltiptext">Folder</span> </i> <div class="asset-title">Fall 2016 Week 1 </div>
+                          <i class="asset-type-icon icon-tooltip folder"> <span class="tooltiptext">Folder</span> </i> <div class="asset-title">Fall 2016 Week 1 </div>
                       </h4>
                       <p class="group inner list-group-item-text align-middle">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -234,7 +242,7 @@
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="asset-type-icon video"> <span class="tooltiptext">Video</span> </i> <div class="asset-title">Fall 2016 Week 2 with a very long name</div> <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon icon-tooltip video"> <span class="tooltiptext">Video</span> </i> <div class="asset-title">Fall 2016 Week 2 with a very long name</div> <i class="fa fa-star icon-tooltip" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -261,7 +269,7 @@
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> <div class="asset-title">Webinar Transcript</div> <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon icon-tooltip doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> <div class="asset-title">Webinar Transcript</div> <i class="fa fa-star icon-tooltip" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -290,7 +298,7 @@
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="asset-type-icon audio" aria-hidden="true"> <span class="tooltiptext">Audio</span> </i> <div class="asset-title">Webinar Recording</div> <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon icon-tooltip audio" aria-hidden="true"> <span class="tooltiptext">Audio</span> </i> <div class="asset-title">Webinar Recording</div> <i class="fa fa-star icon-tooltip" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -317,7 +325,7 @@
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="asset-type-icon doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> <div class="asset-title">Week 1 Syllabus</div> <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon icon-tooltip doc" aria-hidden="true"> <span class="tooltiptext">Document</span> </i> <div class="asset-title">Week 1 Syllabus</div> <i class="fa fa-star icon-tooltip" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -346,7 +354,7 @@
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="asset-type-icon video" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> <div class="asset-title">Fall 2016 Week 3</div> <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <i class="asset-type-icon icon-tooltip video" aria-hidden="true"> <span class="tooltiptext">Video</span> </i> <div class="asset-title">Fall 2016 Week 3</div> <i class="fa fa-star icon-tooltip" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -374,10 +382,10 @@
                 </div>
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <i class="asset-type-icon zip" aria-hidden="true">
+                          <i class="asset-type-icon icon-tooltip zip" aria-hidden="true">
                             <span class="tooltiptext">Video</span>
                           </i>
-                          <div class="asset-title">Fall 2016 Week 4</div> <i class="fa fa-star" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
+                          <div class="asset-title">Fall 2016 Week 4</div> <i class="fa fa-star icon-tooltip" aria-hidden="true"><span class="tooltiptext favorite">Favorite</span></i>
                       </h4>
                       <p class="group inner list-group-item-text">
                           This is a simple description of the video that is too long and extends past the second line</p>
@@ -407,7 +415,6 @@
           </ul>
         </div>
       </div>
-</div>
 
   </body>
 </html>
