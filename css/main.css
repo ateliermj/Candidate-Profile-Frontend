@@ -333,6 +333,15 @@ p.group.inner.list-group-item-text
     padding-top: 1px;
   }
 
+  .list-group-item-heading {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    height: 1.2em;
+  }
+
   .list-group-item .fa-star {
     margin-top: -2em;
   }
@@ -4886,12 +4895,14 @@ fieldset.file-fields .input-group.captioning {
 @media (max-width: 992px) {
   .container {
     width: 100%;
+    padding: 0px !important;
   }
 
   div.mediainbox .dropdown {
   left: 90%;
     position: absolute;
 }
+
 }
 
 @media (max-width: 768px) { 
@@ -4921,5 +4932,9 @@ div.item.mediainbox .overlayimage{
   width: 70%;
     height: auto;
     margin-bottom: 10px;
+}
+
+.row  {
+  margin: 0px !important;
 }
 }
