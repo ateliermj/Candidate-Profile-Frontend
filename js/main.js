@@ -102,13 +102,11 @@ $( document ).ready(function() {
 
     if($(this).hasClass("activeSort")){
       sortby = '';
-      console.log(sortby);
       $(this).removeClass("activeSort");
     }else{
       $('.sortby').removeClass("activeSort");
       $(this).addClass('activeSort');
       sortby = $(this).text();
-      console.log(sortby);
     }
 
   });
@@ -117,7 +115,6 @@ $( document ).ready(function() {
   $( '.applyfilters' ).click(function() {
     toggleFilter();
     var totalfilters = $('input[name="filterchecks"]:checked').length;
-    console.log(sortby);
     if(totalfilters > 1){
       $('.filtertext').html('<b>' + totalfilters + ' Filters </b>/ Sort By <b>' +sortby + '</b>');
     }else if(totalfilters == '1'){
@@ -311,7 +308,6 @@ function resetFilter() {
   })
 
   var sortby = '';
-  console.log(sortby);
 
   toggleFilter();
     $('.filtertext').html( 'Filter / Sort By');
