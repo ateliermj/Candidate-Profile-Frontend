@@ -96,7 +96,7 @@ $( document ).ready(function() {
 
 
 
-  var sortby = '';
+  sortby = '';
 
   $( '.sortby' ).click(function() {
 
@@ -107,6 +107,7 @@ $( document ).ready(function() {
       $('.sortby').removeClass("activeSort");
       $(this).addClass('activeSort');
       sortby = $(this).text();
+
     }
 
   });
@@ -114,13 +115,15 @@ $( document ).ready(function() {
 
   $( '.applyfilters' ).click(function() {
     toggleFilter();
+
     var totalfilters = $('input[name="filterchecks"]:checked').length;
+
     if(totalfilters > 1){
-      $('.filtertext').html('<b>' + totalfilters + ' Filters </b>/ Sort By <b>' +sortby + '</b>');
+      $('.filtertext').html('<b>' + totalfilters + ' Filters </b>/ Sort By <b>' + sortby + '</b>');
     }else if(totalfilters == '1'){
-      $('.filtertext').html('<b>' + totalfilters + ' Filter </b>/ Sort By <b>' +sortby + '</b>');
+      $('.filtertext').html('<b>' + totalfilters + ' Filter </b>/ Sort By <b>' + sortby + '</b>');
     }else{
-      $('.filtertext').html( 'Filter / Sort By <b>' +sortby + '</b>');
+      $('.filtertext').html( 'Filter / Sort By <b>' + sortby + '</b>');
     }
 
     });
@@ -306,11 +309,9 @@ function resetFilter() {
   $('.activeSort').each(function() {
     $(this).removeClass('activeSort');
   })
+  $('.filtertext').html( 'Filter / Sort By');
 
-  var sortby = '';
-
-  toggleFilter();
-    $('.filtertext').html( 'Filter / Sort By');
+  sortby = '';
 
 
 }

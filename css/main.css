@@ -333,14 +333,14 @@ p.group.inner.list-group-item-text
     padding-top: 1px;
   }
 
-  .list-group-item-heading {
+  /*.list-group-item-heading {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     height: 1.2em;
-  }
+  }*/
 
   .list-group-item .fa-star {
     margin-top: -2em;
@@ -4905,7 +4905,7 @@ fieldset.file-fields .input-group.captioning {
 
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
   .headerText {
     font-size: 16px;
   }
