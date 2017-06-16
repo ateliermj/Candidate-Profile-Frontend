@@ -335,11 +335,14 @@ p.group.inner.list-group-item-text
 
   .mediainbox-heading {
     overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
-    display: -webkit-box;
+    display: inline-block;
+    /* display: -webkit-box; */
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     height: 1.2em;
+    max-width: calc(100% - 35px);
   }
 
   .list-group-item .fa-star {
