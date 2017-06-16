@@ -939,8 +939,10 @@ span.fa-caret-right {
   background-size: auto 100%;
 }
 .asset-type-icon.pub {
-  background: url('../img/asset-type-icon-sprite.png') -101% 0px;
-  background-size: auto 100%;
+  background: url('../img/icon-published.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  vertical-align: middle;
 }
 
 .asset-type-icon.zip {
