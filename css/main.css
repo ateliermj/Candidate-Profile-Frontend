@@ -945,7 +945,6 @@ span.fa-caret-right {
   background: url('../img/icon-published.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
-  vertical-align: middle;
 }
 
 .asset-type-icon.zip {
