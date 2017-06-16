@@ -9,6 +9,13 @@ $( document ).ready(function() {
     $(this).hide();
   });
 
+  selections=0;
+  if(selections > 0){
+    $('.multiplefileoptions').show();
+  }else{
+    $('.multiplefileoptions').hide();
+}
+
   console.log('initialised');
 
     $("[data-toggle=popover]").popover();
@@ -71,7 +78,15 @@ $( document ).ready(function() {
 
     $('.rowselection').click(function(event){
       $(this).parent().parent().toggleClass('rowselected');
+      selections = $('.rowselected').length;
+      if(selections > 0){
+        $('.multiplefileoptions').show();
+        checkMultipleSelect();
+      }else{
+        $('.multiplefileoptions').hide();
+    }
     });
+
 
 
         //select all checkboxes
@@ -79,21 +94,55 @@ $( document ).ready(function() {
         if ($('.checkall').is(':checked')) {
           console.log('checked');
           $(".checkall").prop('checked', true);
-
           $(".rowselection").prop('checked', true); //change all ".checkbox" checked status
           $(".rowselection").parent().parent().addClass('rowselected');
+          selections = $('.rowselected').length;
+          console.log(selections);
+
+          if(selections > 0){
+            $('.multiplefileoptions').show();
+            checkMultipleSelect();
+          }else{
+            $('.multiplefileoptions').hide();
+          }
+
         }else{
           console.log('unchecked');
           $(".checkall").prop('checked', false);
           $(".rowselection").prop('checked', false); //change all ".checkbox" checked status
           $(".rowselection").parent().parent().removeClass('rowselected');
+          selections = $('.rowselected').length;
+          console.log(selections);
+          if(selections > 0){
+            $('.multiplefileoptions').show();
+            checkMultipleSelect();
+          }else{
+            $('.multiplefileoptions').hide();
+          }
         }
-
-
         });
 
 
+function checkMultipleSelect(){
+  numberofnew = 0;
+  $(".rowselected").each(function() {
+    if( $(this).hasClass('newasset') ){
+      numberofnew = numberofnew +1;
+      console.log(numberofnew);
+    }
+    else{
+      console.log(numberofnew);
 
+    }
+  });
+  if( numberofnew > 0 ){
+    $('.multipleFileOptionsMarkNew').addClass('greyedout');
+  }else{
+    $('.multipleFileOptionsMarkNew').removeClass('greyedout');
+
+  }
+
+}
 
 
   sortby = '';
@@ -119,11 +168,14 @@ $( document ).ready(function() {
     var totalfilters = $('input[name="filterchecks"]:checked').length;
 
     if(totalfilters > 1){
-      $('.filtertext').html('<b>' + totalfilters + ' Filters </b>/ Sort By <b>' + sortby + '</b>');
+      $('.filtertext').html('<b>' + totalfilters + ' Filters </b>/ Sort By <b>' + sortby + '</b> <a href="#" class="clearFilter" onclick="clearFilter()">clear</a> ');
     }else if(totalfilters == '1'){
-      $('.filtertext').html('<b>' + totalfilters + ' Filter </b>/ Sort By <b>' + sortby + '</b>');
+      $('.filtertext').html('<b>' + totalfilters + ' Filter </b>/ Sort By <b>' + sortby + '</b> <a href="#" class="clearFilter" onclick="clearFilter()">clear</a> ');
+
+    }else if( (totalfilters == '0') && (sortby == '')){
+      $('.filtertext').html(' Filter / Sort By ');
     }else{
-      $('.filtertext').html( 'Filter / Sort By <b>' + sortby + '</b>');
+      $('.filtertext').html( 'Filter / Sort By <b>' + sortby + '</b> <a href="#" class="clearFilter" onclick="clearFilter()">clear</a>');
     }
 
     });
@@ -149,10 +201,13 @@ $( document ).ready(function() {
 
 
   $( '.markasnew' ).click(function() {
+    if($(this).children('a').hasClass('alreadyNew')){
 
-    $(this).parents('.mediainbox').toggleClass('newasset');
-    resetMarkNew();
-    return false;
+    }else{
+      $(this).parents('.mediainbox').toggleClass('newasset');
+      resetMarkNew();
+      return false;
+    }
   });
 
 
@@ -290,13 +345,13 @@ $('.file-title .fa').click(function() {
 function resetMarkNew() {
   $('.markasnew').each(function(){
   if( $(this).parents('.mediainbox').hasClass('newasset')) {
-    $(this).children('a').children('.markasnewtext').text('Unmark As New');
+    //$(this).children('a').children('.markasnewtext').text('Unmark As New');
+    $(this).children('a').addClass('alreadyNew');
     return;
-  } else {
+  }else{
     $(this).children('a').children('.markasnewtext').text('Mark As New');
     return
   }
-
   });
 }
 
@@ -312,8 +367,20 @@ function resetFilter() {
   $('.filtertext').html( 'Filter / Sort By');
 
   sortby = '';
+}
 
+function clearFilter() {
+  $('input[name="filterchecks"]:checked').each(function() {
+    $(this).trigger('click');
+  });
 
+  $('.activeSort').each(function() {
+    $(this).removeClass('activeSort');
+  })
+  $('.filtertext').html( 'Filter / Sort By');
+
+  sortby = '';
+  toggleFilter()
 }
 
 function toggleFilter() {
