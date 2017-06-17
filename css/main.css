@@ -42,24 +42,35 @@ a:hover {
   font-size: 22px;
 }
 .headerDescription{
-  display: block;
+ display: block;
   text-align: center;
   margin: 10px auto 0;
   color: #fff;
   font-size: 16px;
   line-height: 22px;
   font-weight: 200;
-  overflow: hidden;
 }
 .collapseddescription{
-  height: 22px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  /* display: -webkit-box; */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  height: 1.2em;
 }
-
+.descriptiontoggled{
+  display: none;
+}
+.headerDescriptionToggle:nth-child(2){
+  margin-top: 10px;
+  margin-left: 5px;
+}
 .headerDescriptionToggle i{
   cursor: pointer;
   position: relative;
   vertical-align: bottom;
-  margin-top: 10px;
   color: white;
 }
 .headerDescriptionToggle:hover{

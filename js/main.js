@@ -6,7 +6,8 @@ $( document ).ready(function() {
   }
   $('.headerDescriptionToggle').click(function(){
     $('.headerDescription').toggleClass('collapseddescription');
-    $(this).hide();
+    $('.headerDescriptionToggle').toggleClass('descriptiontoggled');
+    //$(this).hide();
   });
 
   selections=0;
