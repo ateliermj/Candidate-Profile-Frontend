@@ -671,6 +671,12 @@ button.btn-primary.active:hover {
   background-size: auto 100%;
 }
 
+.list-group-image.default.image {
+  background: url('../img/asset-type-sprite.png') -650px 0px;
+  background-size: auto 100%;
+    opacity: 0.5;
+}
+
 .videolength{
   background: rgba(0, 0, 0, 0.5);
   color: white;
@@ -938,7 +944,7 @@ span.fa-caret-right {
 }
 
 .asset-type-icon.doc {
-  background: url('../img/asset-type-icon-sprite.png') -101% 0px;
+  background: url('../img/asset-type-icon-sprite.png') -99% 0px;
   background-size: auto 100%;
 }
 .asset-type-icon.pub {
@@ -948,20 +954,24 @@ span.fa-caret-right {
 }
 
 .asset-type-icon.zip {
-  background: url('../img/asset-type-icon-sprite.png') -203% 0px;
+  background: url('../img/asset-type-icon-sprite.png') -200% 0px;
   background-size: auto 100%;
 }
 
 .asset-type-icon.video {
-  background: url('../img/asset-type-icon-sprite.png') -305% 0px;
+  background: url('../img/asset-type-icon-sprite.png') -300% 0px;
   background-size: auto 100%;
 }
 
 .asset-type-icon.audio {
-  background: url('../img/asset-type-icon-sprite.png') -405% 0px;
+  background: url('../img/asset-type-icon-sprite.png') -399% 0px;
   background-size: auto 100%;
 }
 
+.asset-type-icon.image {
+  background: url('../img/asset-type-icon-sprite.png') -500% 0px;
+  background-size: auto 100%;
+}
 
 .featureditem .asset-type-icon {
   width: 25px;
