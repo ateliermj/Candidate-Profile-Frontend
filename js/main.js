@@ -1,5 +1,7 @@
 $( document ).ready(function() {
 
+  $(".savechanges").hide();
+
   var height = $('.headerDescription').height();
   if(height > 22){
     $('.headerDescription').toggleClass('collapseddescription');
@@ -71,8 +73,8 @@ $( document ).ready(function() {
 
     $('.togglefolder').click(function(event){
       event.preventDefault();
-      $(this).children('i').toggleClass('fa-caret-down');
-      $(this).children('i').toggleClass('fa-caret-right');
+      $(this).children('i').toggleClass('fa fa-minus-square-o');
+      $(this).children('i').toggleClass('fa fa-plus-square-o');
       $(this).parent().next(".list-group").toggleClass('collapsedsection');
     });
 
@@ -256,6 +258,10 @@ function checkMultipleSelect(){
       console.log('folder');
   });
 
+
+  $( '.publish' ).click(function() {
+    $('.savechanges').show();
+  });
 
 
 

@@ -76,6 +76,11 @@ a:hover {
 .headerDescriptionToggle:hover{
   text-decoration: underline;
 }
+.descriptiontoggletext{
+  font-size: 14px;
+  text-decoration: underline;
+  font-weight: 200;
+}
 .largeItem .listImage {
   width: 350px;
   height: 300px;
@@ -220,6 +225,17 @@ i .tooltiptext {
     left: -50px;
     opacity: 0;
     transition: opacity 0.3s;
+}
+i .tooltiptext.published {
+    background-color: #009bbb;
+}
+i .tooltiptext.settingstooltip {
+    background-color: white;
+    color:black;
+    font-weight: 200;
+    left: -100px;
+    bottom: -150%;
+
 }
 
 i .tooltiptext.favorite{
@@ -1506,6 +1522,16 @@ h5.course-breadcrumb{
   color:#009bbb;
 }
 
+.alert.oversizefile{
+  border: 1px solid #cfcfcf;
+  border-radius: 0px;
+}
+.alert.oversizefile i{
+  color: red;
+  padding: 0 10px;
+  font-size: 20px;
+}
+
 
 /* SETTINGS STYLES  */
 .settingsSection{
@@ -1584,7 +1610,12 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
+.savechanges{
+  margin: 20px 0 0 0;
+  color: #29aaaa;
+  font-style: italic;
+  font-size: 16px;
+}
 
 
 /* UPLOAD STYLES  */
