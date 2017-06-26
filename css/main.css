@@ -50,12 +50,20 @@ a:hover {
   line-height: 22px;
   font-weight: 200;
 }
+
+.headerDescription.settings a{
+  color: #fff;
+}
+
+.headerDescription.settings a:hover{
+  text-decoration: underline !important;
+}
+
 .collapseddescription{
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: inline-block;
-  /* display: -webkit-box; */
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   height: 1.2em;
@@ -77,9 +85,10 @@ a:hover {
   text-decoration: underline;
 }
 .descriptiontoggletext{
-  font-size: 14px;
+  font-size: 13px;
+  font-style: normal;
   text-decoration: underline;
-  font-weight: 200;
+  font-weight: 400;
 }
 .largeItem .listImage {
   width: 350px;
@@ -225,14 +234,16 @@ i .tooltiptext {
     left: -50px;
     opacity: 0;
     transition: opacity 0.3s;
+    cursor: pointer;
 }
+
 i .tooltiptext.published {
     background-color: #009bbb;
 }
 i .tooltiptext.settingstooltip {
     background-color: white;
     color:black;
-    font-weight: 200;
+    font-weight: 400;
     left: -100px;
     bottom: -150%;
 
@@ -320,7 +331,7 @@ i:hover {
 }
 p.group.inner.list-group-item-text
 {
-  margin-bottom: 11px;
+  margin-bottom: 15px;
       overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -341,11 +352,12 @@ p.group.inner.list-group-item-text
 .grid-group-item .asset-title {
     overflow: hidden;
     text-overflow: ellipsis;
+    word-wrap: break-word;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     height: 1.2em;
-    width: 80%;
+    width: 75%;
     padding-top: 1px;
   }
 
@@ -428,6 +440,19 @@ p.group.inner.list-group-item-text
   color: #009bbb;
 }
 
+.btn:active, .btn:focus {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.btn-default.filterchecks:hover, .btn-default.sortby:hover, .btn-default.sortby:active, .btn-default.sortby:focus {
+  color: #009bbb !important;
+  background-color: #fff !important;
+}
+
 .btn.btn-default {
   color: #1d1d1b;
   border: none;
@@ -455,6 +480,7 @@ p.group.inner.list-group-item-text
   text-align: left;
   margin: 3px 3px;
 }
+
 button.btn-primary.active:hover {
   background-color: #f9f9f9 !important;
   color: #009bbb;
@@ -959,6 +985,7 @@ span.fa-caret-right {
   float: left;
   margin-right: 5px;
   opacity: 0.5;
+  cursor: pointer;
 }
 .nofloat{
   float:none;
@@ -1536,6 +1563,7 @@ h5.course-breadcrumb{
 /* SETTINGS STYLES  */
 .settingsSection{
   margin: 20px 0;
+  margin-bottom: 40px;
 }
 .charactercount{
   font-size: 12px;
@@ -3399,19 +3427,7 @@ li.section {
     font-weight: bold;
     font-size: 1.2em;
 }
-.btn.btn-primary:hover {
 
-}
-
-.btn.btn-default:hover {
-    background-color: #cccccc !important;
-    color: #fff !important;
-}
-
-.btn.btn-primary:active {
-   /* background: #3b9c3a;
-    border: 1px solid #42a141;*/
-}
 .btn.btn-small {
     padding: 4px 10px;
     line-height: 1em;
@@ -4997,6 +5013,10 @@ fieldset.file-fields .input-group.captioning {
 
   .headerDescription {
     font-size: 14px;
+  }
+
+  .headerDescriptionToggle {
+    text-align: center !important;
   }
 
 i .tooltiptext {

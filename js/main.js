@@ -129,13 +129,10 @@ $( document ).ready(function() {
 function checkMultipleSelect(){
   numberofnew = 0;
   $(".rowselected").each(function() {
-    if( $(this).hasClass('newasset') ){
-      numberofnew = numberofnew +1;
-      console.log(numberofnew);
+    if($(this).hasClass('newasset') ){
+      numberofnew +=1;
     }
     else{
-      console.log(numberofnew);
-
     }
   });
   if( numberofnew > 0 ){
@@ -171,14 +168,14 @@ function checkMultipleSelect(){
     var totalfilters = $('input[name="filterchecks"]:checked').length;
 
     if(totalfilters > 1){
-      $('.filtertext').html('<b>' + totalfilters + ' Filters </b>/ Sort By <b>' + sortby + '</b> <a href="#" class="clearFilter" onclick="clearFilter()">clear</a> ');
+      $('.filtertext').html('<b>' + totalfilters + ' Filters </b>/ Sort By <b>' + sortby + '</b> <a href="#" class="clearFilter" onclick="clearFilter()">Clear</a> ');
     }else if(totalfilters == '1'){
-      $('.filtertext').html('<b>' + totalfilters + ' Filter </b>/ Sort By <b>' + sortby + '</b> <a href="#" class="clearFilter" onclick="clearFilter()">clear</a> ');
+      $('.filtertext').html('<b>' + totalfilters + ' Filter </b>/ Sort By <b>' + sortby + '</b> <a href="#" class="clearFilter" onclick="clearFilter()">Clear</a> ');
 
     }else if( (totalfilters == '0') && (sortby == '')){
       $('.filtertext').html(' Filter / Sort By ');
     }else{
-      $('.filtertext').html( 'Filter / Sort By <b>' + sortby + '</b> <a href="#" class="clearFilter" onclick="clearFilter()">clear</a>');
+      $('.filtertext').html( 'Filter / Sort By <b>' + sortby + '</b> <a href="#" class="clearFilter" onclick="clearFilter()">Clear</a>');
     }
 
     });
