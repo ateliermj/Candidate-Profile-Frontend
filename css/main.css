@@ -106,7 +106,7 @@ a:hover {
 .largeItem .meta{
   font-size: 15px;
 }
-.largeItem .fa-video-camera, .largeItem .fa-star{
+.largeItem .fa-video-camera, .largeItem .fa-star, .largeItem .fa-star-o{
   font-size: 20px;
   line-height: 25px;
 
@@ -182,7 +182,7 @@ i{
   display: inline-block;
   font-size: 17px;
 }
-.fa-video-camera, .fa-folder, .fa-star{
+.fa-video-camera, .fa-folder{
     color: rgba(40,169,169, 0.8);
     line-height: 20px;
     margin: 0 5px;
@@ -194,20 +194,19 @@ i{
   float: right;
 }
 
-.fa-star{
-  color: transparent;
-  -webkit-text-stroke: 1px #ef962b;
+.fa-star, .fa-star-o {
+  color: #ef962b;
   margin-top: -1em;
   float: right;
 }
+
 .fa-star:not(.activestar):hover{
   color: rgba(239, 150, 43, 0.3);
   cursor: pointer;
-  -webkit-text-stroke: 1px #ef962b;
 }
 .activestar{
   color: #ef962b;
-  -webkit-text-stroke: 1px #ef962b;
+
 }
 
 i.icon-tooltip {
@@ -791,8 +790,7 @@ button.btn-primary.active:hover {
 .popover{
   min-width: 200px;
   max-width: 800px !important;
-  width: 500px;
-
+  width: 400px;
   border-radius: 0px !important;
 }
 

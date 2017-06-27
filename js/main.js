@@ -19,8 +19,6 @@ $( document ).ready(function() {
     $('.multiplefileoptions').hide();
 }
 
-  console.log('initialised');
-
     $("[data-toggle=popover]").popover();
     resetMarkNew();
 
@@ -32,7 +30,6 @@ $( document ).ready(function() {
 
         });
     });
-
 
 
     $('#searchbox').keypress(function(event){
@@ -88,7 +85,20 @@ $( document ).ready(function() {
       }else{
         $('.multiplefileoptions').hide();
     }
+
     });
+
+    $('.fa-caret-down').click(function() {
+      var breadcrumb_width = $('.course-breadcrumb').children()[0].offsetWidth;
+      console.log(breadcrumb_width);
+      var caret_width = $('.course-breadcrumb > .fa-caret-down')[0].offsetWidth;
+      console.log(caret_width);
+      var breadcrumb_total_width = breadcrumb_width + caret_width;
+      var popover_width = $('.course-breadcrumb > .popover')[0].offsetWidth;
+      var delta = breadcrumb_total_width - popover_width;
+      $('.course-breadcrumb > .popover')[0].style.left = (delta > 0) ? breadcrumb_total_width/2 + 15 + "px" : "0px !important";
+    $('.course-breadcrumb > .popover > .arrow')[0].style.left = "50%";
+});
 
 
 
@@ -221,7 +231,8 @@ function checkMultipleSelect(){
   });
 
 
-  $( '.fa-star' ).click(function() {
+  $( '.fa-star-o' ).click(function() {
+     $(this).toggleClass('fa-star-o fa-star');
       $(this).toggleClass('activestar');
   });
 
