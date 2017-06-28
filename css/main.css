@@ -160,8 +160,16 @@ a:hover {
   color: #777;
 }
 
-.meta span b {
-  display: inline-block;
+.metadata{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  height: 1.6em;
+  width: 100%;
+  padding-top: 1px;
 }
 
 .grid-group-item .meta span, {

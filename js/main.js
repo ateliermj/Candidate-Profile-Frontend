@@ -2,6 +2,8 @@ $( document ).ready(function() {
 
   $(".savechanges").hide();
 
+
+
   var height = $('.headerDescription').height();
   if(height > 22){
     $('.headerDescription').toggleClass('collapseddescription');
