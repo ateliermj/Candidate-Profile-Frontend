@@ -1732,7 +1732,8 @@ button:focus {
     top: 25px;
 }
 .container {
-    max-width: 1024px;
+    /*max-width: 1024px;*/
+    overflow-x: hidden;
 }
 .more:hover {
     cursor: pointer;

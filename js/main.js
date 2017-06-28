@@ -95,9 +95,12 @@ $( document ).ready(function() {
       console.log(caret_width);
       var breadcrumb_total_width = breadcrumb_width + caret_width;
       var popover_width = $('.course-breadcrumb > .popover')[0].offsetWidth;
+      console.log(popover_width);
       var delta = breadcrumb_total_width - popover_width;
-      $('.course-breadcrumb > .popover')[0].style.left = (delta > 0) ? breadcrumb_total_width/2 + 15 + "px" : "0px !important";
-    $('.course-breadcrumb > .popover > .arrow')[0].style.left = "50%";
+      console.log(delta);
+       console.log(delta > 0);
+       $('.course-breadcrumb > .popover')[0].style.left = (delta > 0) ? (breadcrumb_total_width/2 + 15) + "px": 0 + "px";
+      $('.course-breadcrumb > .popover > .arrow')[0].style.left = (delta > 0) ? "50%" : breadcrumb_total_width + 10 + "px";
 });
 
 
