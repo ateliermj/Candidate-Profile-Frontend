@@ -2,6 +2,15 @@ $( document ).ready(function() {
 
   $(".savechanges").hide();
 
+  $('.metadataaccesses').each(function() {
+    while( $(this).height() > 20 ){
+      accesses = $(this).children().html().slice(0,-4);
+      accesses = accesses + '...'
+      $(this).children().html(accesses)
+    }
+  });
+
+
 
 
   var height = $('.headerDescription').height();
