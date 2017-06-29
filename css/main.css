@@ -172,6 +172,10 @@ a:hover {
   padding-top: 1px;
 }
 
+.metadataaccesses {
+  white-space: nowrap;
+}
+
 .grid-group-item .meta span, {
   display: block;
 }

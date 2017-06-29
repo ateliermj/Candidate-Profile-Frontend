@@ -2,15 +2,11 @@ $( document ).ready(function() {
 
   $(".savechanges").hide();
 
-  $('.metadataaccesses').each(function() {
-    while( $(this).height() > 20 ){
-      accesses = $(this).children().html().slice(0,-4);
-      accesses = accesses + '...'
-      $(this).children().html(accesses)
-    }
-  });
+setAccessesWidth();
 
-
+$( window ).resize(function() {
+  setAccessesWidth();
+});
 
 
   var height = $('.headerDescription').height();
@@ -370,6 +366,18 @@ $('.file-title .fa').click(function() {
 
 
 });
+
+
+function setAccessesWidth() {
+	$('.metadataaccesses').each(function() {
+  	var meta_width = $(this).parent()[0].offsetWidth;
+    while($(this).width() > meta_width ){
+      accesses = $(this).children().html().slice(0,-4);
+      accesses = accesses + '...'
+      $(this).children().html(accesses)
+    }
+  });
+}
 
 function resetMarkNew() {
   $('.markasnew').each(function(){
