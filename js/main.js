@@ -57,6 +57,9 @@ $( window ).resize(function() {
       $('#assets .item').addClass('list-group-item');
       $('#list').addClass('listgridactive');
       $('#grid').removeClass('listgridactive');
+      $('.footer').hide();
+      $('#assets')[0].style.overflow = "scroll";
+      $('#assets').height(320);
     });
 
     $('#grid').click(function(event){
@@ -65,6 +68,8 @@ $( window ).resize(function() {
       $('#assets .item').addClass('grid-group-item');
       $('#grid').addClass('listgridactive');
       $('#list').removeClass('listgridactive');
+      $('.footer').show();
+      $('#assets')[0].style.overflow = "hidden";
     });
 
 
@@ -421,6 +426,7 @@ function clearFilter() {
 }
 
 function toggleFilter() {
-  $('#control-panel').toggleClass('filteractive');
+  // $('#control-panel').toggleClass('filteractive');
   $('.filter').toggleClass('filteractive');
+  $('.filter-overlay').toggleClass('filteractive');
 }
