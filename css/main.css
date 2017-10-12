@@ -4984,7 +4984,9 @@ div.item.mediainbox .overlayimage{
 /* change 09102017 */
 
 .iframe-constraint {
-  height: 580px;
+  height: 700px;
+  min-height: 650px;
+  overflow: scroll;
   /*overflow: hidden;*/
   border: 1px solid #000;
   position: relative;
@@ -4993,7 +4995,7 @@ div.item.mediainbox .overlayimage{
 /* change 09102017: when integrating with iframe, position might need to be fixed, and bottom: 0; */
 .footer {
     position: absolute;
-    bottom: 0;
+    /*bottom: 0;*/
     height: 10%;
     width: 100vw;
     background: #fff;
@@ -5002,16 +5004,36 @@ div.item.mediainbox .overlayimage{
     max-height: 60px;
     z-index: 200;
 }
-
+.footer .pagination{
+  margin: 0;
+  padding: 1.5% 0 0 0;
+}
+.row.footer{
+  height: 10%;
+  min-height: 50px;
+  margin: 0;
+}
+.cardcontainer{
+  height: 50%;
+  overflow: hidden;
+  min-height: 315px;
+}
 .course-header{
   position: relative;
   padding: 2% 0;
   width: 100vw;
   background: #3198cb;
+  height: 30%;
+  min-height: 200px;
 /*  height: 15%;
   min-height: 60px;
   max-height: 100px;
-*/}
+*/
+  /*height: 30%;
+  min-height: 150px;
+  */
+
+}
 
 .headerText{
   display: block;
@@ -5040,10 +5062,15 @@ div.item.mediainbox .overlayimage{
 .navbar.lms {
   margin-bottom: 1%;
   padding: 0 20px;
+  height: 9%;
+  min-height: 55px;
 }
-
+.item.col-xs-12.col-sm-3.col-md-3.col-lg-3.grid-group-item{
+  height: 95%;
+  max-height: 330px;
+}
 .grid-group-item:not(.featureditem) .asset-card {
-  height: 50vh;
+  height: 100%;
 }
 
 .grid-group-item:not(.featureditem) .overlayimage {
@@ -5055,14 +5082,17 @@ div.item.mediainbox .overlayimage{
 #control-panel, .control-panel {
   display: block;
   margin-bottom: 5px;
+  height: 15%;
 }
 
 #control-panel.filteractive{
   /*display: none;*/
 }
-
+#assets{
+  height: 85%;
+}
 .filter{
-   
+
     background-color: #F6FAF9;
     display: none;
 }
@@ -5130,6 +5160,6 @@ div.item.mediainbox .overlayimage{
 }
 
 .row.list-group {
-  overflow: scroll;
-    height: 320px;
+  /*overflow: scroll;*/
+  /*height: 320px;*/
 }
