@@ -1,6 +1,32 @@
 $( document ).ready(function() {
 
-  $(".savechanges").hide();
+$(window).load(function() {
+  extrarow = $('.extrarow');
+  extrarow.wrap('<div class="extrarow"></div>');
+  extrarow = $('.extrarow').html();
+  $('.extrarow').remove();
+
+    availableassetspace = $('.cardcontainer').height() - ($('#control-panel').height() + $('.footer').height());
+  assetheight = $('.grid-group-item').height();
+
+
+if(availableassetspace > (2*assetheight)+20){
+  console.log(availableassetspace);
+  console.log(2*assetheight+20);
+
+  rowspacesavailable = (availableassetspace/(assetheight+20)-1);
+  rowspacesavailable = Math.floor(rowspacesavailable);
+
+  console.log(rowspacesavailable);
+    for(var i = 0; i < rowspacesavailable; i++) {
+      $('#assets').append(extrarow);
+      console.log('showing next level');
+    }
+  }
+});
+
+
+$(".savechanges").hide();
 
 setAccessesWidth();
 

@@ -4984,12 +4984,14 @@ div.item.mediainbox .overlayimage{
 /* change 09102017 */
 
 .iframe-constraint {
-  height: 700px;
+  height: 1100px;
   min-height: 300px;
-  overflow: scroll;
-  /*overflow: hidden;*/
+  /*overflow: scroll;*/
+  overflow: hidden;
   border: 1px solid #000;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 /* change 09102017: when integrating with iframe, position might need to be fixed, and bottom: 0; */
@@ -5004,6 +5006,7 @@ div.item.mediainbox .overlayimage{
     max-height: 60px;
     z-index: 200;
 
+
 }
 .footer .pagination{
   margin: 0;
@@ -5017,9 +5020,13 @@ div.item.mediainbox .overlayimage{
   max-height: 70px;
 }
 .cardcontainer{
-  height: 50%;
+  /*height: 50%;*/
   overflow: hidden;
   min-height: 315px;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 .course-header{
   position: relative;
@@ -5074,8 +5081,18 @@ div.item.mediainbox .overlayimage{
   max-height: 65px;
 }
 .item.col-xs-12.col-sm-3.col-md-3.col-lg-3.grid-group-item{
-  height: 95%;
+  height: 300px;
   max-height: 330px;
+}
+/*.item.col-xs-12.col-sm-3.col-md-3.col-lg-3.grid-group-item:nth-child(n+6){
+  margin-top: 20px;
+}*/
+.initialrow{
+  float: left;
+}
+.extrarow{
+  margin-top: 20px;
+  float: left;
 }
 .grid-group-item:not(.featureditem) .asset-card {
   height: 100%;
@@ -5091,6 +5108,7 @@ div.item.mediainbox .overlayimage{
   display: block;
   margin-bottom: 5px;
   height: 15%;
+  max-height: 60px;
 }
 
 #control-panel.filteractive{
