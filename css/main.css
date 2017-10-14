@@ -4984,7 +4984,7 @@ div.item.mediainbox .overlayimage{
 /* change 09102017 */
 
 .iframe-constraint {
-  height: 1100px;
+  height: 3000px;
   min-height: 300px;
   /*overflow: scroll;*/
   overflow: hidden;
@@ -5034,8 +5034,8 @@ div.item.mediainbox .overlayimage{
   width: 100vw;
   background: #3198cb;
   height: 30%;
-  min-height: 200px;
-  max-height: 250px;
+  min-height: 120px;
+  max-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
