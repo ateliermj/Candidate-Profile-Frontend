@@ -5166,7 +5166,8 @@ div.item.mediainbox .overlayimage{
     width: 100%;
     background-color: #fff;
     border: none;
-    margin: 1%;
+    /*LMS fix. 10/16/17*/
+    margin: 1% 0;
 }
 
 
