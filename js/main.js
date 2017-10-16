@@ -85,7 +85,6 @@ $( window ).resize(function() {
       $('#grid').removeClass('listgridactive');
       $('.footer').hide();
       $('#assets')[0].style.overflow = "scroll";
-      $('#assets').height(320);
     });
 
     $('#grid').click(function(event){
