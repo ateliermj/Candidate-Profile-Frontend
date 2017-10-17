@@ -6,7 +6,7 @@ $(window).load(function() {
   extrarow = $('.extrarow').html();
   $('.extrarow').remove();
 
-    availableassetspace = $('.cardcontainer').height() - ($('#control-panel').height() + $('.footer').height());
+  availableassetspace = $('.cardcontainer').height() - ($('#control-panel').height() + $('.footer').height());
   assetheight = $('.grid-group-item').height();
 
 
@@ -20,7 +20,6 @@ if(availableassetspace > (2*assetheight)+20){
   console.log(rowspacesavailable);
     for(var i = 0; i < rowspacesavailable; i++) {
       $('#assets').append(extrarow);
-      console.log('showing next level');
     }
   }
 });

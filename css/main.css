@@ -43,7 +43,7 @@ a:hover {
   display: inline-block;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
-  height: 1.2em;
+  height: 1.5em;
 }
 .descriptiontoggled{
   display: none;
@@ -523,7 +523,6 @@ button.btn-primary.active:hover {
   height: 15px;
   float: left;
   margin-right: 5px;
-  margin-top: 2px;
 }
 
 .navbar-icon.pnp {
@@ -4985,9 +4984,8 @@ div.item.mediainbox .overlayimage{
 
 .iframe-constraint {
 
-  height: 800px;
-  min-height: 300px;
-  /*overflow: scroll;*/
+  height: 1200px;
+  min-height: 600px;
   overflow: hidden;
   border: 1px solid #000;
   position: relative;
@@ -5006,7 +5004,6 @@ div.item.mediainbox .overlayimage{
     min-height: 40px;
     max-height: 60px;
     z-index: 200;
-
 
 }
 .footer .pagination{
@@ -5029,92 +5026,13 @@ div.item.mediainbox .overlayimage{
   flex-direction: column;
   flex: 1 1 auto;
 }
-.course-header{
-  position: relative;
-  padding: 2% 0;
-  width: 100vw;
-  background: #3198cb;
-  height: 30%;
-  min-height: 120px;
-  max-height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-/*  height: 15%;
-  min-height: 60px;
-  max-height: 100px;
-*/
-  /*height: 30%;
-  min-height: 150px;
-  */
 
-}
-
-.headerText{
-  display: block;
-/*  padding-top: 5px;*/
-  text-align: center;
-  margin: 0 auto;
-  color: #fff;
-  font-weight: bold;
-  font-size: 4vh;
-}
-
-.headerDescription{
- display: block;
-  text-align: center;
-  margin: 5px auto 0;
-  color: #fff;
-  font-size: 3vh;
-  line-height: 1.2em;
-  font-weight: 200;
-}
 
 .headerDescriptionToggle:nth-child(2){
   margin-left: 5px;
 }
 
-.navbar.lms {
-  margin-bottom: 1%;
-  padding: 0 20px;
-  height: 9%;
-  min-height: 55px;
-  max-height: 65px;
-}
-.item.col-xs-12.col-sm-3.col-md-3.col-lg-3.grid-group-item{
-  height: 300px;
-  max-height: 330px;
-}
-/*.item.col-xs-12.col-sm-3.col-md-3.col-lg-3.grid-group-item:nth-child(n+6){
-  margin-top: 20px;
-}*/
-.initialrow{
-  float: left;
-}
-.extrarow{
-  margin-top: 20px;
-  float: left;
-}
-.grid-group-item:not(.featureditem) .asset-card {
-  height: 100%;
-}
 
-.grid-group-item:not(.featureditem) .overlayimage {
-   margin-bottom: 5%;
-   width: 100%;
-   height: 40%;
-}
-
-#control-panel, .control-panel {
-  display: block;
-  margin-bottom: 5px;
-  height: 15%;
-  max-height: 60px;
-}
-
-#control-panel.filteractive{
-  /*display: none;*/
-}
 #assets{
   height: 85%;
 }
@@ -5160,15 +5078,6 @@ div.item.mediainbox .overlayimage{
     max-width: 400px;
 }
 
-.item.list-group-item
-{
-    /*width: 45%;*/
-    width: 100%;
-    background-color: #fff;
-    border: none;
-    /*LMS fix. 10/16/17*/
-    margin: 1% 0;
-}
 
 
   .list-group-item .asset-title {
@@ -5187,7 +5096,82 @@ div.item.mediainbox .overlayimage{
     margin-left: 30%;
 }
 
-.row.list-group {
-  /*overflow: scroll;*/
-  /*height: 320px;*/
+/* LMS FIX. 10/16/2017 */
+.navbar-nav>li>a {
+	line-height: 15px;
+}
+
+.item.list-group-item
+{
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    margin: 1% 0;
+}
+
+.course-header{
+  position: relative;
+  padding: 2% 0;
+  width: 100vw;
+  background: #3198cb;
+  height: 15%;
+  min-height: 50px;
+  max-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.headerText{
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+  font-weight: bold;
+  font-size: 3vh;
+}
+
+.headerDescription{
+ display: block;
+  text-align: center;
+  margin: 5px auto 0;
+  color: #fff;
+  font-size: 2vh;
+  line-height: 1.2em;
+  font-weight: 200;
+}
+
+.navbar.lms {
+  margin-bottom: 1%;
+  padding: 0 20px;
+  height: 55px;
+}
+.item.col-xs-12.col-sm-3.col-md-3.col-lg-3.grid-group-item{
+  height: 300px;
+  max-height: 330px;
+}
+
+
+.initialrow{
+  float: left;
+}
+.extrarow{
+  margin-top: 20px;
+  float: left;
+}
+.grid-group-item:not(.featureditem) .asset-card {
+  height: 100%;
+}
+
+.grid-group-item:not(.featureditem) .overlayimage {
+   margin-bottom: 5%;
+   width: 100%;
+   height: 40%;
+}
+
+#control-panel, .control-panel {
+  display: block;
+  margin-bottom: 5px;
+  height: 15%;
+  max-height: 60px;
 }
