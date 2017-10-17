@@ -1,26 +1,32 @@
 $( document ).ready(function() {
 
 $(window).load(function() {
+  
+//LMS FIX. 10/17/2017
   extrarow = $('.extrarow');
   extrarow.wrap('<div class="extrarow"></div>');
   extrarow = $('.extrarow').html();
   $('.extrarow').remove();
 
   availableassetspace = $('.cardcontainer').height() - ($('#control-panel').height() + $('.footer').height());
-  assetheight = $('.grid-group-item').height();
+  assetheight = 300;
 
+    assetheight = availableassetspace / (Math.round(availableassetspace / 300)) - 10;
+    console.log(availableassetspace);
+    console.log(assetheight);
 
-if(availableassetspace > (2*assetheight)+20){
-  console.log(availableassetspace);
-  console.log(2*assetheight+20);
+  $('.grid-group-item').css("height", assetheight + "px");
 
-  rowspacesavailable = (availableassetspace/(assetheight+20)-1);
+  if(availableassetspace > (2*assetheight)){
+
+  rowspacesavailable = availableassetspace/assetheight - 1;
   rowspacesavailable = Math.floor(rowspacesavailable);
 
   console.log(rowspacesavailable);
     for(var i = 0; i < rowspacesavailable; i++) {
       $('#assets').append(extrarow);
     }
+      $('.grid-group-item').css("height", assetheight + "px");
   }
 });
 
