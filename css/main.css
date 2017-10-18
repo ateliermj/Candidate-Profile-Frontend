@@ -5066,9 +5066,10 @@ div.item.mediainbox .overlayimage{
     width: 25%;
     padding: 0;
     box-sizing: border-box;
-    margin-right: 5%;
+    /*LMS FIX. 10/18/17*/
+    /*margin-right: 5%;*/
     height: 80%;
-        min-width: 200px;
+    min-width: 200px;
     max-width: 400px;
 }
 
