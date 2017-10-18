@@ -4932,6 +4932,16 @@ fieldset.file-fields .input-group.captioning {
     position: absolute;
 }
 
+/*LMS FIX. 10/18/17*/
+ul.nav.navbar-nav a{
+  padding: 15px 9px;
+  font-size: 13px;
+}
+.row{
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
 }
 
 @media (max-width: 768px) {
@@ -5021,7 +5031,13 @@ div.item.mediainbox .overlayimage{
     margin-left: auto;
     margin-right: auto;
     width: 970px;
- z-index: 100;
+     z-index: 100;
+}
+/*LMS FIX. 10/18/17*/
+.panel-body.filter{
+  max-width: 970px;
+  width: auto;
+  position: relative;
 }
 .filteractive{
   display: block;
@@ -5035,6 +5051,11 @@ div.item.mediainbox .overlayimage{
   opacity: 0.3;
   z-index: 99;
   display: none;
+  /*LMS FIX. 10/18/17*/
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .filter-overlay.filteractive {
@@ -5117,6 +5138,8 @@ div.item.mediainbox .overlayimage{
   font-size: 2vh;
   line-height: 1.2em;
   font-weight: 200;
+  /*LMS FIX. 10/18/17*/
+  height: auto;
 }
 
 .navbar.lms {
@@ -5169,6 +5192,8 @@ p.group.inner.list-group-item-text
   height: 60px;
   margin: 0;
   bottom: 0;
+  /*LMS FIX. 10/18/17*/
+  z-index: 98;
 }
 .cardcontainer{
   overflow: hidden;
@@ -5177,4 +5202,3 @@ p.group.inner.list-group-item-text
   flex-direction: column;
   flex: 1 1 auto;
 }
-
