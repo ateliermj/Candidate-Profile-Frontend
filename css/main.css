@@ -5037,7 +5037,9 @@ div.item.mediainbox .overlayimage{
 .panel-body.filter{
   max-width: 970px;
   width: auto;
-  position: relative;
+  position: absolute;
+  left: 0;
+  right:0;
 }
 .filteractive{
   display: block;
