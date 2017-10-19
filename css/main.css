@@ -270,7 +270,7 @@ i:hover {
     padding: 15px;
     border-radius: 0px;
     /*LMS FIX. 10/19/17*/
-    overflow: hidden;
+    /*overflow: hidden;*/
     position: relative;
 
 }
@@ -1670,7 +1670,8 @@ button:focus {
 }
 .container {
     /*max-width: 1024px;*/
-    overflow-x: hidden;
+    /*LMS FIX. 10/19/17*/
+    /*overflow-x: hidden;*/
 }
 .more:hover {
     cursor: pointer;
@@ -5211,7 +5212,8 @@ p.group.inner.list-group-item-text
   z-index: 98;
 }
 .cardcontainer{
-  overflow: hidden;
+  /*LMS FIX. 10/19/17*/
+  /*overflow: hidden;*/
   min-height: 315px;
   display: flex;
   flex-direction: column;
