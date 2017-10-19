@@ -269,6 +269,8 @@ i:hover {
     border: 1px solid #ccc;
     padding: 15px;
     border-radius: 0px;
+    /*LMS FIX. 10/19/17*/
+    overflow: hidden;
 
 }
 
@@ -1188,7 +1190,8 @@ div.modal-footer .publish:hover{
 }
 
 div.item.list-group-item{
-
+  /*LMS FIX. 10/19/17*/
+  height: auto !important;
   border-radius: 0;
 }
 div.dropdown{
