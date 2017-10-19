@@ -2,6 +2,9 @@ $( document ).ready(function() {
 
 $(window).load(function() {
   
+//FIX 10192017
+  setImageHeight();
+
 //LMS FIX. 10/17/2017
   extrarow = $('.extrarow');
   extrarow.wrap('<div class="extrarow"></div>');
@@ -37,6 +40,8 @@ setAccessesWidth();
 
 $( window ).resize(function() {
   setAccessesWidth();
+  //FIX 10192017
+  setImageHeight();
 });
 
 
@@ -412,6 +417,15 @@ function setAccessesWidth() {
       $(this).children().html(accesses)
     }
   });
+}
+
+//FIX 10192017
+function setImageHeight() {
+ $('.grid-group-item .overlayimage').each(function() {
+   var width = $(this).width();
+   var height = width / 16 * 9;
+   $(this).css('height', height + "px");
+ })
 }
 
 function resetMarkNew() {

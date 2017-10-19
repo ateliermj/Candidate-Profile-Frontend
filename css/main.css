@@ -626,10 +626,14 @@ button.btn-primary.active:hover {
   z-index: 9;
   width: 100%;
   height: 100%;
+  /*FIX 10192017*/
+  object-fit: cover;
 }
 
 .list-group-item:not(.featureditem) > .group.list-group-image  {
   width: 100px !important;
+    /*FIX 10192017*/
+  object-fit: cover;
 }
 
 .group.list-group-image.default {
@@ -4990,7 +4994,7 @@ div.item.mediainbox .overlayimage{
 
 .iframe-constraint {
 
-  height: 1200px;
+  height: 2500px;
   min-height: 600px;
   overflow: hidden;
   border: 1px solid #000;
