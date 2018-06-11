@@ -5160,7 +5160,9 @@ div.item.mediainbox .overlayimage{
 .navbar.lms {
   margin-bottom: 1%;
   padding: 0 20px;
-  height: 55px;
+  /*  MC-717 06/11/18  */
+  height: unset;
+  min-height: unset;
 }
 .grid-group-item{
 /*  height: 300px;*/
