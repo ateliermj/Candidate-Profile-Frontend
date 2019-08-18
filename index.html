@@ -25,6 +25,12 @@ $(document).ready(function() {
   	$('.experience-item.extra').css('display', 'flex');
   	$(this).parents('.experience-item').hide();
   });
+
+  $('.skills-wrapper .more').click(function() {
+  	$(this).hide();
+  	$(this).siblings('.extra').show();
+  });
+
 });
 </script>
 	</head>
