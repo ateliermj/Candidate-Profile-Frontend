@@ -12,8 +12,21 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <script src="https://kit.fontawesome.com/15ec0c7a3f.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.thumbs i').click(function() {
+  		$(this).toggleClass('fal fas');
+  		$(this).toggleClass('selected')
+	});
 
+  $('.showmore').click(function() {
+  	$('.experience-item.extra').css('display', 'flex');
+  	$(this).parents('.experience-item').hide();
+  });
+});
+</script>
 	</head>
 
 <body>
@@ -42,9 +55,9 @@
 		<div class="column profile-photo-wrapper">
 			<img class="profile-photo" src="img/profile.png" alt="profile photo" />
 			<div class="icons-wrapper">
-				<i class="fab fa-linkedin-in"></i>
-				<i class="cv">CV</i>
-				<i class="far fa-envelope"></i>
+				<a href="https://linkedin.com/in/stephaniebaseman/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+			<a href="https://app.acorn.work/dataanalysis/summary_view/97b516f3-3a6a-44d0-b619-40bf5a3b285f" target="_blank"><i class="cv">CV</i></a>
+			<a href="mailto: stephanie.baseman@gmail.com"><i class="far fa-envelope"></i></a>
 			</div>
 		</div>
 		<div class="column profile-info-wrapper">
@@ -126,7 +139,7 @@
 			<div class="flex-6 column">
 				<div class="position content">Senior Product Designer</div>
 				<div class="company sub-content">YouCaring</div>
-				<a class="showmore">Show 2 more roles</a>
+				<!-- <a class="showmore">Show 2 more roles</a> -->
 			</div>
 			<div class="flex-1 tenure">3 yrs</div>
 		</div>
@@ -151,16 +164,26 @@
 			<div class="flex-1 tenure">4 mos</div>
 		</div>
 
-		<!-- <div class="experience-item">
+		<div class="experience-item extra">
 			<div class="flex-1 year">2011</div>
 			<div class="flex-1 favicon"><img src="img/paypal.png" /></div>
 			<div class="flex-6 column">
 				<div class="position content">Channel Marketing Specialist</div>
 				<div class="company sub-content">PayPal</div>
-				<a class="showmore">Show 1 more role</a>
+			<!-- 	<a class="showmore">Show 1 more role</a> -->
 			</div>
 			<div class="flex-1 tenure">4 yrs</div>
-		</div> -->
+		</div>
+
+		<div class="experience-item extra last">
+			<div class="flex-1 year">2009</div>
+			<div class="flex-1 favicon"><img src="img/su.jpg" /></div>
+			<div class="flex-6 column">
+				<div class="position content">Publications Intern</div>
+				<div class="company sub-content">Stevenson University</div>
+			</div>
+			<div class="flex-1 tenure">9 mos</div>
+		</div>
 
 		<div class="experience-item">
 			<div class="flex-1 year"></div>

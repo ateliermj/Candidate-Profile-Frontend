@@ -52,6 +52,11 @@ body {
   transform: scale(1.05);
 }
 
+.thumbs i.selected {
+  color: #fff;
+  background: #0aa2c6;
+}
+
 .candidate-nav {
   font-weight: 400;
   color: #000;
@@ -308,6 +313,11 @@ img.profile-photo {
 .experience-item {
   display: flex;
   align-items: baseline;
+  background: #fff;
+}
+
+.experience-item.extra {
+  display: none;
 }
 
 .experience-item:not(:last-child) {
@@ -338,7 +348,7 @@ img.profile-photo {
 
 .experience-item:not(:last-child) > .favicon:after {
     content: "";
-    height: 100%;
+    height: 150%;
     width: 5px;
     border-left: 1px solid #999;
     position: absolute;
@@ -346,12 +356,16 @@ img.profile-photo {
     left: 50%;
 }
 
+.experience-item.extra.last > .favicon:after {
+  display: none;
+}
+
 .favicon.none:before {
   content: " ";
   border: 1px solid #999;
   border-radius: 50%;
   background-color: #fff;
-  padding: 0px 10px;
+  padding: 0px 8px;
 }
 
 a.showmore {
@@ -562,13 +576,19 @@ align-items: stretch;
 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 834px) {
   .location .item {
   width: 100%;
 }
 
 .option-item:not(.active) {
   display: none;
+}
+
+#htmltagcloud {
+  margin-top: 5px;
+  line-height: 2em !important;
+  font-size: 40% !important;
 }
 }
 
